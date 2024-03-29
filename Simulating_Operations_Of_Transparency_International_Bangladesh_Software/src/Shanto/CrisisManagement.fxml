@@ -51,4 +51,6 @@
             <Button onAction="#refreshResponseActions" text="Refresh Actions" />
         </VBox>
     </SplitPane>
+   <Button layoutX="14.0" layoutY="702.0" onAction="#goBack" prefHeight="25.0" prefWidth="77.0" text="Back" />
+   <Button layoutX="105.0" layoutY="702.0" onAction="#logOut" prefHeight="25.0" prefWidth="77.0" text="Logout" />
 </AnchorPane>
