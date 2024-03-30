@@ -12,6 +12,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
@@ -29,8 +30,11 @@ public class CrisisManagementController implements Initializable {
      
         crisisTypeColumn.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue()));
         crisisTypesTableView.getItems().addAll(
-            "Natural Disasters", "Cybersecurity Breaches", "Workplace Accidents", "Product Recalls", "Financial Crises",
-            "Public Health Emergencies", "Terrorist Attacks", "Environmental Disasters", "Supply Chain Disruptions", "Reputation Crises"
+            "Natural Disasters", "Cybersecurity Breaches",
+                "Workplace Accidents", "Product Recalls",
+                "Financial Crises","Public Health Emergencies",
+                "Terrorist Attacks", "Environmental Disasters",
+                "Supply Chain Disruptions", "Reputation Crises"
         );      
         responseActionColumn.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue()));
         responseActionsTableView.getItems().addAll(
@@ -62,12 +66,56 @@ public class CrisisManagementController implements Initializable {
 
     @FXML
     private void viewCrisisDetails(ActionEvent event) {
-        // Implement code to view crisis details
+        String selectedCrisis = crisisTypesTableView.getSelectionModel().getSelectedItem();
+        if (selectedCrisis != null) {
+            String details = getCrisisDetails(selectedCrisis);
+            displayDetails("Crisis Details", details);
+        } else {
+            displayNoSelectionAlert("Crisis Details");
+        }
     }
 
     @FXML
     private void viewResponseDetails(ActionEvent event) {
-        // Implement code to view response details
+        String selectedResponse = responseActionsTableView.getSelectionModel().getSelectedItem();
+        if (selectedResponse != null) {
+            String details = getResponseDetails(selectedResponse);
+            displayDetails("Response Details", details);
+        } else {
+            displayNoSelectionAlert("Response Details");
+        }
+    }
+
+    private String getCrisisDetails(String crisis) {
+      
+        return "Crisis: " + crisis + "\n"
+             + "Severity: High\n"
+             + "Affected Area: Operations\n"
+             + "Date: 02/15/2024";
+    }
+
+    private String getResponseDetails(String response) {
+        
+        return "Response: " + response + "\n"
+             + "Action Plan: Activate crisis management team\n"
+             + "Lead: Crisis Management Director\n"
+             + "Status: Ongoing";
+    }
+
+    private void displayDetails(String title, String content) {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle(title);
+        alert.setHeaderText(null);
+        alert.setContentText(content);
+        alert.showAndWait();
+    }
+
+    private void displayNoSelectionAlert(String title) {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle(title);
+        alert.setHeaderText(null);
+        alert.setContentText("Please select a row to view details.");
+        alert.showAndWait();
     }
     
     private void loadScene(String fxmlFile, ActionEvent event) {
@@ -82,4 +130,5 @@ public class CrisisManagementController implements Initializable {
             e.printStackTrace();
         }
     }
+
 }
