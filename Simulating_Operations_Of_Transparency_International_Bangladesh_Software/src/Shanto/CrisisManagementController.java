@@ -1,105 +1,87 @@
-
 package Shanto;
 
 import java.io.IOException;
+import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.beans.property.SimpleStringProperty;
 import java.net.URL;
 import java.util.ResourceBundle;
-import javafx.application.Platform;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
 import javafx.scene.Node;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Alert.AlertType;
-import javafx.scene.control.ListView;
-import javafx.scene.control.TextArea;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 public class CrisisManagementController implements Initializable {
 
-    @FXML    private ListView<String> crisisTypesListView;
-    @FXML    private TextArea responseActionsTextArea;
-
-    // Initialize list if needed
-    ObservableList<String> crisisTypes = FXCollections.observableArrayList();
+    @FXML
+    private TableView<String> crisisTypesTableView;
+    @FXML
+    private TableColumn<String, String> crisisTypeColumn;
+    @FXML
+    private TableColumn<String, String> crisisDetailsColumn;
+    @FXML
+    private TableView<String> responseActionsTableView;
+    @FXML
+    private TableColumn<String, String> responseActionColumn;
+    @FXML
+    private TableColumn<String, String> responseDetailsColumn;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // Initialize the list here if needed
-        crisisTypes.add("Natural Disasters");
-        crisisTypes.add("Security Threats");
-        crisisTypes.add("Reputational Crises");
-        crisisTypesListView.setItems(crisisTypes);
+        // Initialize crisis types table
+        crisisTypeColumn.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue()));
+        crisisTypesTableView.getItems().addAll(
+            "Natural Disasters", "Cybersecurity Breaches", "Workplace Accidents", "Product Recalls", "Financial Crises",
+            "Public Health Emergencies", "Terrorist Attacks", "Environmental Disasters", "Supply Chain Disruptions", "Reputation Crises"
+        );
+
+        // Initialize response actions table
+        responseActionColumn.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue()));
+        responseActionsTableView.getItems().addAll(
+            "Activate emergency response teams and protocols", "Conduct threat assessments and forensic investigations",
+            "Provide immediate medical assistance and first aid", "Implement recall procedures and notify affected parties",
+            "Engage financial experts and regulators to stabilize markets", "Mobilize healthcare resources and coordinate with public health agencies",
+            "Coordinate with law enforcement and security agencies to ensure public safety", "Initiate environmental cleanup efforts and containment measures",
+            "Identify alternative suppliers and logistics routes", "Implement crisis communication strategies to protect reputation and maintain transparency"
+        );
     }
+
+
+   
 
     @FXML
     private void exitApplication(ActionEvent event) {
-        // Exit the application
-        Platform.exit();
-    }
-
-    @FXML
-    private void viewNaturalDisasters(ActionEvent event) {
-        // Implement code to view natural disasters
-        displayMessage("View Natural Disasters", "Viewing natural disasters...");
-    }
-
-    @FXML
-    private void viewSecurityThreats(ActionEvent event) {
-        // Implement code to view security threats
-        displayMessage("View Security Threats", "Viewing security threats...");
-    }
-
-    @FXML
-    private void viewReputationalCrises(ActionEvent event) {
-        // Implement code to view reputational crises
-        displayMessage("View Reputational Crises", "Viewing reputational crises...");
-    }
-
-    @FXML
-    private void emergencyResponse(ActionEvent event) {
-        // Implement code for emergency response
-        displayMessage("Emergency Response", "Performing emergency response actions...");
-    }
-
-    @FXML
-    private void communicationPlan(ActionEvent event) {
-        // Implement code for communication plan
-        displayMessage("Communication Plan", "Implementing communication plan...");
-    }
-
-    @FXML
-    private void refreshCrisisTypes(ActionEvent event) {
-        // Implement code to refresh crisis types
-        displayMessage("Refresh Crisis Types", "Refreshing crisis types...");
-    }
-
-    @FXML
-    private void refreshResponseActions(ActionEvent event) {
-        // Implement code to refresh response actions
-        displayMessage("Refresh Response Actions", "Refreshing response actions...");
-    }
-
-    // Helper method to display alert messages
-    private void displayMessage(String title, String message) {
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle(title);
-        alert.setHeaderText(null);
-        alert.setContentText(message);
-        alert.showAndWait();
+        System.exit(0);
     }
 
     @FXML
     private void goBack(ActionEvent event) {
-        // Implement code to navigate back to the previous screen
+        loadScene("ExecutiveDirector.fxml", event);
+    }
+
+    @FXML
+    private void logOut(ActionEvent event) {
+        loadScene("LoginSc.fxml", event);
+    }
+
+    @FXML
+    private void viewCrisisDetails(ActionEvent event) {
+        // Implement code to view crisis details
+    }
+
+    @FXML
+    private void viewResponseDetails(ActionEvent event) {
+        // Implement code to view response details
+    }
+    
+    private void loadScene(String fxmlFile, ActionEvent event) {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlFile));
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("PreviousScreen.fxml"));
-            Parent root = loader.load();
+            AnchorPane root = loader.load();
             Scene scene = new Scene(root);
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             stage.setScene(scene);
@@ -107,17 +89,5 @@ public class CrisisManagementController implements Initializable {
         } catch (IOException e) {
             e.printStackTrace();
         }
-    }
-
-    @FXML
-    private void logOut(ActionEvent event) {
-       
-        Alert alert = new Alert(AlertType.INFORMATION);
-        alert.setTitle("Logout");
-        alert.setHeaderText(null);
-        alert.setContentText("You have been logged out.");
-        alert.showAndWait();       
-        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        stage.close();
     }
 }
