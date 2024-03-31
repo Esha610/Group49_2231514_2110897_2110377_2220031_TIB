@@ -56,7 +56,7 @@ public class CrisisManagementController implements Initializable {
 
     @FXML
     private void goBack(ActionEvent event) {
-        loadScene("ExecutiveDirector.fxml", event);
+        loadScene("SecretaryGeneral.fxml", event);
     }
 
     @FXML

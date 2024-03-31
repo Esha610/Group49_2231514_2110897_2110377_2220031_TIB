@@ -105,39 +105,27 @@ public class AdministrativeOversightController implements Initializable {
     
     @FXML
     private void logout(ActionEvent event) {
-        System.out.println("User logged out.");
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("Login.fxml"));
-        try {
-            AnchorPane root = loader.load();
-            Scene scene = new Scene(root);
-            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();          
-            stage.setScene(scene);
-            stage.show();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        loadScene("LoginSc.fxml", event);
     }
     
     @FXML
     private void goBack(ActionEvent event) {
-         System.out.println("Going back...");
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("ExecutiveDirector.fxml"));
+        loadScene("SecretaryGeneral.fxml", event);
+    }
+    
+    
+    private void loadScene(String fxmlFile, ActionEvent event) {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlFile));
         try {
             AnchorPane root = loader.load();
             Scene scene = new Scene(root);
-
-            // Get the Stage from the ActionEvent
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-
-            // Set the Scene on the Stage
             stage.setScene(scene);
-
-            // Show the Stage
             stage.show();
         } catch (IOException e) {
             e.printStackTrace();
         }
-    }
+    }    
   
     
 }
