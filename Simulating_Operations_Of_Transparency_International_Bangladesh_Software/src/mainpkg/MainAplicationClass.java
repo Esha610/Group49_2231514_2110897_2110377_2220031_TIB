@@ -13,7 +13,7 @@ public class MainAplicationClass extends Application {
     
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("NewRecruitment.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("OfficialMeets.fxml"));
         
         Scene scene = new Scene(root);
         
