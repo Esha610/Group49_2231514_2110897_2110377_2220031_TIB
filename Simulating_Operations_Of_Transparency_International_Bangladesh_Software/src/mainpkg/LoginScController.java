@@ -7,6 +7,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Cursor;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
@@ -35,7 +36,11 @@ public class LoginScController implements Initializable {
                 ,"Finance and Administration Manager"
                 ,"Citizen"
                 ,"Legal Advisor");
-        //defaultIdpass
+ 
+        login.setCursor(Cursor.HAND);
+        signupButton.setCursor(Cursor.HAND);
+
+        
         userIdTextField.setText("");
         passwordTextField.setText("");
     }

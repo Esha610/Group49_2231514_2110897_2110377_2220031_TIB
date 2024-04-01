@@ -86,8 +86,7 @@ public class CapacityBuildingController implements Initializable {
         loadScene("SecretaryGeneral.fxml", event);
     }
 
-    @FXML
-    private void logoutButton(ActionEvent event) {
+    private void logout(ActionEvent event) {
         loadScene("LoginSc.fxml", event);
     }
 

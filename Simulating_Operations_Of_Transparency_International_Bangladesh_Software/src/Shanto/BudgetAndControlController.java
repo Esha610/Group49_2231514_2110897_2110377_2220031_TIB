@@ -1,5 +1,6 @@
 package Shanto;
 
+import java.io.IOException;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -11,6 +12,11 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 import javafx.application.Platform;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Scene;
+import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 
 public class BudgetAndControlController implements Initializable {
 
@@ -94,18 +100,30 @@ private void viewAllExpenses(ActionEvent event) {
         }
     }
     
+    @FXML
+    private void logout(ActionEvent event) {
+        loadScene("LoginSc.fxml", event);
+    }
     
-
-
-
-
-
     @FXML
-    private void logoutAction(ActionEvent event) {
+    private void goBack(ActionEvent event) {
+        loadScene("ExecutiveDirector.fxml", event);
     }
+    
+    
+    private void loadScene(String fxmlFile, ActionEvent event) {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlFile));
+        try {
+            AnchorPane root = loader.load();
+            Scene scene = new Scene(root);
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }    
 
-    @FXML
-    private void backAction(ActionEvent event) {
-    }
+  
 
 }

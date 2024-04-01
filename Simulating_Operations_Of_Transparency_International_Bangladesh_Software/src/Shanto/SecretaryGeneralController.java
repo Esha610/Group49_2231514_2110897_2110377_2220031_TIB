@@ -8,6 +8,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Cursor;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -24,8 +25,9 @@ public class SecretaryGeneralController implements Initializable {
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-
-    }    
+     
+        logout.setCursor(Cursor.HAND);
+    } 
 
     @FXML
     private void LogoutButtonOnClick(ActionEvent event) {

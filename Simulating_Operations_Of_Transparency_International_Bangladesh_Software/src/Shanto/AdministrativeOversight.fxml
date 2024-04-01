@@ -53,5 +53,6 @@
     </SplitPane>
     
     <!-- Back Button -->
-    <Button layoutX="869.0" layoutY="770.0" onAction="#goBack" prefHeight="35.0" prefWidth="107.0" text="Back" />
+    <Button layoutX="827.0" layoutY="775.0" onAction="#goBack" prefHeight="25.0" prefWidth="67.0" text="Back" />
+   <Button layoutX="906.0" layoutY="775.0" onAction="#logout" prefHeight="25.0" prefWidth="67.0" text="Logout" />
 </AnchorPane>

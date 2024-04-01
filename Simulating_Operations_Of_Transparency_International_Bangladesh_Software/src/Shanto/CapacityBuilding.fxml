@@ -42,7 +42,7 @@
             <ListView fx:id="programsListView" prefHeight="526.0" prefWidth="491.0" />
          <Button onAction="#viewDescription" text="View Description" />
          <Button onAction="#goBack" prefHeight="25.0" prefWidth="67.0" text="Back" />
-         <Button onAction="#logoutButton" prefHeight="25.0" prefWidth="67.0" text="Logout" />
+         <Button onAction="#logout" prefHeight="25.0" prefWidth="67.0" text="Logout" />
         </VBox>
 
         <!-- Program Details -->
