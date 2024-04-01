@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="906.0" prefWidth="1046.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Shanto.OfficialMeetsController">
+
+    <!-- Header -->
+    <VBox layoutX="10.0" layoutY="35.0" prefHeight="72.0" prefWidth="403.0" spacing="10.0">
+        <Label style="-fx-font-size: 24px; -fx-font-weight: bold;" text="Official Meets" />
+        <Label text="Manage official meetings efficiently" />
+    </VBox>
+
+    <!-- Content Area -->
+    <SplitPane layoutX="10.0" layoutY="119.0" prefHeight="714.0" prefWidth="1026.0">
+        <!-- Meetings List -->
+        <VBox style="-fx-background-color: lightgray;">
+            <Label style="-fx-font-size: 18px; -fx-font-weight: bold;" text="Meetings" />
+            <TableView fx:id="meetingsTableView" prefHeight="509.0" prefWidth="509.0">
+                <columns>
+                    <TableColumn prefWidth="273.0" text="Meeting Name" />
+                    <TableColumn prefWidth="183.0" text="Time" />
+                    <TableColumn prefWidth="267.0" text="Date" />
+                    <TableColumn prefWidth="300.0" text="Location" />
+                </columns>
+            </TableView>
+            <Button onAction="#viewAllMeetings" text="View All" />
+            <Button onAction="#scheduleNewMeeting" text="Schedule New Meeting" />
+            <TextField fx:id="newMeetingField" prefHeight="128.0" prefWidth="1024.0" promptText="Enter New Meeting Details" /> <!-- Added Exit Button -->
+        </VBox>
+    </SplitPane>
+
+    <!-- Buttons for Logout and Back -->
+    <Button layoutX="965.0" layoutY="867.0" onAction="#logout" text="Logout" />
+    <Button layoutX="908.0" layoutY="867.0" onAction="#goBack" prefHeight="25.0" prefWidth="50.0" text="Back" />
+   <MenuBar layoutY="1.0" prefHeight="25.0" prefWidth="59.0">
+      <menus>
+         <Menu text="File">
+            <items>
+               <MenuItem onAction="#exitApplication" text="Exit" />
+            </items>
+         </Menu>
+      </menus>
+   </MenuBar>
+</AnchorPane>
