@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="892.0" prefWidth="1332.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Shanto.OperationalManagementController">
+
+    <!-- Header -->
+    <VBox layoutX="10.0" layoutY="36.0" prefHeight="99.0" prefWidth="476.0" spacing="10.0">
+        <Label style="-fx-font-size: 24px; -fx-font-weight: bold;" text="Operational Management" />
+        <Label text="Welcome to Transparency International Bangladesh's Operational Management Platform" />
+    </VBox>
+
+    <!-- Navigation Bar -->
+    <MenuBar>
+        <Menu text="File">
+            <MenuItem onAction="#exitApplication" text="Exit" />
+        </Menu>
+    </MenuBar>
+
+    <!-- Content Area -->
+    <VBox layoutX="10.0" layoutY="120.0" prefHeight="717.0" prefWidth="434.0" spacing="10.0">
+        <!-- Human Resources -->
+        <TitledPane prefHeight="680.0" prefWidth="866.0" text="Human Resources">
+            <VBox prefHeight="195.0" prefWidth="864.0" spacing="5.0">
+                <Label text="Number of Employees:" />
+            <ListView fx:id="employeeListView" prefHeight="726.0" prefWidth="844.0" />
+                <Button onAction="#viewEmployees" text="View Employees" />
+                <!-- TextField for adding employee count -->
+                <TextField fx:id="addEmployeeField" prefHeight="358.0" prefWidth="844.0" promptText="Add New Employee Count" />
+                <Button onAction="#addEmployee" text="Add Employee" />
+            </VBox>
+        </TitledPane>
+    </VBox>
+   <VBox layoutX="452.0" layoutY="120.0" prefHeight="690.0" prefWidth="434.0">
+      <children>
+         <TitledPane prefHeight="680.0" prefWidth="469.0" text="Finance">
+            <content>
+               <VBox prefHeight="188.0" prefWidth="864.0" spacing="5.0">
+                  <children>
+                     <Label text="Total Budget:" />
+                     <ListView fx:id="budgetListView" prefHeight="618.0" prefWidth="447.0" />
+                     <Button onAction="#viewBudgetDetails" text="View Budget Details" />
+                     <TextField fx:id="addBudgetField" prefHeight="247.0" prefWidth="447.0" promptText="Add New Total Budget" />
+                     <Button onAction="#addBudget" text="Add Budget" />
+                  </children>
+               </VBox>
+            </content>
+         </TitledPane>
+      </children>
+   </VBox>
+   <VBox layoutX="889.0" layoutY="121.0" prefHeight="680.0" prefWidth="434.0">
+      <children>
+         <TitledPane prefHeight="677.0" prefWidth="434.0" text="Office Management">
+            <content>
+               <VBox spacing="5.0">
+                  <children>
+                     <Label text="Office Supplies Inventory:" />
+                     <ListView fx:id="inventoryListView" prefHeight="752.0" prefWidth="412.0" />
+                     <Button onAction="#viewInventory" text="View Inventory" />
+                     <TextField fx:id="addInventoryField" prefHeight="374.0" prefWidth="412.0" promptText="Add New Inventory Data" />
+                     <Button onAction="#addInventory" text="Add Inventory Data" />
+                  </children>
+               </VBox>
+            </content>
+         </TitledPane>
+      </children>
+   </VBox>
+   <Button layoutX="1264.0" layoutY="845.0" onAction="#logout" text="Logout" />
+   <Button layoutX="1207.0" layoutY="845.0" onAction="#goBack" prefHeight="25.0" prefWidth="50.0" text="Back" />
+
+</AnchorPane>

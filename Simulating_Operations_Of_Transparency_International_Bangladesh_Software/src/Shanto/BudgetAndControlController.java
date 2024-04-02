@@ -41,7 +41,6 @@ public class BudgetAndControlController implements Initializable {
 
     @FXML
     private void exitApplication(ActionEvent event) {
-       
         Platform.exit();
     }
 
