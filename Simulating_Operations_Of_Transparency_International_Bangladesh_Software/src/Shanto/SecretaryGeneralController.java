@@ -10,10 +10,10 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Cursor;
 import javafx.scene.Node;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 
@@ -31,143 +31,73 @@ public class SecretaryGeneralController implements Initializable {
 
     @FXML
     private void LogoutButtonOnClick(ActionEvent event) {
-        try {          
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("LoginSc.fxml"));
-            Parent root = loader.load();          
-            Scene scene = new Scene(root);           
-            Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            currentStage.setScene(scene);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
+        
+        loadScene("/mainpkg/LoginSc.fxml", event);
 
+    }
 
     @FXML
     private void OperationalManagementButtonOnClick(ActionEvent event) {
         
-        try {           
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("OperationalManagement.fxml"));
-            Parent root = loader.load();
-            Scene scene = new Scene(root);
-            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            stage.setScene(scene);
-            stage.show();
-        } 
-        catch (IOException e) {
-            e.printStackTrace();          
-        }
+        loadScene("OperationalManagement.fxml", event);        
     }
 
     @FXML
     private void QualityAssuranceButtonOnClick(ActionEvent event) {
         
-        try {           
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("QualityAssurance.fxml"));
-            Parent root = loader.load();
-            Scene scene = new Scene(root);
-            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            stage.setScene(scene);
-            stage.show();
-        } 
-        catch (IOException e) {
-            e.printStackTrace();          
-        }
+        loadScene("QualityAssurance.fxml", event);
     }
 
     @FXML
     private void CrisisManagementButtonOnClick(ActionEvent event) {
         
-        try {           
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("CrisisManagement.fxml"));
-            Parent root = loader.load();
-            Scene scene = new Scene(root);
-            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            stage.setScene(scene);
-            stage.show();
-        } 
-        catch (IOException e) {
-            e.printStackTrace();          
-        }
+        loadScene("CrisisManagement.fxml", event);
+
     }
 
     @FXML
     private void StrategicPlanningSupportButtonOnClick(ActionEvent event) {
-        
-        try {           
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("StrategicPlanning.fxml"));
-            Parent root = loader.load();
-            Scene scene = new Scene(root);
-            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            stage.setScene(scene);
-            stage.show();
-        } 
-        catch (IOException e) {
-            e.printStackTrace();          
-        }
+
+        loadScene("StrategicPlanning.fxml", event);
     }
 
     @FXML
     private void AdministrativeOversightButtonOnClick(ActionEvent event) {
         
-        try {           
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("AdministrativeOversight.fxml"));
-            Parent root = loader.load();
-            Scene scene = new Scene(root);
-            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            stage.setScene(scene);
-            stage.show();
-        } 
-        catch (IOException e) {
-            e.printStackTrace();          
-        }
+        loadScene("AdministrativeOversight.fxml", event);
     }
 
     @FXML
     private void CapacityBuildingButtonOnClick(ActionEvent event) {
-        
-        try {           
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("CapacityBuilding.fxml"));
-            Parent root = loader.load();
-            Scene scene = new Scene(root);
-            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            stage.setScene(scene);
-            stage.show();
-        } 
-        catch (IOException e) {
-            e.printStackTrace();          
-        }
+
+        loadScene("CapacityBuilding.fxml", event);
     }
 
     @FXML
     private void ResearchandPolicyAnalysisButtonOnClick(ActionEvent event) {
         
-        try {           
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("ResearchAndPolicyAnalysis.fxml"));
-            Parent root = loader.load();
-            Scene scene = new Scene(root);
-            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            stage.setScene(scene);
-            stage.show();
-        } 
-        catch (IOException e) {
-            e.printStackTrace();          
-        }
+        loadScene("ResearchAndPolicyAnalysis.fxml", event);
     }
 
     @FXML
     private void RiskManagementButtonOnClick(ActionEvent event) {
         
-        try {           
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("RiskManagement.fxml"));
-            Parent root = loader.load();
+        loadScene("RiskManagement.fxml", event);
+    }
+    
+    //---------------------------------------------------------------------------------------------------------------
+    
+    
+            private void loadScene(String fxmlFile, ActionEvent event) {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlFile));
+        try {
+            AnchorPane root = loader.load();
             Scene scene = new Scene(root);
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             stage.setScene(scene);
             stage.show();
-        } 
-        catch (IOException e) {
-            e.printStackTrace();          
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
     

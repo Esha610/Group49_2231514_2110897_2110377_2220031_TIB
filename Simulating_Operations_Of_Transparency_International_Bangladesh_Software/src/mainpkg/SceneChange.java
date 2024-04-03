@@ -11,7 +11,7 @@ public class SceneChange {
 
     public SceneChange() {
     }
-    
+ 
     public void Scenechanger(Stage currentstage,String filename) throws IOException{
         Parent root = FXMLLoader.load(getClass().getResource(filename));
         Scene scene= new Scene(root);

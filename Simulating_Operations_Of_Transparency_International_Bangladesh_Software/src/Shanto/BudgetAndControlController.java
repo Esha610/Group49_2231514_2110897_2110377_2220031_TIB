@@ -97,7 +97,7 @@ public class BudgetAndControlController implements Initializable {
     
     @FXML
     private void logout(ActionEvent event) {
-        loadScene("LoginSc.fxml", event);
+        loadScene("/mainpkg/LoginSc.fxml", event);
     }
     
     @FXML

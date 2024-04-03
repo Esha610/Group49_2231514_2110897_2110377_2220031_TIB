@@ -138,17 +138,19 @@ public class OperationalManagementController implements Initializable {
         alert.showAndWait();
     }
 
-    @FXML
-    private void logout(ActionEvent event) {
-        loadScene("LoginSc.fxml", event);
-    }
+
     
     @FXML
     private void goBack(ActionEvent event) {
-        loadScene("ExecutiveDirector.fxml", event);
+        loadScene("OperationalManagement.fxml", event);
     }
     
-    
+
+    @FXML
+    private void logout(ActionEvent event) {
+        loadScene("/mainpkg/LoginSc.fxml", event);
+    }
+
     private void loadScene(String fxmlFile, ActionEvent event) {
         FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlFile));
         try {
@@ -160,7 +162,8 @@ public class OperationalManagementController implements Initializable {
         } catch (IOException e) {
             e.printStackTrace();
         }
-    }    
+    }
+
 
   
 

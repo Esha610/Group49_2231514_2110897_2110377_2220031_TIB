@@ -61,7 +61,7 @@ public class CrisisManagementController implements Initializable {
 
     @FXML
     private void logOut(ActionEvent event) {
-        loadScene("LoginSc.fxml", event);
+        loadScene("/mainpkg/LoginSc.fxml", event);
     }
 
     @FXML

@@ -87,7 +87,7 @@ public class CapacityBuildingController implements Initializable {
     }
 
     private void logout(ActionEvent event) {
-        loadScene("LoginSc.fxml", event);
+        loadScene("/mainpkg/LoginSc.fxml", event);
     }
 
    
