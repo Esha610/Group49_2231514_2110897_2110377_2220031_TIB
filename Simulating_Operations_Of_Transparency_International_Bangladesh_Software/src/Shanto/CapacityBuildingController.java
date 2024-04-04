@@ -71,26 +71,6 @@ public class CapacityBuildingController implements Initializable {
         }
     }
 
-
-    @FXML
-    private void saveProgramChanges(ActionEvent event) {
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle("Save Program Changes");
-        alert.setHeaderText(null);
-        alert.setContentText("Saving program changes...");
-        alert.showAndWait();
-    }
-
-    @FXML
-    private void goBack(ActionEvent event) {
-        loadScene("SecretaryGeneral.fxml", event);
-    }
-
-    private void logout(ActionEvent event) {
-        loadScene("/mainpkg/LoginSc.fxml", event);
-    }
-
-   
     @FXML
     private void viewDescription(ActionEvent event) {
         String selectedProgram = programsListView.getSelectionModel().getSelectedItem();
@@ -134,9 +114,18 @@ public class CapacityBuildingController implements Initializable {
         }
     }
 
+        @FXML
+        private void goBack(ActionEvent event) {
+            loadScene("/Shanto/SecretaryGeneral.fxml", event);
+        }
 
+        @FXML
+        private void logout(ActionEvent event) {
+            loadScene("/mainpkg/LoginSc.fxml", event);
+        }
 
-
+        
+        
     private void showAlert(Alert.AlertType alertType, String title, String message) {
         Alert alert = new Alert(alertType);
         alert.setTitle(title);
@@ -144,6 +133,7 @@ public class CapacityBuildingController implements Initializable {
         alert.setContentText(message);
         alert.showAndWait();
     }
+    
     
     
     

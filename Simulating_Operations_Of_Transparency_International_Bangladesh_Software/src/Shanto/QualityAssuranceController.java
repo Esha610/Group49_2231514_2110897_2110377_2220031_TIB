@@ -147,7 +147,7 @@ public class QualityAssuranceController implements Initializable {
 
     @FXML
     private void goBack(ActionEvent event) {
-        loadScene("SecretaryGeneral.fxml", event);
+        loadScene("/Shanto/SecretaryGeneral.fxml", event);
     }
 
     private void loadScene(String fxmlFile, ActionEvent event) {

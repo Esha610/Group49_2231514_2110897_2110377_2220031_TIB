@@ -110,7 +110,7 @@ public class AdministrativeOversightController implements Initializable {
     
     @FXML
     private void goBack(ActionEvent event) {
-        loadScene("SecretaryGeneral.fxml", event);
+        loadScene("/Shanto/SecretaryGeneral.fxml", event);
     }
     
     

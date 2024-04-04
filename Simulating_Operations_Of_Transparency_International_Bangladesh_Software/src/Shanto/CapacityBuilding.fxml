@@ -28,31 +28,26 @@
         <Menu text="File">
             <MenuItem onAction="#exitApplication" text="Exit" />
         </Menu>
-        <Menu text="Training Programs">
-            <MenuItem onAction="#viewAllPrograms" text="View All Programs" />
-            <MenuItem onAction="#addNewProgram" text="Add New Program" />
-        </Menu>
     </MenuBar>
 
     <!-- Content Area -->
-    <SplitPane dividerPositions="0.4817813765182186" layoutX="10.0" layoutY="124.0" prefHeight="687.0" prefWidth="990.0">
+    <SplitPane dividerPositions="0.4817813765182186" layoutX="10.0" layoutY="124.0" prefHeight="622.0" prefWidth="990.0">
         <!-- Programs List -->
-        <VBox style="-fx-background-color: lightgray;">
+        <VBox>
             <Label style="-fx-font-size: 18px; -fx-font-weight: bold;" text="Training Programs" />
-            <ListView fx:id="programsListView" prefHeight="526.0" prefWidth="491.0" />
+            <ListView fx:id="programsListView" prefHeight="548.0" prefWidth="473.0" />
+         <Button layoutX="10.0" layoutY="563.0" onAction="#viewAllPrograms" text="View All Programs" />
          <Button onAction="#viewDescription" text="View Description" />
-         <Button onAction="#goBack" prefHeight="25.0" prefWidth="67.0" text="Back" />
-         <Button onAction="#logout" prefHeight="25.0" prefWidth="67.0" text="Logout" />
         </VBox>
 
         <!-- Program Details -->
         <VBox>
             <Label prefHeight="46.0" prefWidth="158.0" style="-fx-font-size: 18px; -fx-font-weight: bold;" text="Program Details" />
-            <GridPane hgap="10" vgap="10">
+            <GridPane hgap="10" prefHeight="402.0" prefWidth="509.0" vgap="10">
                 <Label text="Program Name:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
-                <TextField fx:id="programNameField" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                <TextField fx:id="programNameField" prefHeight="33.0" prefWidth="360.0" GridPane.columnIndex="1" GridPane.rowIndex="0" />
                 <Label text="Program Description:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
-                <TextArea fx:id="programDescriptionArea" prefHeight="320.0" prefWidth="360.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                <TextArea fx:id="programDescriptionArea" prefHeight="344.0" prefWidth="360.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
             <columnConstraints>
                <ColumnConstraints />
                <ColumnConstraints />
@@ -63,7 +58,9 @@
             </rowConstraints>
                 <!-- Add more fields as needed -->
             </GridPane>
-            <Button onAction="#saveProgramChanges" prefHeight="36.0" prefWidth="101.0" text="Save Changes" />
+         <Button onAction="#addNewProgram" text="Add New Program" />
         </VBox>
     </SplitPane>
+   <Button layoutX="931.0" layoutY="840.0" onAction="#logout" prefHeight="25.0" prefWidth="67.0" text="Logout" />
+   <Button layoutX="852.0" layoutY="840.0" onAction="#goBack" prefHeight="25.0" prefWidth="67.0" text="Back" />
 </AnchorPane>

@@ -75,7 +75,7 @@ public class OfficialMeetsController implements Initializable {
     
     @FXML
     private void goBack(ActionEvent event) {
-        loadScene("ExecutiveDirector.fxml", event);
+        loadScene("/Shanto/ExecutiveDirector.fxml", event);
     }
     
     

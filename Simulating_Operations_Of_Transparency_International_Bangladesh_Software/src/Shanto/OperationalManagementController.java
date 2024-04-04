@@ -142,7 +142,7 @@ public class OperationalManagementController implements Initializable {
     
     @FXML
     private void goBack(ActionEvent event) {
-        loadScene("OperationalManagement.fxml", event);
+        loadScene("/Shanto/OperationalManagement.fxml", event);
     }
     
 

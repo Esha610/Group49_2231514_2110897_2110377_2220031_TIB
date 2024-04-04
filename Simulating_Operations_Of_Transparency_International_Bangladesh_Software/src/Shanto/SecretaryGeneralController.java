@@ -39,50 +39,50 @@ public class SecretaryGeneralController implements Initializable {
     @FXML
     private void OperationalManagementButtonOnClick(ActionEvent event) {
         
-        loadScene("OperationalManagement.fxml", event);        
+        loadScene("/Shanto/OperationalManagement.fxml", event);        
     }
 
     @FXML
     private void QualityAssuranceButtonOnClick(ActionEvent event) {
         
-        loadScene("QualityAssurance.fxml", event);
+        loadScene("/Shanto/QualityAssurance.fxml", event);
     }
 
     @FXML
     private void CrisisManagementButtonOnClick(ActionEvent event) {
         
-        loadScene("CrisisManagement.fxml", event);
+        loadScene("/Shanto/CrisisManagement.fxml", event);
 
     }
 
     @FXML
     private void StrategicPlanningSupportButtonOnClick(ActionEvent event) {
 
-        loadScene("StrategicPlanning.fxml", event);
+        loadScene("/Shanto/StrategicPlanning.fxml", event);
     }
 
     @FXML
     private void AdministrativeOversightButtonOnClick(ActionEvent event) {
         
-        loadScene("AdministrativeOversight.fxml", event);
+        loadScene("/Shanto/AdministrativeOversight.fxml", event);
     }
 
     @FXML
     private void CapacityBuildingButtonOnClick(ActionEvent event) {
 
-        loadScene("CapacityBuilding.fxml", event);
+        loadScene("/Shanto/CapacityBuilding.fxml", event);
     }
 
     @FXML
     private void ResearchandPolicyAnalysisButtonOnClick(ActionEvent event) {
         
-        loadScene("ResearchAndPolicyAnalysis.fxml", event);
+        loadScene("/Shanto/ResearchAndPolicyAnalysis.fxml", event);
     }
 
     @FXML
     private void RiskManagementButtonOnClick(ActionEvent event) {
         
-        loadScene("RiskManagement.fxml", event);
+        loadScene("/Shanto/RiskManagement.fxml", event);
     }
     
     //---------------------------------------------------------------------------------------------------------------
