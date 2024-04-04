@@ -53,18 +53,19 @@ public class OperationalManagementController implements Initializable {
     @FXML
     private void viewEmployees(ActionEvent event) {
         ArrayList<String> allEmployees = new ArrayList<>();
-        allEmployees.add("John Doe - Manager");
-        allEmployees.add("Jane Smith - Accountant");
-        allEmployees.add("Michael Johnson - Sales Associate");
-        allEmployees.add("Emily Brown - HR Coordinator");
-        allEmployees.add("David Wilson - IT Specialist");
-        allEmployees.add("Sarah Lee - Marketing Manager");
-        allEmployees.add("Alex Turner - Operations Assistant");
-        allEmployees.add("Rachel Miller - Customer Service Representative");
-        allEmployees.add("Chris Evans - Project Manager");
-        allEmployees.add("Emma Garcia - Financial Analyst");
+        allEmployees.add("Mohammad Rahman - Manager");
+        allEmployees.add("Fatima Akhter - Accountant");
+        allEmployees.add("Abdul Aziz - Sales Associate");
+        allEmployees.add("Aisha Begum - HR Coordinator");
+        allEmployees.add("Nurul Islam - IT Specialist");
+        allEmployees.add("Shamima Sultana - Marketing Manager");
+        allEmployees.add("Rahim Mia - Operations Assistant");
+        allEmployees.add("Nasreen Akter - Customer Service Representative");
+        allEmployees.add("Kamal Hossain - Project Manager");
+        allEmployees.add("Nadia Islam - Financial Analyst");
         employeeData.setAll(allEmployees);
     }
+
 
     @FXML
     private void addEmployee(ActionEvent event) {
@@ -142,7 +143,7 @@ public class OperationalManagementController implements Initializable {
     
     @FXML
     private void goBack(ActionEvent event) {
-        loadScene("/Shanto/OperationalManagement.fxml", event);
+        loadScene("/Shanto/SecretaryGeneral.fxml", event);
     }
     
 
