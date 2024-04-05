@@ -68,58 +68,48 @@ public class LoginScController implements Initializable {
 
             String userFullName = SignUpFile.FileRead_forUserName(userType, username, password);
 
+            
             Stage currentStage = (Stage) login.getScene().getWindow();
-            if (userType.equals("Student")) {
-                //SceneChange newScene= new SceneChange();
-                //newScene.Scenechanger(currentStage, "User_1_MainDashboard.fxml");
-
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("/Esha/Student.fxml"));
-                Parent root = loader.load();
-                Scene scene = new Scene(root);
-                currentStage.setScene(scene);
+            if (userType.equals("Student")) {                
+                loadScene("/Esha/Student.fxml", event);
             }
-            if (userType.equals("Researcher")) {
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("/Esha/Researcher.fxml"));
-                Parent root = loader.load();
-                Scene scene = new Scene(root);
-                currentStage.setScene(scene);
+            
+            
+            if (userType.equals("Researcher")) {                
+                loadScene("/Esha/Researcher.fxml", event);               
             }
+            
+            
             if (userType.equals("Executive Director")) {
-                loadScene("/Shanto/ExecutiveDirector.fxml", event);
-                
+                loadScene("/Shanto/ExecutiveDirector.fxml", event);              
             }
+            
+            
             if (userType.equals("Secretary General")) {
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("/Shanto/SecretaryGeneral.fxml"));
-                Parent root = loader.load();
-                Scene scene = new Scene(root);
-                currentStage.setScene(scene);
+                loadScene("/Shanto/SecretaryGeneral.fxml", event);
             }
+            
+            
             if (userType.equals("Program Manager")) {
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("/Alif/Program Manager.fxml"));
-                Parent root = loader.load();
-                Scene scene = new Scene(root);
-                currentStage.setScene(scene);
+                loadScene("/Alif/Program Manager.fxml", event);
             }
+            
+            
             if (userType.equals("Finance and Administration Manager")) {
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("/Alif/FinanceAndAdministrationManager.fxml"));
-                Parent root = loader.load();
-                Scene scene = new Scene(root);
-                currentStage.setScene(scene);
+                loadScene("/Alif/FinanceAndAdministrationManager", event);
             }
+            
+            
             if (userType.equals("Citizen")) {
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("/Kazi/Citizen.fxml"));
-                Parent root = loader.load();
-                Scene scene = new Scene(root);
-                currentStage.setScene(scene); 
-                
-                
+                loadScene("/Kazi/Citizen.fxml", event);         
             }
+            
+            
             if (userType.equals("Legal Advisor")) {
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("/Kazi/LegalAdvisor.fxml"));
-                Parent root = loader.load();
-                Scene scene = new Scene(root);
-                currentStage.setScene(scene); 
+                loadScene("/Kazi/LegalAdvisor", event);
             }
+            
+           
         } else {
 
             Alert a = new Alert(Alert.AlertType.ERROR);

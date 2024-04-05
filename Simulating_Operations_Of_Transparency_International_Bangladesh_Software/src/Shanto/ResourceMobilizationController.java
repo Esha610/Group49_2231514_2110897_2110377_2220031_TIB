@@ -108,7 +108,7 @@ public class ResourceMobilizationController implements Initializable {
 
     @FXML
     private void goBack(ActionEvent event) {
-        loadScene("/Shanto/SecretaryGeneral.fxml", event);
+        loadScene("/Shanto/ExecutiveDirector.fxml", event);
     }
 
     private void loadScene(String fxmlFile, ActionEvent event) {
