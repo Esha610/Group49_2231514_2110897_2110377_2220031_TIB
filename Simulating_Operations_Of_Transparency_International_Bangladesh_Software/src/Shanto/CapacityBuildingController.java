@@ -89,25 +89,25 @@ public class CapacityBuildingController implements Initializable {
         } else {
             switch (programName) {
                 case "Leadership Development":
-                    return "This program focuses on developing leadership skills, including communication, decision-making, and team management.";
+                    return "This program focuses on developing leadership skills,\n including communication, decision-making,\n and team management.";
                 case "Project Management Training":
-                    return "Project management training covers principles, methodologies, and tools required for effective project execution and delivery.";
+                    return "Project management training covers principles,\n methodologies, and tools required for \n effective project execution and delivery.";
                 case "Digital Marketing Certification":
-                    return "This certification program teaches digital marketing strategies, including SEO, SEM, social media marketing, and content marketing.";
+                    return "This certification program teaches digital \n marketing strategies, including SEO,\n SEM, social media marketing, and\n content marketing.";
                 case "Financial Literacy Workshops":
-                    return "Financial literacy workshops educate participants on personal finance topics such as budgeting, saving, investing, and debt management.";
+                    return "Financial literacy workshops educate participants\n on personal finance topics such as budgeting,\n saving, investing, and debt management.";
                 case "Health and Wellness Programs":
-                    return "Health and wellness programs promote physical and mental well-being through fitness activities, nutrition education, and stress management.";
+                    return "Health and wellness programs promote physical\n and mental well-being through fitness activities,\n nutrition education, and stress management.";
                 case "Environmental Sustainability Initiatives":
-                    return "These initiatives aim to raise awareness and implement practices that reduce environmental impact and promote sustainability.";
+                    return "These initiatives aim to raise awareness \n and implement practices that reduce environmental \n impact and promote sustainability.";
                 case "Community Outreach Campaigns":
-                    return "Community outreach campaigns engage with local communities to address social issues, promote awareness, and provide support.";
+                    return "Community outreach campaigns engage with \n local communities to address social issues,\n promote awareness, and provide support.";
                 case "Crisis Management Training":
-                    return "Crisis management training prepares individuals and organizations to effectively respond to and mitigate various crises and emergencies.";
+                    return "Crisis management training prepares individuals \n and organizations to effectively respond \n to and mitigate various crises and emergencies.";
                 case "Diversity and Inclusion Workshops":
-                    return "Diversity and inclusion workshops foster understanding, respect, and collaboration among diverse individuals and groups.";
+                    return "Diversity and inclusion workshops foster \n understanding, respect, and collaboration \n among diverse individuals and groups.";
                 case "Entrepreneurship Bootcamp":
-                    return "Entrepreneurship bootcamp provides aspiring entrepreneurs with essential skills and knowledge to launch and grow successful businesses.";
+                    return "Entrepreneurship bootcamp provides \n aspiring entrepreneurs with essential skills \n and knowledge to launch and grow successful businesses.";
                 default:
                     return "No description available for " + programName;
             }

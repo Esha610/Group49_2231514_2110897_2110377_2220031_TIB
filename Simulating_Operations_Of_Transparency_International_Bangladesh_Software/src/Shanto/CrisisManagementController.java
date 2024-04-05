@@ -86,20 +86,54 @@ public class CrisisManagementController implements Initializable {
         }
     }
 
-    private String getCrisisDetails(String crisis) {
-      
-        return "Crisis: " + crisis + "\n"
-             + "Severity: High\n"
-             + "Affected Area: Operations\n"
-             + "Date: 02/15/2024";
+        private String getCrisisDetails(String crisis) {
+        switch (crisis) {
+            case "Natural Disasters":
+                return "Crisis: Natural Disasters\n"
+                     + "Severity: High\n"
+                     + "Affected Area: Operations\n"
+                     + "Date: 02/15/2024";
+            case "Cybersecurity Breaches":
+                return "Crisis: Cybersecurity Breaches\n"
+                     + "Severity: Critical\n"
+                     + "Affected Area: Information Technology\n"
+                     + "Date: 02/20/2024";
+            case "Workplace Accidents":
+                return "Crisis: Workplace Accidents\n"
+                     + "Severity: Moderate\n"
+                     + "Affected Area: Health and Safety\n"
+                     + "Date: 02/25/2024";
+            default:
+                return "Crisis: " + crisis + "\n"
+                     + "Severity: High\n"
+                     + "Affected Area: Operations\n"
+                     + "Date: 02/15/2024";
+        }
     }
 
     private String getResponseDetails(String response) {
-        
-        return "Response: " + response + "\n"
-             + "Action Plan: Activate crisis management team\n"
-             + "Lead: Crisis Management Director\n"
-             + "Status: Ongoing";
+        switch (response) {
+            case "Activate emergency response teams and protocols":
+                return "Response: Activate emergency response teams and protocols\n"
+                     + "Action Plan: Initiate emergency procedures and mobilize response teams\n"
+                     + "Lead: Crisis Management Director\n"
+                     + "Status: Ongoing";
+            case "Conduct threat assessments and forensic investigations":
+                return "Response: Conduct threat assessments and forensic investigations\n"
+                     + "Action Plan: Investigate security breaches and analyze potential threats\n"
+                     + "Lead: Security Officer\n"
+                     + "Status: In Progress";
+            case "Provide immediate medical assistance and first aid":
+                return "Response: Provide immediate medical assistance and first aid\n"
+                     + "Action Plan: Deploy medical personnel and resources to affected areas\n"
+                     + "Lead: Health and Safety Coordinator\n"
+                     + "Status: Completed";
+            default:
+                return "Response: " + response + "\n"
+                    + "Action Plan: Activate crisis management team\n"
+                    + "Lead: Crisis Management Director\n"
+                    + "Status: Ongoing";
+        }
     }
 
     private void displayDetails(String title, String content) {

@@ -89,25 +89,25 @@ public class ResearchPolicyAnalysisController implements Initializable {
         } else {
             switch (projectName) {
                 case "Building a New Hospital":
-                    return "This project involves the construction of a state-of-the-art hospital facility to provide quality healthcare services to the community.";
+                    return "This project involves the construction of a \n state-of-the-art hospital facility to provide\n quality healthcare services to the community.";
                 case "Developing a Mobile App for Remote Learning":
-                    return "The project aims to develop a mobile application platform to facilitate remote learning and educational access.";
+                    return "The project aims to develop a mobile\n application platform to facilitate remote\n learning and educational access.";
                 case "Renewable Energy Infrastructure Project":
-                    return "This project focuses on building infrastructure for renewable energy sources such as solar, wind, and hydroelectric power.";
+                    return "This project focuses on building infrastructure\n for renewable energy sources such as solar,\n wind, and hydroelectric power.";
                 case "Urban Revitalization Initiative":
-                    return "The urban revitalization initiative aims to rejuvenate urban areas through redevelopment and community engagement.";
+                    return "The urban revitalization initiative aims \n to rejuvenate urban areas through redevelopment\n and community engagement.";
                 case "Research and Development of a COVID-19 Vaccine":
-                    return "This project involves extensive research and development efforts towards creating a vaccine to combat the COVID-19 pandemic.";
+                    return "This project involves extensive research \nand development efforts towards creating a vaccine\n to combat the COVID-19 pandemic.";
                 case "Construction of Affordable Housing Units":
-                    return "The project aims to construct affordable housing units to address housing shortages and provide shelter for low-income families.";
+                    return "The project aims to construct affordable\n housing units to address housing shortages and provide\n shelter for low-income families.";
                 case "Implementing a Waste Management System":
-                    return "This project focuses on implementing efficient waste management systems to promote environmental sustainability.";
+                    return "This project focuses on implementing \nefficient waste management systems to promote \nenvironmental sustainability.";
                 case "Expansion of Public Transportation System":
-                    return "The project involves expanding the existing public transportation infrastructure to improve accessibility and reduce traffic congestion.";
+                    return "The project involves expanding the existing\n public transportation infrastructure to improve \naccessibility and reduce traffic congestion.";
                 case "Digital Transformation of Government Services":
-                    return "This project aims to digitize and modernize government services to enhance efficiency, transparency, and citizen engagement.";
+                    return "This project aims to digitize and modernize\n government services to enhance efficiency,\n transparency, and citizen engagement.";
                 case "Promotion of Sustainable Agriculture Practices":
-                    return "The project focuses on promoting sustainable agriculture practices to ensure food security and mitigate environmental impact.";
+                    return "The project focuses on promoting sustainable\n agriculture practices to ensure food security\n and mitigate environmental impact.";
                 default:
                     return "No description available for " + projectName;
             }
