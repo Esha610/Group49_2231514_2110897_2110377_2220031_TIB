@@ -13,7 +13,7 @@ public class MainAplicationClass extends Application {
     
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("/Shanto/SocialEventsSchedule.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/Shanto/StakeholderEngagement.fxml"));
         
         Scene scene = new Scene(root);
         
