@@ -2,52 +2,81 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="760.0" prefWidth="600.0" style="-fx-background-color: grey;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Shanto.ExecutiveDirectorController">
+<AnchorPane id="AnchorPane" prefHeight="739.0" prefWidth="888.0" style="-fx-background-color: grey;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Shanto.ExecutiveDirectorController">
    <children>
-      <Button fx:id="logout" layoutX="421.0" layoutY="649.0" mnemonicParsing="false" onAction="#LogoutButtonOnClick" prefHeight="50.0" prefWidth="148.0" style="-fx-background-color: black;" text="Logout" textFill="WHITE">
-         <font>
-            <Font name="System Bold Italic" size="23.0" />
-         </font>
-      </Button>
-      <Button layoutX="76.0" layoutY="128.0" mnemonicParsing="false" onAction="#StakeholderEngagementButtonOnClick" prefHeight="43.0" prefWidth="292.0" text="StakeholderEngagement">
-         <font>
-            <Font name="System Bold" size="18.0" />
-         </font></Button>
-      <Button layoutX="76.0" layoutY="489.0" mnemonicParsing="false" onAction="#SocialEventsSheduleButtonOnClick" prefHeight="43.0" prefWidth="292.0" text="SocialEventsSchedule">
-         <font>
-            <Font name="System Bold Italic" size="18.0" />
-         </font></Button>
-      <Button layoutX="233.0" layoutY="425.0" mnemonicParsing="false" onAction="#NewrecruitmentButtonOnClick" prefHeight="43.0" prefWidth="292.0" text="Newrecruitment">
-         <font>
-            <Font name="System Bold Italic" size="18.0" />
-         </font></Button>
-      <Button layoutX="76.0" layoutY="363.0" mnemonicParsing="false" onAction="#TransferRequestsButtonOnClick" prefHeight="43.0" prefWidth="292.0" text="TransferRequests">
-         <font>
-            <Font name="System Bold Italic" size="18.0" />
-         </font></Button>
-      <Button layoutX="233.0" layoutY="305.0" mnemonicParsing="false" onAction="#BudgetandControlButtonOnClick" prefHeight="43.0" prefWidth="292.0" text="BudgetandControl">
-         <font>
-            <Font name="System Bold Italic" size="18.0" />
-         </font></Button>
-      <Button layoutX="76.0" layoutY="245.0" mnemonicParsing="false" onAction="#TeamBuildingandDevelopmentButtonOnClick" prefHeight="43.0" prefWidth="292.0" text="TeamBuilding">
-         <font>
-            <Font name="System Bold Italic" size="18.0" />
-         </font></Button>
-      <Button layoutX="233.0" layoutY="182.0" mnemonicParsing="false" onAction="#ResourceMobilizationOnClick" prefHeight="43.0" prefWidth="292.0" text="ResourceMobilization">
-         <font>
-            <Font name="System Bold Italic" size="18.0" />
-         </font></Button>
-      <Label fx:id="executivedirector" layoutX="119.0" layoutY="46.0" prefHeight="59.0" prefWidth="410.0" text="Executive Director">
-         <font>
-            <Font name="System Bold" size="41.0" />
-         </font>
-      </Label>
-      <Button layoutX="233.0" layoutY="549.0" mnemonicParsing="false" onAction="#OfficialMeetsButtonOnClick" prefHeight="43.0" prefWidth="292.0" text="OfficialMeets">
-         <font>
-            <Font name="System Bold Italic" size="18.0" />
-         </font></Button>
+      <ScrollPane layoutX="6.0" prefHeight="732.0" prefWidth="332.0">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="857.0" prefWidth="314.0">
+               <children>
+                  <VBox layoutX="25.0" layoutY="312.0" prefHeight="345.0" prefWidth="265.0">
+                     <children>
+                        <Button mnemonicParsing="false" onAction="#StakeholderEngagementButtonOnClick" prefHeight="43.0" prefWidth="292.0" text="StakeholderEngagement">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Button>
+                        <Button mnemonicParsing="false" onAction="#SocialEventsSheduleButtonOnClick" prefHeight="43.0" prefWidth="292.0" text="SocialEventsSchedule">
+                           <font>
+                              <Font name="System Bold Italic" size="18.0" />
+                           </font>
+                        </Button>
+                        <Button mnemonicParsing="false" onAction="#NewrecruitmentButtonOnClick" prefHeight="43.0" prefWidth="292.0" text="Newrecruitment">
+                           <font>
+                              <Font name="System Bold Italic" size="18.0" />
+                           </font>
+                        </Button>
+                        <Button mnemonicParsing="false" onAction="#TransferRequestsButtonOnClick" prefHeight="43.0" prefWidth="292.0" text="TransferRequests">
+                           <font>
+                              <Font name="System Bold Italic" size="18.0" />
+                           </font>
+                        </Button>
+                        <Button mnemonicParsing="false" onAction="#BudgetandControlButtonOnClick" prefHeight="43.0" prefWidth="292.0" text="BudgetandControl">
+                           <font>
+                              <Font name="System Bold Italic" size="18.0" />
+                           </font>
+                        </Button>
+                        <Button mnemonicParsing="false" onAction="#TeamBuildingandDevelopmentButtonOnClick" prefHeight="43.0" prefWidth="292.0" text="TeamBuilding">
+                           <font>
+                              <Font name="System Bold Italic" size="18.0" />
+                           </font>
+                        </Button>
+                        <Button mnemonicParsing="false" onAction="#ResourceMobilizationOnClick" prefHeight="43.0" prefWidth="292.0" text="ResourceMobilization">
+                           <font>
+                              <Font name="System Bold Italic" size="18.0" />
+                           </font>
+                        </Button>
+                        <Button mnemonicParsing="false" onAction="#OfficialMeetsButtonOnClick" prefHeight="43.0" prefWidth="292.0" text="OfficialMeets">
+                           <font>
+                              <Font name="System Bold Italic" size="18.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="logout" mnemonicParsing="false" onAction="#LogoutButtonOnClick" prefHeight="50.0" prefWidth="270.0" style="-fx-background-color: black;" text="Logout" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold Italic" size="23.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </VBox>
+                  <ImageView fitHeight="230.0" fitWidth="265.0" layoutX="25.0" layoutY="65.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@img/wired-gradient-955-demand.gif" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="33.0" layoutY="23.0" prefHeight="37.0" prefWidth="256.0" text="User&quot; Executive Director" textFill="#f50606">
+                     <font>
+                        <Font name="MV Boli" size="21.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+        </content>
+      </ScrollPane>
    </children>
 </AnchorPane>
