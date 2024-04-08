@@ -60,8 +60,7 @@ public class StrategicPlanningController implements Initializable {
 
     @FXML
     private void viewActionPlans(ActionEvent event) {
-        // Implement logic to view all action plans for selected goal
-    }
+         }
 
     @FXML
     private void createPlan(ActionEvent event) {
