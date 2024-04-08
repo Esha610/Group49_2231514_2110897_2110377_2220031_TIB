@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="834.0" prefWidth="964.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Shanto.StrategicPlanningController">
+
+    <!-- Header -->
+    <VBox layoutX="10.0" layoutY="37.0" prefHeight="80.0" prefWidth="448.0" spacing="10.0">
+        <Label style="-fx-font-size: 24px; -fx-font-weight: bold;" text="Strategic Planning" />
+        <Label text="Welcome to Transparency International Bangladesh's Strategic Planning Platform" />
+    </VBox>
+
+    <!-- Navigation Bar -->
+    <MenuBar>
+        <Menu text="File">
+            <MenuItem onAction="#exitApplication" text="Exit" />
+        </Menu>
+    </MenuBar>
+
+    <!-- Content Area -->
+    <SplitPane dividerPositions="0.49946977730646874" layoutX="10.0" layoutY="123.0" prefHeight="629.0" prefWidth="945.0">
+
+        <!-- Action Plans Section -->
+        <VBox>
+            <Label style="-fx-font-size: 18px; -fx-font-weight: bold;" text="Strategic Goals" />
+            <ListView fx:id="goalsListView" prefHeight="450.0" prefWidth="468.0" />
+            <Button layoutX="10.0" layoutY="237.0" onAction="#viewGoals" text="View Goals" />
+            <Button layoutX="10.0" layoutY="237.0" onAction="#addGoal" prefHeight="25.0" prefWidth="74.0" text="Add Goal" />
+            <TextField fx:id="newStrategicGoalField" prefHeight="150.0" prefWidth="468.0" promptText="Enter New Strategic Goals" />
+        </VBox>
+
+        <!-- Goals Section -->
+        <VBox>
+            <Label style="-fx-font-size: 18px; -fx-font-weight: bold;" text="Action Plans" />
+            <ListView prefHeight="513.0" prefWidth="469.0" />
+            <Button layoutX="10.0" layoutY="239.0" onAction="#viewActionPlans" prefHeight="25.0" prefWidth="76.0" text="View Plans" />
+            <Button layoutX="10.0" layoutY="239.0" onAction="#createPlan" text="Create Plan" />
+            <TextField fx:id="newActionPlanField" prefHeight="211.0" prefWidth="469.0" promptText="Enter New Action Plan" />
+        </VBox>
+    </SplitPane>
+    <Button layoutX="893.0" layoutY="778.0" onAction="#logout" text="Logout" />
+    <Button layoutX="836.0" layoutY="778.0" onAction="#goBack" prefHeight="25.0" prefWidth="50.0" text="Back" />
+</AnchorPane>
