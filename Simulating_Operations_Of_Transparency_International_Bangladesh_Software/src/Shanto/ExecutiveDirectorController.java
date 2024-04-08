@@ -19,7 +19,6 @@ import javafx.stage.Stage;
 public class ExecutiveDirectorController implements Initializable {
 
     @FXML private Button logout;
-    @FXML private Label executivedirector;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
