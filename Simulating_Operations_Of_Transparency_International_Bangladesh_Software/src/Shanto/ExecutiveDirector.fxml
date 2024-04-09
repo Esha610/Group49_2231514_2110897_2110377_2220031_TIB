@@ -9,13 +9,13 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="739.0" prefWidth="888.0" style="-fx-background-color: grey;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Shanto.ExecutiveDirectorController">
+<AnchorPane id="AnchorPane" prefHeight="739.0" prefWidth="569.0" style="-fx-background-color: grey;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Shanto.ExecutiveDirectorController">
    <children>
-      <ScrollPane layoutX="6.0" prefHeight="732.0" prefWidth="332.0">
+      <ScrollPane layoutX="-6.0" prefHeight="773.0" prefWidth="607.0">
         <content>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="857.0" prefWidth="314.0">
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="767.0" prefWidth="591.0">
                <children>
-                  <VBox layoutX="25.0" layoutY="312.0" prefHeight="345.0" prefWidth="265.0">
+                  <VBox layoutX="139.0" layoutY="312.0" prefHeight="412.0" prefWidth="363.0">
                      <children>
                         <Button mnemonicParsing="false" onAction="#StakeholderEngagementButtonOnClick" prefHeight="43.0" prefWidth="292.0" text="StakeholderEngagement">
                            <font>
@@ -64,12 +64,12 @@
                         </Button>
                      </children>
                   </VBox>
-                  <ImageView fitHeight="230.0" fitWidth="265.0" layoutX="25.0" layoutY="65.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="230.0" fitWidth="265.0" layoutX="174.0" layoutY="75.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@img/wired-gradient-955-demand.gif" />
                      </image>
                   </ImageView>
-                  <Label layoutX="33.0" layoutY="23.0" prefHeight="37.0" prefWidth="256.0" text="User&quot; Executive Director" textFill="#f50606">
+                  <Label layoutX="174.0" layoutY="28.0" prefHeight="37.0" prefWidth="256.0" text="Executive Director" textFill="#f50606">
                      <font>
                         <Font name="MV Boli" size="21.0" />
                      </font>

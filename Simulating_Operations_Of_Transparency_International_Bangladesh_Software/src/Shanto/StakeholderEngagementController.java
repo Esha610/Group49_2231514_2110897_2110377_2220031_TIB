@@ -81,35 +81,34 @@ public class StakeholderEngagementController implements Initializable {
     }
 
     private String getDescription(String stakeholderName) {
-                String description = stakeholderDescriptions.getDescription(stakeholderName);
+        String description = stakeholderDescriptions.getDescription(stakeholderName);
         if (description != null) {
             return description;
         } else {
-        
-        switch (stakeholderName) {
-            case "Government of Bangladesh":
-                return "The Government of Bangladesh, often referred to as the GoB,\n is the central governing authority of the country.\n It oversees the administration of various sectors including education, health, finance, and infrastructure.";
-            case "Non-Governmental Organizations (NGOs)":
-                return "Non-Governmental Organizations (NGOs) are non-profit organizations\n independent of the government. They play a\n crucial role in social development, providing services such as healthcare, education, and poverty alleviation.";
-            case "Private Sector Companies (e.g., BRAC, Grameenphone)":
-                return "Private sector companies in Bangladesh operate across various\n industries such as telecommunications, banking,\n manufacturing, and retail. They contribute significantly to the country's economy and employment.";
-            case "International Development Agencies (e.g., World Bank, UNDP)":
-                return "International development agencies collaborate with the government\n and local organizations to support development\n initiatives in Bangladesh. They provide financial assistance, technical expertise, and policy advice.";
-            case "Local Communities (e.g., residents of a specific village)":
-                return "Local communities in Bangladesh represent the grassroots level of\n society. They are composed of individuals living\n in specific geographical areas and often work together to address local issues and promote development.";
-            case "Civil Society Organizations (e.g., Transparency International Bangladesh)":
-                return "Civil society organizations (CSOs) in Bangladesh play a vital role in\n advocating for human rights, democracy, and\n good governance. They engage in activities such as monitoring government actions, conducting research, and raising public awareness.";
-            case "Academic Institutions (e.g., Dhaka University, BRAC University)":
-                return "Academic institutions in Bangladesh provide higher education and research\n opportunities in various fields. They contribute\n to knowledge creation, skill development, and intellectual growth.";
-            case "Media Organizations (e.g., Prothom Alo, bdnews24.com)":
-                return "Media organizations in Bangladesh, including newspapers, television channels,\n and online platforms, play a crucial role\n in disseminating information, shaping public opinion, and promoting accountability.";
-            case "Trade Unions (e.g., Bangladesh Garment Sramik Samhati)":
-                return "Trade unions represent the collective interests of workers in Bangladesh.\n They advocate for labor rights, negotiate with\n employers on behalf of workers, and work to improve working conditions and wages.";
-            case "Environmental Activists (e.g., Bangladesh Poribesh Andolon)":
-                return "Environmental activists in Bangladesh raise awareness about environmental\n issues, advocate for sustainable development\n practices, and mobilize communities to protect natural resources and mitigate environmental degradation.";
-            default:
-                return "No description available for " + stakeholderName;
-            }
+            switch (stakeholderName) {
+                case "Government of Bangladesh":
+                    return "The Government of Bangladesh, often referred to as the GoB,\n is the central governing authority of the country.\n It oversees the administration of various sectors including education, health, finance, and infrastructure.";
+                case "Non-Governmental Organizations (NGOs)":
+                    return "Non-Governmental Organizations (NGOs) are non-profit organizations\n independent of the government. They play a\n crucial role in social development, providing services such as healthcare, education, and poverty alleviation.";
+                case "Private Sector Companies (e.g., BRAC, Grameenphone)":
+                    return "Private sector companies in Bangladesh operate across various\n industries such as telecommunications, banking,\n manufacturing, and retail. They contribute significantly to the country's economy and employment.";
+                case "International Development Agencies (e.g., World Bank, UNDP)":
+                    return "International development agencies collaborate with the government\n and local organizations to support development\n initiatives in Bangladesh. They provide financial assistance, technical expertise, and policy advice.";
+                case "Local Communities (e.g., residents of a specific village)":
+                    return "Local communities in Bangladesh represent the grassroots level of\n society. They are composed of individuals living\n in specific geographical areas and often work together to address local issues and promote development.";
+                case "Civil Society Organizations (e.g., Transparency International Bangladesh)":
+                    return "Civil society organizations (CSOs) in Bangladesh play a vital role in\n advocating for human rights, democracy, and\n good governance. They engage in activities such as monitoring government actions, conducting research, and raising public awareness.";
+                case "Academic Institutions (e.g., Dhaka University, BRAC University)":
+                    return "Academic institutions in Bangladesh provide higher education and research\n opportunities in various fields. They contribute\n to knowledge creation, skill development, and intellectual growth.";
+                case "Media Organizations (e.g., Prothom Alo, bdnews24.com)":
+                    return "Media organizations in Bangladesh, including newspapers, television channels,\n and online platforms, play a crucial role\n in disseminating information, shaping public opinion, and promoting accountability.";
+                case "Trade Unions (e.g., Bangladesh Garment Sramik Samhati)":
+                    return "Trade unions represent the collective interests of workers in Bangladesh.\n They advocate for labor rights, negotiate with\n employers on behalf of workers, and work to improve working conditions and wages.";
+                case "Environmental Activists (e.g., Bangladesh Poribesh Andolon)":
+                    return "Environmental activists in Bangladesh raise awareness about environmental\n issues, advocate for sustainable development\n practices, and mobilize communities to protect natural resources and mitigate environmental degradation.";
+                default:
+                    return "No description available for " + stakeholderName;
+                }
         }
     }
 

@@ -154,7 +154,7 @@ public class StrategicPlanningController implements Initializable {
 
     @FXML
     private void goBack(ActionEvent event) {
-        loadScene("/Shanto/ExecutiveDirector.fxml", event);
+        loadScene("/Shanto/SecretaryGeneral.fxml", event);
     }
 
     private void showAlert(Alert.AlertType alertType, String title, String message) {
