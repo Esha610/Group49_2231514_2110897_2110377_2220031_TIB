@@ -28,17 +28,13 @@ public class OperationalManagementController implements Initializable {
     @FXML    private ListView<String> budgetListView;
     @FXML    private ListView<String> inventoryListView;
 
-    private ObservableList<String> employeeData;
-    private ObservableList<String> budgetData;
-    private ObservableList<String> inventoryData;
+    private ObservableList<String> employeeData = FXCollections.observableArrayList();
+    private ObservableList<String> budgetData = FXCollections.observableArrayList();
+    private ObservableList<String> inventoryData = FXCollections.observableArrayList();
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
       
-        employeeData = FXCollections.observableArrayList();
-        budgetData = FXCollections.observableArrayList();
-        inventoryData = FXCollections.observableArrayList();
-
         employeeListView.setItems(employeeData);
         budgetListView.setItems(budgetData);
         inventoryListView.setItems(inventoryData);

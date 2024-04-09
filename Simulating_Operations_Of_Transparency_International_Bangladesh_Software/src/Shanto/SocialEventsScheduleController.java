@@ -22,18 +22,14 @@ import javafx.stage.Stage;
 
 public class SocialEventsScheduleController implements Initializable {
 
-    @FXML
-    private TableView<String> eventsTableView;
-    @FXML
-    private TableColumn<String, String> socialEventsNameTimeDateLocationTableColumn;
-    @FXML
-    private TextField newEventField;
+    @FXML    private TableView<String> eventsTableView;
+    @FXML    private TableColumn<String, String> socialEventsNameTimeDateLocationTableColumn;
+    @FXML    private TextField newEventField;
 
-    private ObservableList<String> eventsData;
+    private ObservableList<String> eventsData= FXCollections.observableArrayList();
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        eventsData = FXCollections.observableArrayList();
         eventsTableView.setItems(eventsData);
         socialEventsNameTimeDateLocationTableColumn.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue()));
     }

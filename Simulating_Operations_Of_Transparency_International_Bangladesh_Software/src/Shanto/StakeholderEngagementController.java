@@ -21,12 +21,9 @@ import javafx.stage.Stage;
 
 public class StakeholderEngagementController implements Initializable {
 
-    @FXML
-    private ListView<String> stakeholderListView;
-    @FXML
-    private TextField stakeholderNameField;
-    @FXML
-    private TextField stakeholderDescriptionArea;
+    @FXML    private ListView<String> stakeholderListView;
+    @FXML    private TextField stakeholderNameField;
+    @FXML    private TextField stakeholderDescriptionArea;
 
     private ObservableList<String> stakeholderItems = FXCollections.observableArrayList();
     private StakeholderDescriptions stakeholderDescriptions = new StakeholderDescriptions();
