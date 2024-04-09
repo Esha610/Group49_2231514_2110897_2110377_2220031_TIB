@@ -75,7 +75,7 @@ public class CapacityBuildingController implements Initializable {
     private void viewDescription(ActionEvent event) {
         String selectedProgram = programsListView.getSelectionModel().getSelectedItem();
         if (selectedProgram != null) {
-            String description = getDescription(selectedProgram); // Use getDescription method here
+            String description = getDescription(selectedProgram); 
             programDescriptionArea.setText(description);
         } else {
             showAlert(Alert.AlertType.ERROR, "Error", "Please select a program to view its description.");

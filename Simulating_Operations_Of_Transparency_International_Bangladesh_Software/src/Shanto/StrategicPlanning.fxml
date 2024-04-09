@@ -41,7 +41,7 @@
         <!-- Goals Section -->
         <VBox>
             <Label style="-fx-font-size: 18px; -fx-font-weight: bold;" text="Action Plans" />
-            <ListView prefHeight="513.0" prefWidth="469.0" />
+            <ListView fx:id="actionsListView" prefHeight="513.0" prefWidth="469.0" />
             <Button layoutX="10.0" layoutY="239.0" onAction="#viewActionPlans" prefHeight="25.0" prefWidth="76.0" text="View Plans" />
             <Button layoutX="10.0" layoutY="239.0" onAction="#createPlan" text="Create Plan" />
             <TextField fx:id="newActionPlanField" prefHeight="211.0" prefWidth="469.0" promptText="Enter New Action Plan" />

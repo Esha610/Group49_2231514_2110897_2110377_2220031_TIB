@@ -25,15 +25,11 @@ public class BudgetAndControlController implements Initializable {
     @FXML    private TextField newBudgetField;    
     @FXML    private TextField newExpenseField;
 
-    private ObservableList<String> budgetItems;
-    private ObservableList<String> expenseItems;
+    private ObservableList<String> budgetItems = FXCollections.observableArrayList();
+    private ObservableList<String> expenseItems = FXCollections.observableArrayList();
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-       
-        budgetItems = FXCollections.observableArrayList();
-        expenseItems = FXCollections.observableArrayList();
-        
         
         budgetListView.setItems(budgetItems);
         expenseListView.setItems(expenseItems);

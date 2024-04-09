@@ -25,14 +25,12 @@ public class NewRecruitmentController implements Initializable {
     @FXML private TextField newJobVacancyField;
     @FXML private TextField newApplicantField;
 
-    private ObservableList<String> jobVacancies;
-    private ObservableList<String> applicants;
+    private ObservableList<String> jobVacancies = FXCollections.observableArrayList();
+    private ObservableList<String> applicants = FXCollections.observableArrayList();
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        jobVacancies = FXCollections.observableArrayList();
-        applicants = FXCollections.observableArrayList();
-
+        
         jobVacancyListView.setItems(jobVacancies);
         applicantListView.setItems(applicants);
     }

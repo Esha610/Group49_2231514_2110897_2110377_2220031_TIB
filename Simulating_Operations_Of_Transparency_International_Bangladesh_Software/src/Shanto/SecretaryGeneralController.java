@@ -12,7 +12,6 @@ import javafx.scene.Cursor;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
@@ -20,7 +19,6 @@ import javafx.stage.Stage;
 public class SecretaryGeneralController implements Initializable {
 
     @FXML    private Button logout;
-    @FXML    private Label secretaryGeneral;
 
     
     @Override

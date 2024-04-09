@@ -26,11 +26,11 @@ public class OfficialMeetsController implements Initializable {
     @FXML    private TableColumn<String, String> meetingNameTimeDateLocationTableColumn; 
     @FXML    private TextField newMeetingField;
 
-    private ObservableList<String> meetingsData;
+    private ObservableList<String> meetingsData = FXCollections.observableArrayList();
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        meetingsData = FXCollections.observableArrayList();
+        
         meetingsTableView.setItems(meetingsData);
         meetingNameTimeDateLocationTableColumn.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue()));
     }

@@ -31,10 +31,10 @@ public class CrisisManagementController implements Initializable {
         crisisTypeColumn.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue()));
         crisisTypesTableView.getItems().addAll(
             "Natural Disasters", "Cybersecurity Breaches",
-                "Workplace Accidents", "Product Recalls",
-                "Financial Crises","Public Health Emergencies",
-                "Terrorist Attacks", "Environmental Disasters",
-                "Supply Chain Disruptions", "Reputation Crises"
+            "Workplace Accidents", "Product Recalls",
+            "Financial Crises","Public Health Emergencies",
+            "Terrorist Attacks", "Environmental Disasters",
+            "Supply Chain Disruptions", "Reputation Crises"
         );      
         responseActionColumn.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue()));
         responseActionsTableView.getItems().addAll(

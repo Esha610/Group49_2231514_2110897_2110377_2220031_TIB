@@ -19,7 +19,7 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
-import mainpkg.SceneChange;
+
 
 
 public class QualityAssuranceController implements Initializable {
@@ -30,14 +30,11 @@ public class QualityAssuranceController implements Initializable {
     @FXML    private TextField solutionsTextField;
 
  
-    private ObservableList<String> assessmentData;
-    private ObservableList<String> solutionsData;
+    private ObservableList<String> assessmentData = FXCollections.observableArrayList();
+    private ObservableList<String> solutionsData = FXCollections.observableArrayList();
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        assessmentData = FXCollections.observableArrayList();
-        solutionsData = FXCollections.observableArrayList();
-
         assessmentView.setItems(assessmentData);
         improvementView.setItems(solutionsData);
     }      
