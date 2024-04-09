@@ -10,6 +10,13 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.MenuBar;
+import javafx.scene.control.MenuItem;
+import javafx.scene.control.ScrollPane;
+import javafx.scene.control.TabPane;
+import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
 
 /**
  * FXML Controller class
@@ -19,18 +26,43 @@ import javafx.scene.control.Button;
 public class ResearcherrController implements Initializable {
 
     @FXML
-    private Button logout;
+    private BorderPane borderPane;
+    @FXML
+    private MenuBar menuBar;
+    @FXML
+    private MenuItem uploadResearchMenuItem;
+    @FXML
+    private MenuItem evaluationMenuItem;
+    @FXML
+    private MenuItem deleteMenuItem;
+    @FXML
+    private ScrollPane scrollPane;
+    @FXML
+    private VBox vBox;
+    @FXML
+    private HBox menteesHBox;
+    @FXML
+    private Button menteesButton;
+    @FXML
+    private HBox reportsHBox;
+    @FXML
+    private Button reportsButton;
+    @FXML
+    private HBox workshopHBox;
+    @FXML
+    private Button workshopButton;
+    @FXML
+    private HBox logoutHBox;
+    @FXML
+    private Button logoutButton;
+    @FXML
+    private TabPane tabPane;
 
-    /**
-     * Initializes the controller class.
-     */
+   
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
 
-    @FXML
-    private void LogoutButtonOnClick(ActionEvent event) {
-    }
     
 }
