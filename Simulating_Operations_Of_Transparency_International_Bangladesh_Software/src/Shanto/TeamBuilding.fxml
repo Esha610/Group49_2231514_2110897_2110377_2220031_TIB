@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="878.0" prefWidth="1147.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Shanto.TeamBuildingController">
+
+    <!-- Header -->
+    <VBox layoutX="10.0" layoutY="40.0" prefHeight="84.0" prefWidth="419.0" spacing="10.0">
+        <Label style="-fx-font-size: 24px; -fx-font-weight: bold;" text="Team Building and Development" />
+        <Label text="Welcome to the Team Building Platform" />
+    </VBox>
+
+    <!-- Navigation Bar -->
+    <MenuBar prefHeight="27.0" prefWidth="179.0">
+        <Menu text="File">
+            <MenuItem onAction="#exitApplication" text="Exit" />
+        </Menu>
+    </MenuBar>
+   <SplitPane dividerPositions="0.2873769024171889, 0.6230975828111012" layoutX="14.0" layoutY="114.0" prefHeight="678.0" prefWidth="1119.0">
+     <items>
+         <VBox prefHeight="534.0" prefWidth="390.0" style="-fx-background-color: lightgray;">
+            <children>
+               <Label style="-fx-font-size: 18px; -fx-font-weight: bold;" text="Teams" />
+               <ListView fx:id="teamListView" prefHeight="563.0" prefWidth="330.0" />
+               <Button onAction="#viewAllTeams" text="View All" />
+               <Button layoutX="10.0" layoutY="337.0" onAction="#addNewTeam" text="Add New" />
+               <TextField fx:id="newTeamField" prefHeight="157.0" prefWidth="429.0" promptText="Enter New Team" />
+            </children>
+         </VBox>
+         <VBox prefHeight="534.0" prefWidth="383.0" style="-fx-background-color: lightgray;">
+            <children>
+               <Label style="-fx-font-size: 18px; -fx-font-weight: bold;" text="Members" />
+               <ListView fx:id="memberListView" prefHeight="531.0" prefWidth="220.0" />
+               <Button onAction="#viewAllMembers" text="View All" />
+               <Button layoutX="10.0" layoutY="337.0" onAction="#addNewMember" text="Add New" />
+               <TextField fx:id="newMembersField" prefHeight="127.0" prefWidth="429.0" promptText="Enter New Member" />
+            </children>
+         </VBox>
+         <VBox prefHeight="534.0" prefWidth="338.0" style="-fx-background-color: lightgray;">
+            <children>
+               <Label style="-fx-font-size: 18px; -fx-font-weight: bold;" text="Action Plans" />
+               <ListView fx:id="actionsListView" prefHeight="501.0" prefWidth="555.0" />
+               <Button layoutX="10.0" layoutY="239.0" onAction="#viewTeamActionPlans" prefHeight="25.0" prefWidth="76.0" text="View Plans" />
+               <Button layoutX="10.0" layoutY="239.0" onAction="#createTeamActionPlans" text="Create Plan" />
+               <TextField fx:id="newActionPlanField" prefHeight="98.0" prefWidth="338.0" promptText="Enter New Action Plan" />
+            </children>
+         </VBox>
+     </items>
+   </SplitPane>
+</AnchorPane>
