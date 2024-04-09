@@ -4,16 +4,20 @@
  */
 package Esha;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
+import javafx.scene.Node;
+import javafx.scene.Scene;
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuBar;
-import javafx.scene.control.MenuItem;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
+import javafx.stage.Stage;
 
 /**
  * FXML Controller class
@@ -28,20 +32,6 @@ public class StudentController implements Initializable {
     private MenuBar menuBar;
     @FXML
     private Menu extrasMenu;
-    @FXML
-    private MenuItem researchMaterialsMenuItem;
-    @FXML
-    private MenuItem reportIncidentMenuItem;
-    @FXML
-    private MenuItem sendFeedbackMenuItem;
-    @FXML
-    private Button mentorsButton;
-    @FXML
-    private Button volunteersButton;
-    @FXML
-    private Button workshopButton;
-    @FXML
-    private Button logoutButton;
 
     /**
      * Initializes the controller class.
@@ -52,7 +42,51 @@ public class StudentController implements Initializable {
     }    
 
     @FXML
+    private void researchMaterialsMenuItemClicked(ActionEvent event) {
+    }
+
+    @FXML
     private void reportIncidentMenuItemClicked(ActionEvent event) {
     }
+
+    @FXML
+    private void sendFeedbackMenuItemClicked(ActionEvent event) {
+    }
+
+    @FXML
+    private void mentorsButtonClicked(ActionEvent event) {
+            loadScene("/Esha/requestingmentorship.fxml", event);
+        
+    }
+
+    @FXML
+    private void volunteersButtonClicked(ActionEvent event) {
+    }
+
+    @FXML
+    private void workshopButtonClicked(ActionEvent event) {
+    }
+
+    @FXML
+    private void logoutButtonClicked(ActionEvent event) {
+    }
+
+    
+    private void loadScene(String fxmlFile, ActionEvent event) {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlFile));
+        try {
+            AnchorPane root = loader.load();
+            Scene scene = new Scene(root);
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }    
+    
+    
+    
+    
     
 }

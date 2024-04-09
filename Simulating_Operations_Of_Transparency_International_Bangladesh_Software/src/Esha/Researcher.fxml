@@ -15,7 +15,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="649.0" prefWidth="929.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Esha.ResearcherrController">
+<AnchorPane id="AnchorPane" prefHeight="649.0" prefWidth="929.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Esha.ResearcherController">
    <children>
       <BorderPane fx:id="borderPane" prefHeight="649.0" prefWidth="929.0">
          <top>
@@ -23,13 +23,13 @@
               <menus>
                 <Menu mnemonicParsing="false" text="Extras">
                   <items>
-                    <MenuItem fx:id="uploadResearchMenuItem" mnemonicParsing="false" onAction="uploadResearchMenuItemClicked" text="Uploading Research Materials" />
-                        <MenuItem fx:id="evaluationMenuItem" mnemonicParsing="false" onAction="evaluationMenuItemClicked" text="Evaluation" />
+                    <MenuItem mnemonicParsing="false" onAction="#uploadResearchMenuItemClicked" text="Uploading Research Materials" />
+                        <MenuItem fx:id="evaluationMenuItem" mnemonicParsing="false" onAction="#evaluationMenuItemClicked" text="Evaluation" />
                   </items>
                 </Menu>
                 <Menu mnemonicParsing="false" text="View">
                   <items>
-                    <MenuItem fx:id="deleteMenuItem" mnemonicParsing="false" onAction="deleteMenuItemClicked" text="Delete" />
+                    <MenuItem fx:id="deleteMenuItem" mnemonicParsing="false" onAction="#deleteMenuItemClicked" text="Delete" />
                   </items>
                 </Menu>
               </menus>
@@ -53,7 +53,7 @@
                               <HBox fx:id="menteesHBox" prefHeight="63.0" prefWidth="243.0">
                                  <children>
                                     <ImageView fitHeight="63.0" fitWidth="84.0" pickOnBounds="true" preserveRatio="true" />
-                                    <Button fx:id="menteesButton" mnemonicParsing="false" prefHeight="64.0" prefWidth="170.0" text="Mentees" onAction="menteesButtonClicked">
+                                    <Button fx:id="menteesButton" mnemonicParsing="false" onAction="#menteesButtonClicked" prefHeight="64.0" prefWidth="170.0" text="Mentees">
                                        <font>
                                           <Font name="System Bold" size="24.0" />
                                        </font>
@@ -63,7 +63,7 @@
                               <HBox fx:id="reportsHBox" prefHeight="63.0" prefWidth="243.0">
                                  <children>
                                     <ImageView fitHeight="64.0" fitWidth="84.0" pickOnBounds="true" preserveRatio="true" />
-                                    <Button fx:id="reportsButton" mnemonicParsing="false" prefHeight="67.0" prefWidth="172.0" text="Reports" onAction="reportsButtonClicked">
+                                    <Button fx:id="reportsButton" mnemonicParsing="false" onAction="#reportsButtonClicked" prefHeight="67.0" prefWidth="172.0" text="Reports">
                                        <font>
                                           <Font name="System Bold" size="24.0" />
                                        </font>
@@ -73,7 +73,7 @@
                               <HBox fx:id="workshopHBox" prefHeight="65.0" prefWidth="243.0">
                                  <children>
                                     <ImageView fitHeight="67.0" fitWidth="87.0" pickOnBounds="true" preserveRatio="true" />
-                                    <Button fx:id="workshopButton" mnemonicParsing="false" prefHeight="67.0" prefWidth="164.0" text="Workshop" onAction="workshopButtonClicked">
+                                    <Button fx:id="workshopButton" mnemonicParsing="false" onAction="#workshopButtonClicked" prefHeight="67.0" prefWidth="164.0" text="Workshop">
                                        <font>
                                           <Font name="System Bold" size="24.0" />
                                        </font>
@@ -83,7 +83,7 @@
                               <HBox fx:id="logoutHBox" prefHeight="73.0" prefWidth="243.0">
                                  <children>
                                     <ImageView fitHeight="69.0" fitWidth="89.0" pickOnBounds="true" preserveRatio="true" />
-                                    <Button fx:id="logoutButton" mnemonicParsing="false" prefHeight="69.0" prefWidth="157.0" text="Log out" textFill="#d01919" onAction="logoutButtonClicked">
+                                    <Button fx:id="logoutButton" mnemonicParsing="false" onAction="#logoutButtonClicked" prefHeight="69.0" prefWidth="157.0" text="Log out" textFill="#d01919">
                                        <font>
                                           <Font name="System Bold" size="30.0" />
                                        </font>
@@ -116,4 +116,3 @@
       </BorderPane>
    </children>
 </AnchorPane>
-
