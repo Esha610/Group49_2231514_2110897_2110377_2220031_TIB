@@ -1,36 +1,35 @@
 package Shanto;
 
 import java.io.IOException;
+import java.net.URL;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
-import javafx.scene.control.ListView;
-import javafx.scene.control.TextField;
-import javafx.collections.ObservableList;
-import javafx.collections.FXCollections;
-import java.net.URL;
-import java.util.ArrayList;
-import java.util.ResourceBundle;
-import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Scene;
+import javafx.scene.control.ListView;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import javafx.application.Platform;
+import javafx.collections.ObservableList;
+import javafx.collections.FXCollections;
+import java.util.ArrayList;
+import java.util.ResourceBundle;
 
 public class BudgetAndControlController implements Initializable {
 
-    @FXML    private ListView<String> budgetListView;    
-    @FXML    private ListView<String> expenseListView;    
-    @FXML    private TextField newBudgetField;    
-    @FXML    private TextField newExpenseField;
+    @FXML private ListView<Budget> budgetListView;
+    @FXML private ListView<Expense> expenseListView;
+    @FXML private TextField newBudgetField;
+    @FXML private TextField newExpenseField;
 
-    private ObservableList<String> budgetItems = FXCollections.observableArrayList();
-    private ObservableList<String> expenseItems = FXCollections.observableArrayList();
+    private ObservableList<Budget> budgetItems = FXCollections.observableArrayList();
+    private ObservableList<Expense> expenseItems = FXCollections.observableArrayList();
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        
         budgetListView.setItems(budgetItems);
         expenseListView.setItems(expenseItems);
     }
@@ -40,69 +39,66 @@ public class BudgetAndControlController implements Initializable {
         Platform.exit();
     }
 
-
     @FXML
     private void viewAllBudgets(ActionEvent event) {
-        ArrayList<String> allBudgets = new ArrayList<>();
-        allBudgets.add("Monthly Rent - $1200");
-        allBudgets.add("Groceries - $300");
-        allBudgets.add("Utilities - $200");
-        allBudgets.add("Transportation - $150");
-        allBudgets.add("Entertainment - $100");
-        allBudgets.add("Healthcare - $50");
-        allBudgets.add("Education - $200");
-        allBudgets.add("Savings - $500");
-        allBudgets.add("Insurance - $100");
-        allBudgets.add("Debt Repayment - $200");
+        ArrayList<Budget> allBudgets = new ArrayList<>();
+        allBudgets.add(new Budget("Monthly Rent", 1200));
+        allBudgets.add(new Budget("Groceries", 300));
+        allBudgets.add(new Budget("Utilities", 200));
+        allBudgets.add(new Budget("Transportation", 150));
+        allBudgets.add(new Budget("Entertainment", 100));
+        allBudgets.add(new Budget("Healthcare", 50));
+        allBudgets.add(new Budget("Education", 200));
+        allBudgets.add(new Budget("Savings", 500));
+        allBudgets.add(new Budget("Insurance", 100));
+        allBudgets.add(new Budget("Debt Repayment", 200));
         budgetItems.setAll(allBudgets);
     }
 
     @FXML
     private void viewAllExpenses(ActionEvent event) {
-        ArrayList<String> allExpenses = new ArrayList<>();
-        allExpenses.add("Rent/Mortgage Payment - $1200");
-        allExpenses.add("Food and Dining - $250");
-        allExpenses.add("Utility Bills - $150");
-        allExpenses.add("Transportation Costs - $100");
-        allExpenses.add("Entertainment Expenses - $150");
-        allExpenses.add("Healthcare Expenses - $50");
-        allExpenses.add("Education Expenses - $100");
-        allExpenses.add("Savings Contributions - $200");
-        allExpenses.add("Insurance Premiums - $100");
-        allExpenses.add("Loan Payments - $300");
+        ArrayList<Expense> allExpenses = new ArrayList<>();
+        allExpenses.add(new Expense("Rent/Mortgage Payment", 1200));
+        allExpenses.add(new Expense("Food and Dining", 250));
+        allExpenses.add(new Expense("Utility Bills", 150));
+        allExpenses.add(new Expense("Transportation Costs", 100));
+        allExpenses.add(new Expense("Entertainment Expenses", 150));
+        allExpenses.add(new Expense("Healthcare Expenses", 50));
+        allExpenses.add(new Expense("Education Expenses", 100));
+        allExpenses.add(new Expense("Savings Contributions", 200));
+        allExpenses.add(new Expense("Insurance Premiums", 100));
+        allExpenses.add(new Expense("Loan Payments", 300));
         expenseItems.setAll(allExpenses);
     }
 
     @FXML
     private void addNewBudget(ActionEvent event) {
-        String newBudget = newBudgetField.getText();
-        if (!newBudget.isEmpty()) {
-            budgetItems.add(newBudget);
+        String newName = newBudgetField.getText();
+        if (!newName.isEmpty()) {
+            budgetItems.add(new Budget(newName, 0));
             newBudgetField.clear();
         }
     }
 
     @FXML
     private void addNewExpense(ActionEvent event) {
-        String newExpense = newExpenseField.getText();
-        if (!newExpense.isEmpty()) {
-            expenseItems.add(newExpense);
+        String newName = newExpenseField.getText();
+        if (!newName.isEmpty()) {
+            expenseItems.add(new Expense(newName, 0));
             newExpenseField.clear();
         }
     }
-    
+
     @FXML
     private void logout(ActionEvent event) {
         loadScene("/mainpkg/LoginSc.fxml", event);
     }
-    
+
     @FXML
     private void goBack(ActionEvent event) {
         loadScene("/Shanto/ExecutiveDirector.fxml", event);
-        
     }
-    
-    
+
     private void loadScene(String fxmlFile, ActionEvent event) {
         FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlFile));
         try {
@@ -114,8 +110,5 @@ public class BudgetAndControlController implements Initializable {
         } catch (IOException e) {
             e.printStackTrace();
         }
-    }    
-
-  
-
+    }
 }
