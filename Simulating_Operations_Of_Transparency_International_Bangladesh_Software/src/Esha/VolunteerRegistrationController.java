@@ -22,9 +22,7 @@ public class VolunteerRegistrationController implements Initializable {
     @FXML
     private TextArea additionalInfoTextArea;
 
-    /**
-     * Initializes the controller class.
-     */
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
             // Initialize ChoiceBoxes

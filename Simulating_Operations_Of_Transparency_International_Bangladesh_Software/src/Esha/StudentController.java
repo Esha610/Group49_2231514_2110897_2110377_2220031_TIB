@@ -13,65 +13,29 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuBar;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
-/**
- * FXML Controller class
- *
- * @author mumta
- */
+
 public class StudentController implements Initializable {
 
     @FXML
-    private BorderPane borderPane;
-    @FXML
-    private MenuBar menuBar;
-    @FXML
-    private Menu extrasMenu;
+    private Button logout;
 
-    /**
-     * Initializes the controller class.
-     */
+   
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
 
-    @FXML
-    private void researchMaterialsMenuItemClicked(ActionEvent event) {
-    }
-
-    @FXML
-    private void reportIncidentMenuItemClicked(ActionEvent event) {
-    }
-
-    @FXML
-    private void sendFeedbackMenuItemClicked(ActionEvent event) {
-    }
-
-    @FXML
     private void mentorsButtonClicked(ActionEvent event) {
-            loadScene("/Esha/requestingmentorship.fxml", event);
+        loadScene("/Esha/requestingmentorship.fxml", event);
         
     }
-
-    @FXML
-    private void volunteersButtonClicked(ActionEvent event) {
-    }
-
-    @FXML
-    private void workshopButtonClicked(ActionEvent event) {
-    }
-
-    @FXML
-    private void logoutButtonClicked(ActionEvent event) {
-    }
-
-    
     private void loadScene(String fxmlFile, ActionEvent event) {
         FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlFile));
         try {
@@ -83,6 +47,31 @@ public class StudentController implements Initializable {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    @FXML
+    private void volunteerButtonOnClick(ActionEvent event) {
+    }
+
+    @FXML
+    private void requestingMentorshipButtonOnClick(ActionEvent event) {
+    }
+
+    @FXML
+    private void reportingIncidentButtonOnClick(ActionEvent event) {
+    }
+
+    @FXML
+    private void TransferRequestsButtonOnClick(ActionEvent event) {
+    }
+
+    @FXML
+    private void sendingFeedbacksButtonOnClick(ActionEvent event) {
+    }
+
+    
+    @FXML
+    private void LogoutButtonOnClick(ActionEvent event) {
     }    
     
     

@@ -7,6 +7,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 
@@ -24,19 +25,36 @@ public class WorkshopRegistrationController implements Initializable {
     private RadioButton inPersonRadioButton;
     
     private static final String FILE_PATH = "workshop_data.ser";
+    @FXML
+    private ChoiceBox<String> areaChoiceBox;
+    @FXML
+    private ChoiceBox<String> placeChoiceBox;
 
-    /**
-     * Initializes the controller class.
-     */
-    @Override
-    public void initialize(URL url, ResourceBundle rb) {
-        // Load saved data if available
-        loadSavedData();
-    }    
+    
+  @Override
+public void initialize(URL url, ResourceBundle rb) {
+    areaChoiceBox.getItems().addAll(
+        "Urban Development",
+        "Rural Empowerment",
+        "Healthcare Access",
+        "Environmental Sustainability",
+        "Education Reform"
+    );
+
+    placeChoiceBox.getItems().addAll(
+        "Local Community Center",
+        "Public Hospital",
+        "City Park",
+        "School Campus",
+        "Wildlife Sanctuary"
+    );
+
+    loadSavedData();
+}
 
     @FXML
     private void submitForm(ActionEvent event) {
-        // Retrieve data from the form
+       
         String name = nameTextField.getText();
         String email = emailTextField.getText();
         String mobile = mobileTextField.getText();

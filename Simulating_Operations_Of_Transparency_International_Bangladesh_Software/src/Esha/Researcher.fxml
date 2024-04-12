@@ -2,117 +2,66 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.Menu?>
-<?import javafx.scene.control.MenuBar?>
-<?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.ScrollPane?>
-<?import javafx.scene.control.Tab?>
-<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="649.0" prefWidth="929.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Esha.ResearcherController">
+<AnchorPane id="AnchorPane" prefHeight="739.0" prefWidth="569.0" style="-fx-background-color: grey;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Esha.ResearcherController">
    <children>
-      <BorderPane fx:id="borderPane" prefHeight="649.0" prefWidth="929.0">
-         <top>
-            <MenuBar fx:id="menuBar" BorderPane.alignment="CENTER">
-              <menus>
-                <Menu mnemonicParsing="false" text="Extras">
-                  <items>
-                    <MenuItem mnemonicParsing="false" onAction="#uploadResearchMenuItemClicked" text="Uploading Research Materials" />
-                        <MenuItem fx:id="evaluationMenuItem" mnemonicParsing="false" onAction="#evaluationMenuItemClicked" text="Evaluation" />
-                  </items>
-                </Menu>
-                <Menu mnemonicParsing="false" text="View">
-                  <items>
-                    <MenuItem fx:id="deleteMenuItem" mnemonicParsing="false" onAction="#deleteMenuItemClicked" text="Delete" />
-                  </items>
-                </Menu>
-              </menus>
-            </MenuBar>
-         </top>
-         <left>
-            <ScrollPane fx:id="scrollPane" prefHeight="624.0" prefWidth="312.0" BorderPane.alignment="CENTER">
-              <content>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="619.0" prefWidth="315.0">
+      <ScrollPane layoutX="-6.0" prefHeight="773.0" prefWidth="607.0">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="767.0" prefWidth="591.0">
+               <children>
+                  <VBox layoutX="139.0" layoutY="312.0" prefHeight="267.0" prefWidth="294.0">
                      <children>
-                        <Label layoutX="36.0" layoutY="28.0" prefHeight="39.0" prefWidth="226.0" text="User: Researcher" textFill="#eb0c0c">
+                        <Button mnemonicParsing="false" onAction="#menteesButtonOnClick" prefHeight="43.0" prefWidth="292.0" text="Mentees">
                            <font>
-                              <Font name="Segoe UI Semibold Italic" size="27.0" />
+                              <Font name="System Bold" size="18.0" />
                            </font>
-                        </Label>
-                        <VBox fx:id="vBox" layoutX="31.0" layoutY="72.0" prefHeight="536.0" prefWidth="243.0" style="-fx-background-color: red; -fx-background-radius: 55;">
-                           <children>
-                              <Label prefHeight="29.0" prefWidth="0.0" text="Label" />
-                              <ImageView fitHeight="196.0" fitWidth="243.0" pickOnBounds="true" preserveRatio="true" />
-                              <Label prefHeight="23.0" prefWidth="0.0" text="Label" />
-                              <HBox fx:id="menteesHBox" prefHeight="63.0" prefWidth="243.0">
-                                 <children>
-                                    <ImageView fitHeight="63.0" fitWidth="84.0" pickOnBounds="true" preserveRatio="true" />
-                                    <Button fx:id="menteesButton" mnemonicParsing="false" onAction="#menteesButtonClicked" prefHeight="64.0" prefWidth="170.0" text="Mentees">
-                                       <font>
-                                          <Font name="System Bold" size="24.0" />
-                                       </font>
-                                    </Button>
-                                 </children>
-                              </HBox>
-                              <HBox fx:id="reportsHBox" prefHeight="63.0" prefWidth="243.0">
-                                 <children>
-                                    <ImageView fitHeight="64.0" fitWidth="84.0" pickOnBounds="true" preserveRatio="true" />
-                                    <Button fx:id="reportsButton" mnemonicParsing="false" onAction="#reportsButtonClicked" prefHeight="67.0" prefWidth="172.0" text="Reports">
-                                       <font>
-                                          <Font name="System Bold" size="24.0" />
-                                       </font>
-                                    </Button>
-                                 </children>
-                              </HBox>
-                              <HBox fx:id="workshopHBox" prefHeight="65.0" prefWidth="243.0">
-                                 <children>
-                                    <ImageView fitHeight="67.0" fitWidth="87.0" pickOnBounds="true" preserveRatio="true" />
-                                    <Button fx:id="workshopButton" mnemonicParsing="false" onAction="#workshopButtonClicked" prefHeight="67.0" prefWidth="164.0" text="Workshop">
-                                       <font>
-                                          <Font name="System Bold" size="24.0" />
-                                       </font>
-                                    </Button>
-                                 </children>
-                              </HBox>
-                              <HBox fx:id="logoutHBox" prefHeight="73.0" prefWidth="243.0">
-                                 <children>
-                                    <ImageView fitHeight="69.0" fitWidth="89.0" pickOnBounds="true" preserveRatio="true" />
-                                    <Button fx:id="logoutButton" mnemonicParsing="false" onAction="#logoutButtonClicked" prefHeight="69.0" prefWidth="157.0" text="Log out" textFill="#d01919">
-                                       <font>
-                                          <Font name="System Bold" size="30.0" />
-                                       </font>
-                                    </Button>
-                                 </children>
-                              </HBox>
-                           </children>
-                        </VBox>
+                        </Button>
+                        <Button mnemonicParsing="false" onAction="#requestingMentorshipButtonOnClick" prefHeight="43.0" prefWidth="292.0" text="Monitoring Reports">
+                           <font>
+                              <Font name="System Bold Italic" size="18.0" />
+                           </font>
+                        </Button>
+                        <Button mnemonicParsing="false" onAction="#hostingWorkshopsButtonOnClick" prefHeight="43.0" prefWidth="292.0" text="Hosting Worshops">
+                           <font>
+                              <Font name="System Bold Italic" size="18.0" />
+                           </font>
+                        </Button>
+                        <Button mnemonicParsing="false" onAction="#evaluationOfWorkshopsButtonOnClick" prefHeight="43.0" prefWidth="292.0" text="Evaluation Of Workshops">
+                           <font>
+                              <Font name="System Bold Italic" size="18.0" />
+                           </font>
+                        </Button>
+                        <Button mnemonicParsing="false" onAction="#uploadingResearchesButtonOnClick" prefHeight="43.0" prefWidth="292.0" text="Uploading Researches">
+                           <font>
+                              <Font name="System Bold Italic" size="18.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="logout" mnemonicParsing="false" onAction="#LogoutButtonOnClick" prefHeight="50.0" prefWidth="292.0" style="-fx-background-color: black;" text="Logout" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold Italic" size="23.0" />
+                           </font>
+                        </Button>
                      </children>
-                  </AnchorPane>
-              </content>
-            </ScrollPane>
-         </left>
-         <center>
-            <TabPane fx:id="tabPane" prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
-              <tabs>
-                <Tab text="Hotline Reports">
-                  <content>
-                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
-                  </content>
-                </Tab>
-                <Tab text="Researches">
-                  <content>
-                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
-                  </content>
-                </Tab>
-              </tabs>
-            </TabPane>
-         </center>
-      </BorderPane>
+                  </VBox>
+                  <Label layoutX="186.0" layoutY="28.0" prefHeight="37.0" prefWidth="200.0" text="    Researcher" textFill="#f50606">
+                     <font>
+                        <Font name="MV Boli" size="21.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="244.0" fitWidth="287.0" layoutX="141.0" layoutY="67.0">
+                     <image>
+                        <Image url="@../../../../Group49_2231514_2110897_2110377_2220031_TIB/Simulating_Operations_Of_Transparency_International_Bangladesh_Software/src/Esha/images/wired-gradient-955-demand.gif" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+        </content>
+      </ScrollPane>
    </children>
 </AnchorPane>
