@@ -1,6 +1,10 @@
 package Shanto;
 
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -31,6 +35,7 @@ public class NewRecruitmentController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         
+   
         jobVacancyListView.setItems(jobVacancies);
         applicantListView.setItems(applicants);
     }
@@ -199,4 +204,5 @@ public class NewRecruitmentController implements Initializable {
             e.printStackTrace();
         }
     }
+      
 }
