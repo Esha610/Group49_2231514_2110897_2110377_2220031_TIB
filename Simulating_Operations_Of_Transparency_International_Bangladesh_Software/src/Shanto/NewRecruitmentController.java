@@ -32,13 +32,10 @@ public class NewRecruitmentController implements Initializable {
     private ObservableList<String> jobVacancies = FXCollections.observableArrayList();
     private ObservableList<String> applicants = FXCollections.observableArrayList();
 
-    
-    private final String dataFileName = "recruitment_data.ser";
-    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         
-        loadSavedData();
+   
         jobVacancyListView.setItems(jobVacancies);
         applicantListView.setItems(applicants);
     }
@@ -207,36 +204,5 @@ public class NewRecruitmentController implements Initializable {
             e.printStackTrace();
         }
     }
-    
-    
-    
-    
-        private void saveData() {
-        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(dataFileName))) {
-            oos.writeObject(jobVacancies);
-            oos.writeObject(applicants);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-    
-    private void loadSavedData() {
-        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(dataFileName))) {
-            jobVacancies.addAll((ArrayList<String>) ois.readObject());
-            applicants.addAll((ArrayList<String>) ois.readObject());
-        } catch (IOException | ClassNotFoundException e) {
-            e.printStackTrace();
-        }
-    }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+      
 }
