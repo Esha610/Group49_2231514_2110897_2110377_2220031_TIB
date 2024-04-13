@@ -58,11 +58,13 @@ public class StudentController implements Initializable {
           loadScene("/mainpkg/LoginSc.fxml", event);
     }
 
+
     @FXML
     private void volunteerRegistrationButtonOnClick(ActionEvent event) {
          loadScene("/Esha/volunteerregistration.fxml", event);
 
     }
+
 
     @FXML
     private void reportingCorruptionButtonOnClick(ActionEvent event) {
@@ -79,6 +81,10 @@ public class StudentController implements Initializable {
     private void contactUsButtonOnClick(ActionEvent event) {
          loadScene("/Esha/contactus.fxml", event);
 
+    }
+
+    @FXML
+    private void requestingMentorshipButtonOnClick(ActionEvent event) {
     }
     
 }

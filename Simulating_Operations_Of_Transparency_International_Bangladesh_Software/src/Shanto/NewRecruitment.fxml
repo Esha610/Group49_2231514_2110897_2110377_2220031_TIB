@@ -32,7 +32,7 @@
         <VBox style="-fx-background-color: lightgray;">
             <Label style="-fx-font-size: 18px; -fx-font-weight: bold;" text="Job Vacancies" />
             <ListView fx:id="jobVacancyListView" prefHeight="444.0" prefWidth="509.0" />
-            <Button onAction="#viewAllJobVacancies" text="View All Job Vacancies" />
+            <Button fx:id="viewAllJobVacanciesButton" onAction="#viewAllJobVacancies" text="View All Job Vacancies" />
             <Button onAction="#addNewJobVacancy" text="Add New Job Vacancy" />
             <TextField fx:id="newJobVacancyField" prefHeight="226.0" prefWidth="509.0" promptText="Enter New Job Vacancy" />
         </VBox>
@@ -41,7 +41,7 @@
         <VBox style="-fx-background-color: lightgray;">
             <Label style="-fx-font-size: 18px; -fx-font-weight: bold;" text="Applicants" />
             <ListView fx:id="applicantListView" prefHeight="395.0" prefWidth="509.0" />
-            <Button onAction="#viewAllApplicants" text="View All Applicants" />
+            <Button fx:id="viewAllApplicantsButton" onAction="#viewAllApplicants" text="View All Applicants" />
             <Button onAction="#addNewApplicant" text="Add New Applicant" />
             <TextField fx:id="newApplicantField" prefHeight="180.0" prefWidth="509.0" promptText="Enter New Applicant" />
         </VBox>
