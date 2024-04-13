@@ -22,7 +22,7 @@
                               <Font name="System Bold" size="18.0" />
                            </font>
                         </Button>
-                        <Button mnemonicParsing="false" onAction="#requestingMentorshipButtonOnClick" prefHeight="43.0" prefWidth="292.0" text="Requesting Mentorship">
+                        <Button mnemonicParsing="false" onAction="#mentorsButtonClicked" prefHeight="43.0" prefWidth="292.0" text="Requesting Mentorship">
                            <font>
                               <Font name="System Bold Italic" size="18.0" />
                            </font>

@@ -32,6 +32,7 @@ public class StudentController implements Initializable {
         // TODO
     }    
 
+    @FXML
     private void mentorsButtonClicked(ActionEvent event) {
         loadScene("/Esha/requestingmentorship.fxml", event);
         
@@ -53,9 +54,6 @@ public class StudentController implements Initializable {
     private void volunteerButtonOnClick(ActionEvent event) {
     }
 
-    @FXML
-    private void requestingMentorshipButtonOnClick(ActionEvent event) {
-    }
 
     @FXML
     private void reportingIncidentButtonOnClick(ActionEvent event) {
