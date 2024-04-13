@@ -1,7 +1,11 @@
 package Shanto;
 
-import java.io.IOException;
+import java.io.*;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.ResourceBundle;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -13,25 +17,28 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javafx.application.Platform;
-import javafx.collections.ObservableList;
-import javafx.collections.FXCollections;
-import java.util.ArrayList;
-import java.util.ResourceBundle;
 
 public class BudgetAndControlController implements Initializable {
 
-    @FXML private ListView<Budget> budgetListView;
-    @FXML private ListView<Expense> expenseListView;
-    @FXML private TextField newBudgetField;
-    @FXML private TextField newExpenseField;
+    @FXML
+    private ListView<Budget> budgetListView;
+    @FXML
+    private ListView<Expense> expenseListView;
+    @FXML
+    private TextField newBudgetField;
+    @FXML
+    private TextField newExpenseField;
 
     private ObservableList<Budget> budgetItems = FXCollections.observableArrayList();
     private ObservableList<Expense> expenseItems = FXCollections.observableArrayList();
+
+    private static final String FILE_PATH = "budget_data.ser";
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         budgetListView.setItems(budgetItems);
         expenseListView.setItems(expenseItems);
+        loadSavedData();
     }
 
     @FXML
@@ -53,6 +60,7 @@ public class BudgetAndControlController implements Initializable {
         allBudgets.add(new Budget("Insurance", 100));
         allBudgets.add(new Budget("Debt Repayment", 200));
         budgetItems.setAll(allBudgets);
+        saveData();
     }
 
     @FXML
@@ -69,14 +77,16 @@ public class BudgetAndControlController implements Initializable {
         allExpenses.add(new Expense("Insurance Premiums", 100));
         allExpenses.add(new Expense("Loan Payments", 300));
         expenseItems.setAll(allExpenses);
+        saveData();
     }
 
     @FXML
     private void addNewBudget(ActionEvent event) {
         String newName = newBudgetField.getText();
         if (!newName.isEmpty()) {
-            budgetItems.add(new Budget(newName, 0));
+            budgetItems.add(new Budget(newName, 200));
             newBudgetField.clear();
+            saveData();
         }
     }
 
@@ -84,8 +94,9 @@ public class BudgetAndControlController implements Initializable {
     private void addNewExpense(ActionEvent event) {
         String newName = newExpenseField.getText();
         if (!newName.isEmpty()) {
-            expenseItems.add(new Expense(newName, 0));
+            expenseItems.add(new Expense(newName,300));
             newExpenseField.clear();
+            saveData();
         }
     }
 
@@ -108,6 +119,30 @@ public class BudgetAndControlController implements Initializable {
             stage.setScene(scene);
             stage.show();
         } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void saveData() {
+        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(FILE_PATH))) {
+            oos.writeObject(new ArrayList<>(budgetItems));
+            oos.writeObject(new ArrayList<>(expenseItems));
+            System.out.println("Data saved successfully.");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void loadSavedData() {
+        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(FILE_PATH))) {
+            ArrayList<Budget> savedBudgets = (ArrayList<Budget>) ois.readObject();
+            ArrayList<Expense> savedExpenses = (ArrayList<Expense>) ois.readObject();
+            budgetItems.setAll(savedBudgets);
+            expenseItems.setAll(savedExpenses);
+            System.out.println("Data loaded successfully.");
+        } catch (FileNotFoundException e) {
+            System.out.println("No saved data found.");
+        } catch (IOException | ClassNotFoundException e) {
             e.printStackTrace();
         }
     }
