@@ -1,10 +1,7 @@
 package Shanto;
 
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
+
+import java.io.*;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -16,28 +13,34 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import java.net.URL;
-import java.util.ArrayList;
 import java.util.ResourceBundle;
-import javafx.collections.ObservableList;
+import javafx.application.Platform;import javafx.collections.ObservableList;
 import javafx.collections.FXCollections;
-import javafx.application.Platform;
+import java.util.List;
+import java.util.ArrayList;
+import javafx.scene.control.Button;
 
 public class NewRecruitmentController implements Initializable {
 
-    @FXML private ListView<String> jobVacancyListView;
-    @FXML private ListView<String> applicantListView;
-    @FXML private TextField newJobVacancyField;
-    @FXML private TextField newApplicantField;
+    @FXML    private ListView<String> jobVacancyListView;
+    @FXML    private ListView<String> applicantListView;
+    @FXML    private TextField newJobVacancyField;
+    @FXML    private TextField newApplicantField;
+    @FXML    private Button viewAllJobVacanciesButton;
+    @FXML    private Button viewAllApplicantsButton;
+    
 
     private ObservableList<String> jobVacancies = FXCollections.observableArrayList();
     private ObservableList<String> applicants = FXCollections.observableArrayList();
 
+
+    private static final String FILE_PATH = "recruitment_data.ser";
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        
-   
         jobVacancyListView.setItems(jobVacancies);
         applicantListView.setItems(applicants);
+        loadSavedData();
     }
 
     @FXML
@@ -45,11 +48,9 @@ public class NewRecruitmentController implements Initializable {
         Platform.exit();
     }
 
-    
-    
     @FXML
     private void viewAllJobVacancies(ActionEvent event) {
-        ArrayList<String> allJobVacancies = new ArrayList<>();
+        ObservableList<String> allJobVacancies = FXCollections.observableArrayList();
         allJobVacancies.add("Software Engineer- 1 Seat");
         allJobVacancies.add("Marketing Manager- 2 Seat");
         allJobVacancies.add("Graphic Designer- 1 Seat");
@@ -61,6 +62,8 @@ public class NewRecruitmentController implements Initializable {
         allJobVacancies.add("Project Manager- 1 Seat");
         allJobVacancies.add("Registered Nurse- 4 Seat");
         jobVacancies.setAll(allJobVacancies);
+        saveData();
+        loadSavedData();
     }
 
     @FXML
@@ -163,22 +166,23 @@ public class NewRecruitmentController implements Initializable {
 
 
 
-
     @FXML
     private void addNewJobVacancy(ActionEvent event) {
         String newJobVacancy = newJobVacancyField.getText();
         if (!newJobVacancy.isEmpty()) {
             jobVacancies.add(newJobVacancy);
             newJobVacancyField.clear();
+            saveData();
         }
     }
-    
+
     @FXML
     private void addNewApplicant(ActionEvent event) {
         String newApplicant = newApplicantField.getText();
         if (!newApplicant.isEmpty()) {
             applicants.add(newApplicant);
             newApplicantField.clear();
+            saveData();
         }
     }
 
@@ -204,5 +208,27 @@ public class NewRecruitmentController implements Initializable {
             e.printStackTrace();
         }
     }
-      
+
+
+
+    private void saveData() {
+        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(FILE_PATH))) {
+            oos.writeObject(new ArrayList<>(jobVacancies));
+            System.out.println("Data saved successfully.");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void loadSavedData() {
+        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(FILE_PATH))) {
+            List<String> savedJobVacancies = (List<String>) ois.readObject();
+            jobVacancies.setAll(savedJobVacancies);
+            System.out.println("Data loaded successfully.");
+        } catch (FileNotFoundException e) {
+            System.out.println("No saved data found.");
+        } catch (IOException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
 }
