@@ -42,17 +42,17 @@ public class SocialEventsScheduleController implements Initializable {
     private void viewAllEvents(ActionEvent event) {
         eventsData.clear();
         ArrayList<SocialEvent> sampleEvents = new ArrayList<>();
-        sampleEvents.add(new SocialEvent("Pohela Boishakh Celebration",         "9:00 AM",  "April 14, 2024",   "Various Locations"));
-        sampleEvents.add(new SocialEvent("Victory Day Parade",                  "9:00 AM",  "December 16, 2024","National Parade Ground"));
-        sampleEvents.add(new SocialEvent("Ekushey Book Fair",                   "3:00 PM",  "February 1, 2024", "Bangla Academy"));
-        sampleEvents.add(new SocialEvent("Dhaka International Film Festival",   "6:00 PM",  "January 12, 2024", "Various Cinemas"));
-        sampleEvents.add(new SocialEvent("Bangabandhu Birth Anniversary",       "10:00 AM", "March 17, 2024",   "National Memorial"));
-        sampleEvents.add(new SocialEvent("Ramadan Iftar Party",                 "6:30 PM",  "Ramadan 25, 2024", "Residential Area"));
-        sampleEvents.add(new SocialEvent("Independence Day Celebration",        "9:00 AM",  "March 26, 2024",   "Various Locations"));
-        sampleEvents.add(new SocialEvent("Durga Puja Festival",                 "10:00 AM", "October 5, 2024",  "Puja Pandals"));
-        sampleEvents.add(new SocialEvent("Bengali New Year Mela",               "10:00 AM", "April 15, 2024",   "Dhaka University Campus"));
-        sampleEvents.add(new SocialEvent("Chobi Mela International Photo Fest", "11:00 AM", "January 30, 2024", "Various Galleries"));
-        eventsData.addAll(sampleEvents);
+        sampleEvents.add(new SocialEvent("Pohela Boishakh Celebration",                 "9:00 AM",          "April 14, 2024",           "Various Locations"));
+        sampleEvents.add(new SocialEvent("Victory Day Parade",                          "9:00 AM",          "December 16, 2024",        "National Parade Ground"));
+        sampleEvents.add(new SocialEvent("Ekushey Book Fair",                           "3:00 PM",          "February 1, 2024",         "Bangla Academy"));
+        sampleEvents.add(new SocialEvent("Dhaka International Film Festival",           "6:00 PM",          "January 12, 2024",         "Various Cinemas"));
+        sampleEvents.add(new SocialEvent("Bangabandhu Birth Anniversary",               "10:00 AM",         "March 17, 2024",           "National Memorial"));
+        sampleEvents.add(new SocialEvent("Ramadan Iftar Party",                         "6:30 PM",          "Ramadan 25, 2024",         "Residential Area"));
+        sampleEvents.add(new SocialEvent("Independence Day Celebration",                "9:00 AM",          "March 26, 2024",           "Various Locations"));
+        sampleEvents.add(new SocialEvent("Durga Puja Festival",                         "10:00 AM",         "October 5, 2024",          "Puja Pandals"));
+        sampleEvents.add(new SocialEvent("Bengali New Year Mela",                       "10:00 AM",         "April 15, 2024",           "Dhaka University Campus"));
+        sampleEvents.add(new SocialEvent("Chobi Mela International Photo Fest",         "11:00 AM",         "January 30, 2024",         "Various Galleries"));
+        eventsData.addAll(sampleEvents);    
     }
 
     @FXML

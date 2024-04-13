@@ -120,7 +120,7 @@ public class StakeholderEngagementController implements Initializable {
 
     @FXML
     private void goBack(ActionEvent event) {
-        loadScene("/Shanto/SecretaryGeneral.fxml", event);
+        loadScene("/Shanto/ExecutiveDirector.fxml", event);
     }
 
     private void showAlert(Alert.AlertType alertType, String title, String message) {
