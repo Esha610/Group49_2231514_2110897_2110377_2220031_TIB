@@ -11,6 +11,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Cursor;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -26,10 +27,12 @@ public class StudentController implements Initializable {
     @FXML
     private Button logout;
 
+
    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+         logout.setCursor(Cursor.HAND);
+        
     }    
 
     private void mentorsButtonClicked(ActionEvent event) {
@@ -49,33 +52,33 @@ public class StudentController implements Initializable {
         }
     }
 
+
     @FXML
-    private void volunteerButtonOnClick(ActionEvent event) {
+    private void logOut(ActionEvent event) {
+          loadScene("/mainpkg/LoginSc.fxml", event);
     }
 
     @FXML
-    private void requestingMentorshipButtonOnClick(ActionEvent event) {
+    private void volunteerRegistrationButtonOnClick(ActionEvent event) {
+         loadScene("/Esha/volunteerregistration.fxml", event);
+
     }
 
     @FXML
-    private void reportingIncidentButtonOnClick(ActionEvent event) {
+    private void reportingCorruptionButtonOnClick(ActionEvent event) {
+          loadScene("/Esha/reportingcorruption.fxml", event);
     }
 
     @FXML
-    private void TransferRequestsButtonOnClick(ActionEvent event) {
+    private void workshopRegistartionButtonOnClick(ActionEvent event) {
+         loadScene("/Esha/workshopregistration.fxml", event);
+
     }
 
     @FXML
-    private void sendingFeedbacksButtonOnClick(ActionEvent event) {
-    }
+    private void contactUsButtonOnClick(ActionEvent event) {
+         loadScene("/Esha/contactus.fxml", event);
 
-    
-    @FXML
-    private void LogoutButtonOnClick(ActionEvent event) {
-    }    
-    
-    
-    
-    
+    }
     
 }

@@ -1,15 +1,20 @@
 package Esha;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
-import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextArea;
+import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 
 public class VolunteerRegistrationController implements Initializable {
 
@@ -25,37 +30,45 @@ public class VolunteerRegistrationController implements Initializable {
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-            // Initialize ChoiceBoxes
-    campaignChoiceBox.getItems().addAll("Gulshan", "Banani", "Dhanmondi", "Uttara", "Mohakhali");
+            
+        campaignChoiceBox.getItems().addAll("Gulshan", "Banani", "Dhanmondi", "Uttara", "Mohakhali");
 
-
-    activityChoiceBox.getItems().addAll(
-        "Teaching",
-        "Volunteering at a Soup Kitchen",
-        "Planting Trees",
-        "Medical Check-Up Camp",
-        "Beach Clean-Up"
-    );
+        activityChoiceBox.getItems().addAll(
+            "Teaching",
+            "Volunteering at a Soup Kitchen",
+            "Planting Trees",
+            "Medical Check-Up Camp",
+            "Beach Clean-Up"
+        );
 
     }    
 
     @FXML
     private void submitForm(ActionEvent event) {
-        // Retrieve data from the form and process it
+       
         String campaignArea = campaignChoiceBox.getValue();
-        String timing = timingChoiceBox.getText(); // Changed from getValue() to getText()
+        String timing = timingChoiceBox.getText(); 
         String activity = activityChoiceBox.getValue();
         String additionalInfo = additionalInfoTextArea.getText();
         
-        // Perform further actions with the retrieved data
+        
         System.out.println("Campaign Area: " + campaignArea);
         System.out.println("Timing: " + timing);
         System.out.println("Field of Activity: " + activity);
         System.out.println("Additional Information: " + additionalInfo);
         
-    // Show an alert confirming that the data is saved
-    showAlert("Success", "Data saved successfully!");
-}
+        
+        VolunteerRegistrationData data = new VolunteerRegistrationData(campaignArea, timing, activity, additionalInfo);
+        saveData(data);
+        
+       
+        showAlert("Success", "Data saved successfully!");
+    }
+
+    private void saveData(VolunteerRegistrationData data) {
+        
+        System.out.println("Data saved: " + data);
+    }
 
     private void showAlert(String title, String message) {
         Alert alert = new Alert(AlertType.INFORMATION);
@@ -65,13 +78,31 @@ public class VolunteerRegistrationController implements Initializable {
         alert.showAndWait();
     }
 
+    
+    
     @FXML
     private void goBack(ActionEvent event) {
-        // Add logic to go back to the previous event
+        loadScene("/Esha/Student.fxml", event);
     }
+    
+    
+    private void loadScene(String fxmlFile, ActionEvent event) {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlFile));
+        try {
+            AnchorPane root = loader.load();
+            Scene scene = new Scene(root);
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }    
 
     @FXML
     private void logOut(ActionEvent event) {
-        // Add logic to log out
+         loadScene("/mainpkg/LoginSc.fxml", event);
     }
+
+
 }

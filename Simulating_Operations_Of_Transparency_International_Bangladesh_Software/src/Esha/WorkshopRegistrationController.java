@@ -6,7 +6,6 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
@@ -31,26 +30,26 @@ public class WorkshopRegistrationController implements Initializable {
     private ChoiceBox<String> placeChoiceBox;
 
     
-  @Override
-public void initialize(URL url, ResourceBundle rb) {
-    areaChoiceBox.getItems().addAll(
-        "Urban Development",
-        "Rural Empowerment",
-        "Healthcare Access",
-        "Environmental Sustainability",
-        "Education Reform"
-    );
+    @Override
+    public void initialize(URL url, ResourceBundle rb) {
+        areaChoiceBox.getItems().addAll(
+            "Urban Development",
+            "Rural Empowerment",
+            "Healthcare Access",
+            "Environmental Sustainability",
+            "Education Reform"
+        );
 
-    placeChoiceBox.getItems().addAll(
-        "Local Community Center",
-        "Public Hospital",
-        "City Park",
-        "School Campus",
-        "Wildlife Sanctuary"
-    );
+        placeChoiceBox.getItems().addAll(
+            "Local Community Center",
+            "Public Hospital",
+            "City Park",
+            "School Campus",
+            "Wildlife Sanctuary"
+        );
 
-    loadSavedData();
-}
+        loadSavedData();
+    }
 
     @FXML
     private void submitForm(ActionEvent event) {

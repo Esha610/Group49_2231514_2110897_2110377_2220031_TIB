@@ -7,5 +7,18 @@
 <?import javafx.scene.layout.*?>
 
 <AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Esha.UploadingresearchesController">
-    
+   
+    <children>
+        <VBox alignment="CENTER" prefHeight="300.0" prefWidth="400.0" spacing="10.0">
+            <Label text="Research Reports" />
+            <Button fx:id="uploadReportButton" text="Upload Report" onAction="#uploadReportClicked" />
+            <Label text="Upload Documents" />
+            <Button fx:id="uploadDocumentsButton" text="Upload Documents" onAction="#uploadDocumentsClicked" />
+            <Label text="Attach Evidence" />
+            <Button fx:id="attachPhotosButton" text="Attach Photos" onAction="#attachPhotosClicked" />
+            <Button fx:id="attachVideosButton" text="Attach Videos" onAction="#attachVideosClicked" />
+            <Button fx:id="submitButton" text="Submit" onAction="#submitClicked" />
+        </VBox>
+    </children>
 </AnchorPane>
+

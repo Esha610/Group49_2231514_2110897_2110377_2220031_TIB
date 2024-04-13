@@ -6,21 +6,49 @@ package Esha;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 
-/**
- * FXML Controller class
- *
- * @author mumta
- */
+
 public class UploadingresearchesController implements Initializable {
 
-    /**
-     * Initializes the controller class.
-     */
+    @FXML
+    private Button uploadReportButton;
+    @FXML
+    private Button uploadDocumentsButton;
+    @FXML
+    private Button attachPhotosButton;
+    @FXML
+    private Button attachVideosButton;
+    @FXML
+    private Button submitButton;
+
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
+
+    @FXML
+    private void uploadReportClicked(ActionEvent event) {
+    }
+
+    @FXML
+    private void uploadDocumentsClicked(ActionEvent event) {
+    }
+
+    @FXML
+    private void attachPhotosClicked(ActionEvent event) {
+    }
+
+    @FXML
+    private void attachVideosClicked(ActionEvent event) {
+    }
+
+    @FXML
+    private void submitClicked(ActionEvent event) {
+    }
     
 }

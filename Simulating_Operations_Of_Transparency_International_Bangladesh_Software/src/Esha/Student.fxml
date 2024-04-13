@@ -10,58 +10,58 @@
 <?import javafx.scene.text.Font?>
 
 <AnchorPane id="AnchorPane" prefHeight="739.0" prefWidth="569.0" style="-fx-background-color: grey;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Esha.StudentController">
-   <children>
-      <ScrollPane layoutX="-6.0" prefHeight="773.0" prefWidth="607.0">
-        <content>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="767.0" prefWidth="591.0">
-               <children>
-                  <VBox layoutX="139.0" layoutY="312.0" prefHeight="267.0" prefWidth="294.0">
-                     <children>
-                        <Button mnemonicParsing="false" onAction="#volunteerButtonOnClick" prefHeight="43.0" prefWidth="292.0" text="Volunteer">
-                           <font>
-                              <Font name="System Bold" size="18.0" />
-                           </font>
-                        </Button>
-                        <Button mnemonicParsing="false" onAction="#requestingMentorshipButtonOnClick" prefHeight="43.0" prefWidth="292.0" text="Requesting Mentorship">
-                           <font>
-                              <Font name="System Bold Italic" size="18.0" />
-                           </font>
-                        </Button>
-                        <Button mnemonicParsing="false" onAction="#reportingIncidentButtonOnClick" prefHeight="43.0" prefWidth="292.0" text="Reporting Incident">
-                           <font>
-                              <Font name="System Bold Italic" size="18.0" />
-                           </font>
-                        </Button>
-                        <Button mnemonicParsing="false" onAction="#TransferRequestsButtonOnClick" prefHeight="43.0" prefWidth="292.0" text="Workshop Registration">
-                           <font>
-                              <Font name="System Bold Italic" size="18.0" />
-                           </font>
-                        </Button>
-                        <Button mnemonicParsing="false" onAction="#sendingFeedbacksButtonOnClick" prefHeight="43.0" prefWidth="292.0" text="Sending Feedbacks">
-                           <font>
-                              <Font name="System Bold Italic" size="18.0" />
-                           </font>
-                        </Button>
-                        <Button fx:id="logout" mnemonicParsing="false" onAction="#LogoutButtonOnClick" prefHeight="50.0" prefWidth="292.0" style="-fx-background-color: black;" text="Logout" textFill="WHITE">
-                           <font>
-                              <Font name="System Bold Italic" size="23.0" />
-                           </font>
-                        </Button>
-                     </children>
-                  </VBox>
-                  <Label layoutX="186.0" layoutY="28.0" prefHeight="37.0" prefWidth="200.0" text="    Students" textFill="#f50606">
-                     <font>
-                        <Font name="MV Boli" size="21.0" />
-                     </font>
-                  </Label>
-                  <ImageView fitHeight="232.0" fitWidth="287.0" layoutX="141.0" layoutY="73.0">
-                     <image>
-                        <Image url="@../../../../Group49_2231514_2110897_2110377_2220031_TIB/Simulating_Operations_Of_Transparency_International_Bangladesh_Software/src/Esha/images/wired-gradient-955-demand.gif" />
-                     </image>
-                  </ImageView>
-               </children>
-            </AnchorPane>
-        </content>
-      </ScrollPane>
-   </children>
+    <children>
+        <ScrollPane layoutX="-6.0" prefHeight="773.0" prefWidth="607.0">
+            <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="767.0" prefWidth="591.0">
+                    <children>
+                        <VBox layoutX="139.0" layoutY="312.0" prefHeight="267.0" prefWidth="294.0">
+                            <children>
+                                <Button mnemonicParsing="false" onAction="#volunteerRegistrationButtonOnClick" prefHeight="43.0" prefWidth="292.0" text="Volunteer Registration">
+                                    <font>
+                                        <Font name="System Bold" size="18.0" />
+                                    </font>
+                                </Button>
+                                <Button mnemonicParsing="false" onAction="#requestingMentorshipButtonOnClick" prefHeight="43.0" prefWidth="292.0" text="Requesting Mentorship">
+                                    <font>
+                                        <Font name="System Bold Italic" size="18.0" />
+                                    </font>
+                                </Button>
+                                <Button mnemonicParsing="false" onAction="#reportingCorruptionButtonOnClick" prefHeight="43.0" prefWidth="292.0" text="Reporting Corruption">
+                                    <font>
+                                        <Font name="System Bold Italic" size="18.0" />
+                                    </font>
+                                </Button>
+                                <Button mnemonicParsing="false" onAction="#workshopRegistartionButtonOnClick" prefHeight="43.0" prefWidth="292.0" text="Workshop Registration">
+                                    <font>
+                                        <Font name="System Bold Italic" size="18.0" />
+                                    </font>
+                                </Button>
+                                <Button mnemonicParsing="false" onAction="#contactUsButtonOnClick" prefHeight="43.0" prefWidth="292.0" text="Contact us">
+                                    <font>
+                                        <Font name="System Bold Italic" size="18.0" />
+                                    </font>
+                                </Button>
+                                <Button fx:id="logout" mnemonicParsing="false" onAction="#logOut" prefHeight="50.0" prefWidth="292.0" style="-fx-background-color: black;" text="Logout" textFill="WHITE">
+                                    <font>
+                                        <Font name="System Bold Italic" size="23.0" />
+                                    </font>
+                                </Button>
+                            </children>
+                        </VBox>
+                        <Label layoutX="186.0" layoutY="28.0" prefHeight="37.0" prefWidth="200.0" text="    Students" textFill="#f50606">
+                            <font>
+                                <Font name="MV Boli" size="21.0" />
+                            </font>
+                        </Label>
+                        <ImageView fitHeight="232.0" fitWidth="287.0" layoutX="141.0" layoutY="73.0">
+                            <image>
+                                <Image url="@../../../../Group49_2231514_2110897_2110377_2220031_TIB/Simulating_Operations_Of_Transparency_International_Bangladesh_Software/src/Esha/images/wired-gradient-955-demand.gif" />
+                            </image>
+                        </ImageView>
+                    </children>
+                </AnchorPane>
+            </content>
+        </ScrollPane>
+    </children>
 </AnchorPane>
