@@ -37,7 +37,7 @@
                               <Font name="System Bold Italic" size="18.0" />
                            </font>
                         </Button>
-                        <Button mnemonicParsing="false" onAction="#BudgetandControlButtonOnClick" prefHeight="43.0" prefWidth="292.0" text="BudgetandControl">
+                        <Button mnemonicParsing="false" onAction="#BudgetandControlButtonOnClick" prefHeight="43.0" prefWidth="292.0" text="AddBudgetandControl">
                            <font>
                               <Font name="System Bold Italic" size="18.0" />
                            </font>

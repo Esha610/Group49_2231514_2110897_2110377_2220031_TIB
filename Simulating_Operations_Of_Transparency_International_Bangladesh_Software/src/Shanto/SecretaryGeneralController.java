@@ -83,6 +83,13 @@ public class SecretaryGeneralController implements Initializable {
         loadScene("/Shanto/RiskManagement.fxml", event);
     }
     
+    @FXML
+    private void BudgetandControlButtonOnClick(ActionEvent event) {
+        
+        loadScene("/Shanto/ViewBudgetandControl.fxml", event);        
+   
+    }
+    
     //---------------------------------------------------------------------------------------------------------------
     
     
@@ -98,5 +105,6 @@ public class SecretaryGeneralController implements Initializable {
             e.printStackTrace();
         }
     }
-    
+
+
 }

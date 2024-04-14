@@ -61,7 +61,7 @@ public class ExecutiveDirectorController implements Initializable {
     @FXML
     private void BudgetandControlButtonOnClick(ActionEvent event) {
         
-        loadScene("/Shanto/BudgetandControl.fxml", event);        
+        loadScene("/Shanto/AddBudgetandControl.fxml", event);        
    
     }
 
