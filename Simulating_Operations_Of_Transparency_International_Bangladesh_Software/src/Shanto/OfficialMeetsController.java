@@ -83,30 +83,30 @@ public class OfficialMeetsController {
         showAlert(Alert.AlertType.INFORMATION, "Success", "Official meet added successfully.");
     }
 
-@FXML
-private void viewAllMeetings(ActionEvent event) {
-    officialMeetsTableView.getItems().clear();
+    @FXML
+    private void viewAllMeetings(ActionEvent event) {
+        officialMeetsTableView.getItems().clear();
 
 
-    List<OfficialMeet> meetings = loadData();
+        List<OfficialMeet> meetings = loadData();
 
-    if (meetings == null || meetings.isEmpty()) {
-      
-        meetings = new ArrayList<>();
-        meetings.add(new OfficialMeet("Weekly Team Standup", "09:00 AM", "2024-04-15", "Conference Room A"));
-        meetings.add(new OfficialMeet("Project Kickoff Meeting", "10:30 AM", "2024-04-16", "Boardroom"));
-        meetings.add(new OfficialMeet("Client Presentation", "02:00 PM", "2024-04-18", "Client Office"));
-        meetings.add(new OfficialMeet("Budget Review Meeting", "11:00 AM", "2024-04-19", "Meeting Room 2"));
-        meetings.add(new OfficialMeet("Monthly Performance Review", "03:00 PM", "2024-04-20", "HR Office"));
-        meetings.add(new OfficialMeet("Executive Board Meeting", "10:00 AM", "2024-04-22", "Executive Office"));
-        meetings.add(new OfficialMeet("Project Status Update", "01:30 PM", "2024-04-23", "Team Collaboration Area"));
-        meetings.add(new OfficialMeet("Strategic Planning Session", "09:30 AM", "2024-04-25", "Strategy Room"));
-        meetings.add(new OfficialMeet("Departmental All-Hands Meeting", "11:30 AM", "2024-04-27", "Auditorium"));
-        meetings.add(new OfficialMeet("Training Workshop", "02:30 PM", "2024-04-29", "Training Center"));
+        if (meetings == null || meetings.isEmpty()) {
 
+            meetings = new ArrayList<>();
+            meetings.add(new OfficialMeet("Weekly Team Standup", "09:00 AM", "2024-04-15", "Conference Room A"));
+            meetings.add(new OfficialMeet("Project Kickoff Meeting", "10:30 AM", "2024-04-16", "Boardroom"));
+            meetings.add(new OfficialMeet("Client Presentation", "02:00 PM", "2024-04-18", "Client Office"));
+            meetings.add(new OfficialMeet("Budget Review Meeting", "11:00 AM", "2024-04-19", "Meeting Room 2"));
+            meetings.add(new OfficialMeet("Monthly Performance Review", "03:00 PM", "2024-04-20", "HR Office"));
+            meetings.add(new OfficialMeet("Executive Board Meeting", "10:00 AM", "2024-04-22", "Executive Office"));
+            meetings.add(new OfficialMeet("Project Status Update", "01:30 PM", "2024-04-23", "Team Collaboration Area"));
+            meetings.add(new OfficialMeet("Strategic Planning Session", "09:30 AM", "2024-04-25", "Strategy Room"));
+            meetings.add(new OfficialMeet("Departmental All-Hands Meeting", "11:30 AM", "2024-04-27", "Auditorium"));
+            meetings.add(new OfficialMeet("Training Workshop", "02:30 PM", "2024-04-29", "Training Center"));
+
+        }
+        officialMeetsTableView.getItems().addAll(meetings);
     }
-    officialMeetsTableView.getItems().addAll(meetings);
-}
 
 
     private void saveData() {
