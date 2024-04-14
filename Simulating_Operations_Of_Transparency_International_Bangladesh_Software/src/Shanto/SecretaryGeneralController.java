@@ -90,6 +90,14 @@ public class SecretaryGeneralController implements Initializable {
    
     }
     
+    @FXML
+    private void addResourceMobilizationOnClick(ActionEvent event) {
+        
+        loadScene("/Shanto/AddResourceMobilization.fxml", event);    
+    }
+
+
+    
     //---------------------------------------------------------------------------------------------------------------
     
     

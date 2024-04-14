@@ -18,6 +18,17 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javafx.application.Platform;
 
+
+//===================================================Extraa=======================================================================
+
+
+
+
+
+
+
+
+
 public class BudgetAndControlController implements Initializable {
 
     @FXML

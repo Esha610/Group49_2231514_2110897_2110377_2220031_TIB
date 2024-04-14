@@ -56,4 +56,6 @@
          </VBox>
      </items>
    </SplitPane>
+   <Button layoutX="1071.0" layoutY="822.0" onAction="#logout" text="Logout" />
+   <Button layoutX="1014.0" layoutY="822.0" onAction="#goBack" prefHeight="25.0" prefWidth="50.0" text="Back" />
 </AnchorPane>

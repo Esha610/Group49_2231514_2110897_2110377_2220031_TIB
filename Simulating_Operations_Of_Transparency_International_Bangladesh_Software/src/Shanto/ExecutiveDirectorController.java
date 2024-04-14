@@ -68,11 +68,10 @@ public class ExecutiveDirectorController implements Initializable {
     @FXML
     private void TeamBuildingandDevelopmentButtonOnClick(ActionEvent event) {
         
-        loadScene("/Shanto/TeamBuildingandDevelopment.fxml", event);        
+        loadScene("/Shanto/TeamBuilding.fxml", event);        
     
     }
 
-    @FXML
     private void ResourceMobilizationOnClick(ActionEvent event) {
         
         loadScene("/Shanto/ResourceMobilization.fxml", event);        
@@ -86,6 +85,14 @@ public class ExecutiveDirectorController implements Initializable {
         loadScene("/Shanto/OfficialMeets.fxml", event);        
        
     }
+    
+    @FXML
+    private void viewResourceMobilizationOnClick(ActionEvent event) {
+        
+        loadScene("/Shanto/ViewResourceMobilization.fxml", event);    
+        
+    }
+        
     
     //---------------------------------------------------------------------------------------------------------------
     
@@ -102,6 +109,7 @@ public class ExecutiveDirectorController implements Initializable {
             e.printStackTrace();
         }
     }
-    
+
+
     
 }

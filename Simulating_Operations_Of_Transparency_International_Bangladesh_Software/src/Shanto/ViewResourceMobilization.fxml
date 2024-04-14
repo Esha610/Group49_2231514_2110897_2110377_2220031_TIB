@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="774.0" prefWidth="804.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Shanto.ViewResourceMobilizationController">
+
+    <!-- Header -->
+    <VBox layoutX="10.0" layoutY="10.0" spacing="10.0" />
+
+    <!-- Navigation Bar -->
+    <MenuBar prefHeight="25.0" prefWidth="54.0">
+        <Menu text="File">
+            <MenuItem onAction="#exitApplication" text="Exit" />
+        </Menu>
+    </MenuBar>
+
+    <!-- Content Area -->
+    <SplitPane dividerPositions="0.5" layoutX="10.0" layoutY="105.0" prefHeight="579.0" prefWidth="780.0">
+        <!-- Resource List -->
+        <VBox style="-fx-background-color: lightgray;">
+            <Label style="-fx-font-size: 18px; -fx-font-weight: bold;" text="Resources" />
+            <ListView fx:id="resourceListView" prefHeight="614.0" prefWidth="386.0" />
+            <Button layoutX="10.0" layoutY="337.0" onAction="#viewAllResources" text="View All Resources" />
+        </VBox>
+
+        <!-- Donor List -->
+        <VBox style="-fx-background-color: lightgray;">
+            <Label style="-fx-font-size: 18px; -fx-font-weight: bold;" text="Donors" />
+            <ListView fx:id="donorListView" prefHeight="616.0" prefWidth="386.0" />
+            <Button layoutX="10.0" layoutY="337.0" onAction="#viewAllDonors" text="View All Donors" />
+        </VBox>
+    </SplitPane>
+    <Label layoutX="15.0" layoutY="69.0" style="-fx-font-size: 24px; -fx-font-weight: bold;" text="Resource Mobilization" />
+    <Label layoutX="14.0" layoutY="52.0" text="Welcome to the Resource Mobilization Platform" />
+    <Button layoutX="736.0" layoutY="730.0" onAction="#logout" text="Logout" />
+    <Button layoutX="679.0" layoutY="730.0" onAction="#goBack" prefHeight="25.0" prefWidth="50.0" text="Back" />
+</AnchorPane>

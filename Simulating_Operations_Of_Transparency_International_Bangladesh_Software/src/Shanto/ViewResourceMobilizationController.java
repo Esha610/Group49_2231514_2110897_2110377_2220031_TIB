@@ -1,6 +1,11 @@
 package Shanto;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
@@ -15,42 +20,31 @@ import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ListView;
-import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 
-//===================================================Extraa=======================================================================
 
-
-
-
-
-
-
-
-
-public class ResourceMobilizationController implements Initializable {
+public class ViewResourceMobilizationController implements Initializable {
 
     @FXML    private ListView<String> resourceListView;
     @FXML    private ListView<String> donorListView;
-    @FXML    private TextField newResourceNameField;
-    @FXML    private TextField newDonorNameField;
 
     private ObservableList<String> resources = FXCollections.observableArrayList();
     private ObservableList<String> donors = FXCollections.observableArrayList();
-
-    private programDescriptions resourceDescriptions = new programDescriptions();
-
+    private static final String FILE_PATH = "Resource_data.ser";
+    
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         resourceListView.setItems(resources);
         donorListView.setItems(donors);
-    }
+        loadSavedData();
+    }    
 
     @FXML
     private void exitApplication(ActionEvent event) {
-        Platform.exit();
+         Platform.exit();
     }
 
     @FXML
@@ -67,23 +61,11 @@ public class ResourceMobilizationController implements Initializable {
         allResources.add("Emergency Relief Kits for Disaster Response");
         allResources.add("Job Skills Training Programs");
         resources.setAll(allResources);
+        saveData();
     }
 
-
-    @FXML
-    private void addNewResource(ActionEvent event) {
-        String newResourceName = newResourceNameField.getText();
-
-        if (!newResourceName.isEmpty()) {
-            resources.add(newResourceName);
-            newResourceNameField.clear();
-        } else {
-            showAlert(Alert.AlertType.ERROR, "Error", "Please enter a resource name..");
-            
-        }
-    }
-
-    @FXML
+    
+        @FXML
     private void viewAllDonors(ActionEvent event) {
         ArrayList<String> allDonors = new ArrayList<>();
         allDonors.add("BRAC - Sir Fazle Hasan Abed");
@@ -97,20 +79,12 @@ public class ResourceMobilizationController implements Initializable {
         allDonors.add("Oxfam");
         allDonors.add("Save the Children");
         donors.setAll(allDonors);
+        saveData();
     }
+    
+    
+    
 
-    @FXML
-    private void addNewDonor(ActionEvent event) {
-        String newDonorName = newDonorNameField.getText();
-
-        if (!newDonorName.isEmpty()) {
-            donors.add(newDonorName);
-            newDonorNameField.clear();
-        } else {
-            showAlert(Alert.AlertType.ERROR, "Error", "Please enter a donor name.");
-            
-        }
-    }
 
     @FXML
     private void logout(ActionEvent event) {
@@ -143,4 +117,31 @@ public class ResourceMobilizationController implements Initializable {
         alert.setContentText(message);
         alert.showAndWait();
     }
+    
+    
+        private void saveData() {
+        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(FILE_PATH))) {
+            oos.writeObject(new ArrayList<>(resources));
+            oos.writeObject(new ArrayList<>(donors));
+            System.out.println("Data saved successfully.");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void loadSavedData() {
+        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(FILE_PATH))) {
+            ArrayList<String> savedResources = (ArrayList<String>) ois.readObject();
+            ArrayList<String> savedDonors = (ArrayList<String>) ois.readObject();
+            resources.setAll(savedResources);
+            donors.setAll(savedDonors);
+            System.out.println("Data loaded successfully.");
+        } catch (FileNotFoundException e) {
+            System.out.println("No saved data found.");
+        } catch (IOException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+    
+    
 }

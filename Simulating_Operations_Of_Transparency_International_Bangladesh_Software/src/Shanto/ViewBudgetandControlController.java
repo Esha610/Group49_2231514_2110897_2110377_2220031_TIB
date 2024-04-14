@@ -89,7 +89,7 @@ public class ViewBudgetandControlController implements Initializable {
 
     @FXML
     private void goBack(ActionEvent event) {
-        loadScene("/Shanto/ExecutiveDirector.fxml", event);
+        loadScene("/Shanto/SecretaryGeneral.fxml", event);
     }
 
     private void loadScene(String fxmlFile, ActionEvent event) {
