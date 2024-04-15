@@ -37,12 +37,12 @@ public class ResearcherController implements Initializable {
 
     @FXML
     private void hostingWorkshopsButtonOnClick(ActionEvent event) {
-        loadScene("/Esha/hostingworkshops.fxml", event);
+        loadScene("/Esha/Hostingworkshops.fxml", event);
     }
 
     @FXML
     private void evaluationOfWorkshopsButtonOnClick(ActionEvent event) {
-        loadScene("/Esha/evaluationofworkshops.fxml", event);
+        loadScene("/Esha/Evaluationofworkshops.fxml", event);
     }
     
 
@@ -55,7 +55,7 @@ public class ResearcherController implements Initializable {
     
     @FXML
     private void menteesButtonOnClick(ActionEvent event) {
-        loadScene("/Esha/mentees.fxml", event);
+        loadScene("/Esha/Mentees.fxml", event);
     }
     
     
