@@ -16,5 +16,6 @@
          </cursor>
       </Button>
       <Button layoutX="196.0" layoutY="74.0" mnemonicParsing="false" onAction="#TransparencyReports" prefHeight="137.0" prefWidth="191.0" text="Transparency Reports" />
+      <Button layoutX="196.0" layoutY="224.0" mnemonicParsing="false" onAction="#AdvocacyCampaigns" prefHeight="137.0" prefWidth="191.0" text="Advocacy Campaigns" />
    </children>
 </AnchorPane>

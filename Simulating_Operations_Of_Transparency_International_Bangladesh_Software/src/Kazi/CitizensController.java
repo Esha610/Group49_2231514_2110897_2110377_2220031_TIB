@@ -1,4 +1,3 @@
-
 package Kazi;
 
 import java.io.IOException;
@@ -14,22 +13,16 @@ import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
-/**
- * FXML Controller class
- *
- * @author mumta
- */
+
 public class CitizensController implements Initializable {
 
     @FXML
     private Button logout;
 
-    /**
-     * Initializes the controller class.
-     */
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+       
     }    
 
     @FXML
@@ -40,10 +33,16 @@ public class CitizensController implements Initializable {
     @FXML
     private void TransparencyReports(ActionEvent event) {
         
-    loadScene("/Kazi/TransparencyReports.fxml", event);
+        loadScene("/Kazi/TransparencyReports.fxml", event);
     }
     
-    
+    @FXML
+    private void AdvocacyCampaigns(ActionEvent event) {
+        
+        loadScene("/Kazi/AdvocacyCampaigns.fxml", event);
+
+        
+    }
         
         private void loadScene(String fxmlFile, ActionEvent event) {
         FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlFile));
@@ -57,5 +56,7 @@ public class CitizensController implements Initializable {
             e.printStackTrace();
         }
     }
+
+
     
 }

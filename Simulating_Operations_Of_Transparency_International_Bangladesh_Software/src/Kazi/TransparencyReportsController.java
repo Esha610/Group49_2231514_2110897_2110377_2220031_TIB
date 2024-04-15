@@ -130,7 +130,7 @@ public void initialize(URL url, ResourceBundle rb) {
     @FXML
     private void goBack(ActionEvent event) {
 
-            loadScene("/Kazi/Citizens.fxml", event);
+            loadScene("/Kazi/Citizen.fxml", event);
     }
     
     
