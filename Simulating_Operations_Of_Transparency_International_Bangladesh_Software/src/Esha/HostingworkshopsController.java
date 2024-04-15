@@ -33,17 +33,36 @@ public class HostingworkshopsController implements Initializable {
     @FXML
     private TextField topicTextField;
     @FXML
-    private ChoiceBox<?> locationChoiceBox;
+    private ChoiceBox<String> locationChoiceBox;
     @FXML
     private TextField topicTextField1;
+    
+    
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-       
-    }    
+        // Initialize the location choice box with sample locations
+        locationChoiceBox.getItems().addAll(
+            "Meeting Room 1",
+            "Meeting Room 2",
+            "Conference Hall A",
+            "Conference Hall B",
+            "Online"
+        );
+    }
+   
 
     @FXML
     private void submitForm(ActionEvent event) {
+        // Add code to handle form submission
+        String topic = topicTextField.getText();
+        String location = locationChoiceBox.getValue().toString();
+        String format = virtualRadioButton.isSelected() ? "Virtual" : "In-Person";
+        
+        // Example: Print the submitted data
+        System.out.println("Topic: " + topic);
+        System.out.println("Location: " + location);
+        System.out.println("Format: " + format);
     }
 
     @FXML
@@ -70,6 +89,8 @@ public class HostingworkshopsController implements Initializable {
 
     @FXML
     private void logOut(ActionEvent event) {
+        loadScene("/mainpkg/LoginSc.fxml", event);
+
     }
     
 }
