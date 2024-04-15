@@ -110,6 +110,11 @@ public class ExecutiveDirectorController implements Initializable {
         }
     }
 
+    @FXML
+    private void addQualityAssuranceButtonOnClick(ActionEvent event) {
+               loadScene("/Shanto/AddQualityAssurance.fxml", event);
+    }
+
 
     
 }

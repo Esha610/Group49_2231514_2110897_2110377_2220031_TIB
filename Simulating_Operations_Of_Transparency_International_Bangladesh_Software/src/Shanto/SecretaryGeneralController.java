@@ -41,9 +41,9 @@ public class SecretaryGeneralController implements Initializable {
     }
 
     @FXML
-    private void QualityAssuranceButtonOnClick(ActionEvent event) {
+    private void viewQualityAssuranceButtonOnClick(ActionEvent event) {
         
-        loadScene("/Shanto/QualityAssurance.fxml", event);
+        loadScene("/Shanto/ViewQualityAssurance.fxml", event);
     }
 
     @FXML

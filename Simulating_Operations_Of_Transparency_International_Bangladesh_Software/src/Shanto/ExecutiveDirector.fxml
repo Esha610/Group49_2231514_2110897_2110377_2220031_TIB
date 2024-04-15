@@ -17,42 +17,47 @@
                <children>
                   <VBox layoutX="139.0" layoutY="312.0" prefHeight="412.0" prefWidth="363.0">
                      <children>
-                        <Button mnemonicParsing="false" onAction="#StakeholderEngagementButtonOnClick" prefHeight="43.0" prefWidth="292.0" text="StakeholderEngagement">
+                        <Button mnemonicParsing="false" onAction="#StakeholderEngagementButtonOnClick" prefHeight="43.0" prefWidth="292.0" text="Stakeholder Engagement">
                            <font>
                               <Font name="System Bold" size="18.0" />
                            </font>
                         </Button>
-                        <Button mnemonicParsing="false" onAction="#SocialEventsSheduleButtonOnClick" prefHeight="43.0" prefWidth="292.0" text="SocialEventsSchedule">
+                        <Button mnemonicParsing="false" onAction="#SocialEventsSheduleButtonOnClick" prefHeight="43.0" prefWidth="292.0" text="Social Events Schedule">
                            <font>
                               <Font name="System Bold Italic" size="18.0" />
                            </font>
                         </Button>
-                        <Button mnemonicParsing="false" onAction="#NewrecruitmentButtonOnClick" prefHeight="43.0" prefWidth="292.0" text="Newrecruitment">
+                        <Button mnemonicParsing="false" onAction="#NewrecruitmentButtonOnClick" prefHeight="43.0" prefWidth="292.0" text="New recruitment">
                            <font>
                               <Font name="System Bold Italic" size="18.0" />
                            </font>
                         </Button>
-                        <Button mnemonicParsing="false" onAction="#TransferRequestsButtonOnClick" prefHeight="43.0" prefWidth="292.0" text="TransferRequests">
+                        <Button mnemonicParsing="false" onAction="#TransferRequestsButtonOnClick" prefHeight="43.0" prefWidth="292.0" text="Transfer Requests">
                            <font>
                               <Font name="System Bold Italic" size="18.0" />
                            </font>
                         </Button>
-                        <Button mnemonicParsing="false" onAction="#BudgetandControlButtonOnClick" prefHeight="43.0" prefWidth="292.0" text="AddBudgetandControl">
+                        <Button mnemonicParsing="false" onAction="#BudgetandControlButtonOnClick" prefHeight="43.0" prefWidth="292.0" text="Add Budget and Control">
                            <font>
                               <Font name="System Bold Italic" size="18.0" />
                            </font>
                         </Button>
-                        <Button mnemonicParsing="false" onAction="#TeamBuildingandDevelopmentButtonOnClick" prefHeight="43.0" prefWidth="292.0" text="TeamBuilding">
+                        <Button mnemonicParsing="false" onAction="#TeamBuildingandDevelopmentButtonOnClick" prefHeight="43.0" prefWidth="292.0" text="Team Building">
                            <font>
                               <Font name="System Bold Italic" size="18.0" />
                            </font>
                         </Button>
-                        <Button mnemonicParsing="false" onAction="#viewResourceMobilizationOnClick" prefHeight="43.0" prefWidth="292.0" text="ViewResourceMobilization">
+                        <Button mnemonicParsing="false" onAction="#viewResourceMobilizationOnClick" prefHeight="43.0" prefWidth="292.0" text="View Resource Mobilization">
                            <font>
                               <Font name="System Bold Italic" size="18.0" />
                            </font>
                         </Button>
-                        <Button mnemonicParsing="false" onAction="#OfficialMeetsButtonOnClick" prefHeight="43.0" prefWidth="292.0" text="OfficialMeets">
+                        <Button mnemonicParsing="false" onAction="#OfficialMeetsButtonOnClick" prefHeight="43.0" prefWidth="292.0" text="Official Meets">
+                           <font>
+                              <Font name="System Bold Italic" size="18.0" />
+                           </font>
+                        </Button>
+                        <Button layoutX="10.0" layoutY="311.0" mnemonicParsing="false" onAction="#addQualityAssuranceButtonOnClick" prefHeight="43.0" prefWidth="292.0" text="Add Quality Assurance">
                            <font>
                               <Font name="System Bold Italic" size="18.0" />
                            </font>

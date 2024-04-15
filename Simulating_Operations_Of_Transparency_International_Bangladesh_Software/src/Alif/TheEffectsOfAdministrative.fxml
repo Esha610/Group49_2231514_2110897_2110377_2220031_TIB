@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="571.0" prefWidth="731.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Alif.TheEffectsOfAdministrativeController">
+   <children>
+      <Label layoutX="168.0" layoutY="14.0" text="Welcome To TIB" underline="true">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+      <Label layoutX="55.0" layoutY="80.0" text="The Effects of Administrative" textFill="#400bff">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Button fx:id="currentAdministrativeProcesses" layoutX="55.0" layoutY="113.0" mnemonicParsing="false" onAction="#currentAdministrativeProcessesButtonMouseOnClicked" text="Current Administrative Processes" />
+      <Button fx:id="areasforImprovement" layoutX="55.0" layoutY="154.0" mnemonicParsing="false" onAction="#areasforImprovementButtonMouseOnClicked" prefHeight="25.0" prefWidth="190.0" text="Areas for Improvement" />
+      <Button fx:id="technologicalSupport" layoutX="55.0" layoutY="200.0" mnemonicParsing="false" onAction="#technologicalSupportButtonMouseOnClicked" prefHeight="25.0" prefWidth="190.0" text="Technological Support" />
+      <Label layoutX="55.0" layoutY="269.0" text="Contact List of The Departments:" />
+      <TextField fx:id="contactListofTheDepartments" layoutX="239.0" layoutY="265.0" />
+      <TableView fx:id="listOfDepartments" layoutX="50.0" layoutY="311.0" prefHeight="200.0" prefWidth="388.0">
+        <columns>
+          <TableColumn fx:id="nameOfTheDepartmentsTC" prefWidth="195.66668701171875" text="Name Of The Departments" />
+            <TableColumn fx:id="emailTC" prefWidth="191.0" text="Emails" />
+        </columns>
+      </TableView>
+      <Button fx:id="communicate" layoutX="463.0" layoutY="435.0" mnemonicParsing="false" onAction="#communicateButtonMouseOnClicked" prefHeight="25.0" prefWidth="107.0" text="Communicate" />
+      <Button fx:id="okay" layoutX="463.0" layoutY="467.0" mnemonicParsing="false" onAction="#OkayButtonMouseOnClicked" prefHeight="25.0" prefWidth="107.0" text="Okay" />
+      <Label layoutX="410.0" layoutY="269.0" text="Email: " />
+      <TextField fx:id="email" layoutX="445.0" layoutY="265.0" prefHeight="25.0" prefWidth="189.0" />
+   </children>
+</AnchorPane>

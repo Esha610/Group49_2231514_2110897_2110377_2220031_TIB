@@ -1,7 +1,12 @@
 
 package Shanto;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
@@ -16,55 +21,35 @@ import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ListView;
-import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 
-//===================================================Extraa=======================================================================
+public class ViewQualityAssuranceController implements Initializable {
 
+    @FXML
+    private ListView<String> assessmentView;
+    @FXML
+    private ListView<String> improvementView;
 
-
-
-
-
-
-
-
-
-public class QualityAssuranceController implements Initializable {
-
-    @FXML    private ListView<String> assessmentView;
-    @FXML    private TextField assessmentTextField;
-    @FXML    private ListView<String> improvementView;
-    @FXML    private TextField solutionsTextField;
-
- 
     private ObservableList<String> assessmentData = FXCollections.observableArrayList();
     private ObservableList<String> solutionsData = FXCollections.observableArrayList();
 
+    private static final String FILE_PATH = "qualityAssurance_data.ser";    
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         assessmentView.setItems(assessmentData);
         improvementView.setItems(solutionsData);
-    }      
-
+        loadSavedData();
+    }   
+    
     @FXML
     private void exitApplication(ActionEvent event) {
           Platform.exit();
     }
 
-    @FXML
-    private void newAssessment(ActionEvent event) {
-        String newAssessment = assessmentTextField.getText();
-        if (!newAssessment.isEmpty()) {
-            assessmentData.add(newAssessment);
-            assessmentTextField.clear();
-        } else {
-            showAlert("Error", "Please enter a description for the new assessment.");
-        }        
-    }    
-    
+
     @FXML
     private void viewAssessmentResults(ActionEvent event) {
         ArrayList<String> allAssessments = new ArrayList<>();
@@ -78,7 +63,9 @@ public class QualityAssuranceController implements Initializable {
         allAssessments.add("Problem 8 - Cybersecurity Vulnerabilities");
         allAssessments.add("Problem 9 - Poor Marketing Campaign Performance");
         allAssessments.add("Problem 10 - Environmental Sustainability Concerns");
-        assessmentData.setAll(allAssessments);        
+        assessmentData.setAll(allAssessments); 
+        saveData();
+
     }
     @FXML
     private void viewImplementSolutions(ActionEvent event) {
@@ -122,29 +109,12 @@ public class QualityAssuranceController implements Initializable {
         allSolutions.add("Solution 1 (Problem 10)- Implementing Recycling and Waste Reduction Initiatives in Operations ");
         allSolutions.add("Solution 2 (Problem 10)- Investing in Renewable Energy Sources for Operations");
         allSolutions.add("Solution 3 (Problem 10)- Partnering with Environmental Organizations for Sustainability Programs ");
-        solutionsData.setAll(allSolutions);        
-    }
-
-    @FXML
-    private void newImplementation(ActionEvent event) {
-         String newSolution = solutionsTextField.getText();
-        if (!newSolution.isEmpty()) {
-            solutionsData.add(newSolution);
-            solutionsTextField.clear();
-        } else {
-            showAlert("Error", "Please enter a solution.");
-        }       
+        solutionsData.setAll(allSolutions);  
+        saveData();
     }
     
-    private void showAlert(String title, String message) {
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle(title);
-        alert.setHeaderText(null);
-        alert.setContentText(message);
-        alert.showAndWait();
-    }    
     
-
+    
     @FXML
     private void logout(ActionEvent event) {
         loadScene("/mainpkg/LoginSc.fxml", event);
@@ -168,6 +138,47 @@ public class QualityAssuranceController implements Initializable {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }  
+    
+    
+    
+    private void showAlert(String title, String message) {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle(title);
+        alert.setHeaderText(null);
+        alert.setContentText(message);
+        alert.showAndWait();
     }    
+    
+    
+            private void saveData() {
+        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(FILE_PATH))) {
+            oos.writeObject(new ArrayList<>(assessmentData));
+            oos.writeObject(new ArrayList<>(solutionsData));
+            System.out.println("Data saved successfully.");
+        } catch (IOException e) {
+            e.printStackTrace();
+            showAlert("Error", "Failed to save data.");
+        }
+    }
+        
+        
+            private void loadSavedData() {
+        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(FILE_PATH))) {
+            ArrayList<String> savedAssessment = (ArrayList<String>) ois.readObject();
+            ArrayList<String> savedSolutions = (ArrayList<String>) ois.readObject();
+            assessmentData.setAll(savedAssessment);
+            solutionsData.setAll(savedSolutions);
+            System.out.println("Data loaded successfully.");
+        } catch (FileNotFoundException e) {
+            System.out.println("No saved data found.");
+        } catch (IOException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+    
+    
+    
+    
     
 }

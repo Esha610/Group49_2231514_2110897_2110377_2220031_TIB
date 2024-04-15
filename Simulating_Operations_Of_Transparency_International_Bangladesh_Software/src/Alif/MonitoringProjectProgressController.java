@@ -10,16 +10,31 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.CheckBox;
 
 /**
  * FXML Controller class
  *
- * @author mumta
+ * @author asifk
  */
-public class ProgramManagerrController implements Initializable {
+public class MonitoringProjectProgressController implements Initializable {
 
     @FXML
-    private Button logout;
+    private CheckBox placeAvailableCB;
+    @FXML
+    private CheckBox approvedByHRCB;
+    @FXML
+    private CheckBox approvedByFmCB;
+    @FXML
+    private CheckBox milestoneAchivedCB;
+    @FXML
+    private CheckBox budgetOnTrackCB;
+    @FXML
+    private CheckBox scheduleMetCB;
+    @FXML
+    private CheckBox deliverablesCompletedCB;
+    @FXML
+    private Button doneProject;
 
     /**
      * Initializes the controller class.
@@ -30,7 +45,7 @@ public class ProgramManagerrController implements Initializable {
     }    
 
     @FXML
-    private void LogoutButtonOnClick(ActionEvent event) {
+    private void doneProjectButtonMouseOnClicked(ActionEvent event) {
     }
     
 }

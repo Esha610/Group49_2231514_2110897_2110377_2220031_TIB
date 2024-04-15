@@ -19,28 +19,30 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Scene;
+import javafx.scene.chart.PieChart;
 import javafx.scene.control.ListView;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 public class ViewBudgetandControlController implements Initializable {
 
-    @FXML
-    private ListView<Budget> budgetListView;
-    @FXML
-    private ListView<Expense> expenseListView;
+    @FXML    private ListView<Budget> budgetListView;
+    @FXML    private ListView<Expense> expenseListView;
+    @FXML    private PieChart budgetPieChart;
 
     private ObservableList<Budget> budgetItems = FXCollections.observableArrayList();
     private ObservableList<Expense> expenseItems = FXCollections.observableArrayList();
 
     private static final String FILE_PATH = "budget_data.ser";
+
     
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-         budgetListView.setItems(budgetItems);
+        budgetListView.setItems(budgetItems);
         expenseListView.setItems(expenseItems);
         loadSavedData();
+        updatePieChart();
     }    
 
     @FXML
@@ -129,5 +131,23 @@ public class ViewBudgetandControlController implements Initializable {
         }
     }
     
+    
+    @FXML
+    private void generatePiChartOnCLick(ActionEvent event) {
+         updatePieChart();
+        
+    }
+
+        private void updatePieChart() {
+        double totalBudget = budgetItems.stream().mapToDouble(Budget::getAmount).sum();
+        double totalExpenses = expenseItems.stream().mapToDouble(Expense::getAmount).sum();
+
+        PieChart.Data budgetData = new PieChart.Data("Total Budget", totalBudget);
+        PieChart.Data expensesData = new PieChart.Data("Total Expenses", totalExpenses);
+
+        budgetPieChart.setData(FXCollections.observableArrayList(budgetData, expensesData));
+    }
+
+
 }
 

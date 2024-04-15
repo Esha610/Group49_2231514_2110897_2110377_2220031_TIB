@@ -10,16 +10,23 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
 
 /**
  * FXML Controller class
  *
- * @author mumta
+ * @author asifk
  */
-public class FinanceAndAdministrationManagerrController implements Initializable {
+public class ProgramManagementController implements Initializable {
 
     @FXML
-    private Button logout;
+    private Button projectSummary;
+    @FXML
+    private Button taskList;
+    @FXML
+    private Button completedWork;
+    @FXML
+    private TextField searchTF;
 
     /**
      * Initializes the controller class.
@@ -30,7 +37,15 @@ public class FinanceAndAdministrationManagerrController implements Initializable
     }    
 
     @FXML
-    private void LogoutButtonOnClick(ActionEvent event) {
+    private void projectSummaryButtonMouseOnClicked(ActionEvent event) {
+    }
+
+    @FXML
+    private void taskListButtonMouseOnClicked(ActionEvent event) {
+    }
+
+    @FXML
+    private void completedWorkButtonMouseOnClicked(ActionEvent event) {
     }
     
 }
