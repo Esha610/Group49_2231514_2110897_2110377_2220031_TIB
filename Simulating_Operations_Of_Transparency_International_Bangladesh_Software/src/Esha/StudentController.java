@@ -85,6 +85,8 @@ public class StudentController implements Initializable {
 
     @FXML
     private void requestingMentorshipButtonOnClick(ActionEvent event) {
+        loadScene("/Esha/requestingmentorship.fxml", event);
+        
     }
     
 }

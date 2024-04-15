@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="798.0" prefWidth="895.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Esha.ReportController">
+
+    <!-- Header -->
+    <VBox layoutX="10.0" layoutY="10.0" spacing="10.0">
+        <Label style="-fx-font-size: 24px; -fx-font-weight: bold;" text="Investigating On Hotline Report On Election 2024" />
+        <Label text="Investigate and analyze the hotline reports received during the 2024 election period." />
+    </VBox>
+
+    <!-- Navigation Buttons -->
+    <HBox layoutX="777.0" layoutY="740.0" spacing="10.0">
+        <Button onAction="#goBack" text="Back" />
+        <Button onAction="#exitApplication" text="Exit" />
+    </HBox>
+
+    <!-- Hotline Reports List -->
+    <VBox layoutX="10.0" layoutY="100.0" prefHeight="328.0" prefWidth="878.0" spacing="10.0">
+        <Label style="-fx-font-size: 18px; -fx-font-weight: bold;" text="Hotline Reports:" />
+        <ListView fx:id="hotlineReportsListView" prefHeight="337.0" prefWidth="878.0" />
+    </VBox>
+
+    <!-- Investigation Details -->
+    <VBox layoutX="11.0" layoutY="435.0" prefHeight="301.0" prefWidth="878.0" spacing="10.0">
+        <Label style="-fx-font-size: 18px; -fx-font-weight: bold;" text="Investigation Details:" />
+        <TextArea fx:id="investigationDetailsTextArea" prefHeight="255.0" prefWidth="858.0" />
+    </VBox>
+
+    <!-- Investigation Buttons -->
+    <HBox layoutX="10.0" layoutY="740.0" spacing="10.0">
+        <Button onAction="#investigateReports" text="Investigate" />
+        <Button onAction="#clearInvestigation" text="Clear" />
+    </HBox>
+
+</AnchorPane>

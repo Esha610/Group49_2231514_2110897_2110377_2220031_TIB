@@ -28,7 +28,7 @@
                     <Label text="Description" />
                     <TextArea fx:id="descriptionTextArea" prefHeight="167.0" prefWidth="991.0" />
                     <Label text="Attach Evidences" />
-                    <!-- You can add file upload functionality here -->
+                   
                 </VBox>
             </center>
             <bottom>

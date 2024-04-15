@@ -57,7 +57,7 @@
                         </Label>
                         <ImageView fitHeight="232.0" fitWidth="287.0" layoutX="141.0" layoutY="73.0">
                             <image>
-                                <Image url="@../../../../Group49_2231514_2110897_2110377_2220031_TIB/Simulating_Operations_Of_Transparency_International_Bangladesh_Software/src/Esha/images/wired-gradient-955-demand.gif" />
+                                <Image url="@images/wired-gradient-955-demand%20-%20Copy.gif" />
                             </image>
                         </ImageView>
                     </children>

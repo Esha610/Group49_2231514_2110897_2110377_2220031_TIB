@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/javafx/FXMLController.java to edit this template
  */
-package Esha;
+package esha;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -15,16 +15,14 @@ import javafx.scene.control.TextArea;
 /**
  * FXML Controller class
  *
- * @author User
+ * @author mumta
  */
-public class MenteesController implements Initializable {
+public class EvaluationController implements Initializable {
 
     @FXML
-    private ListView<?> studentListView;
+    private ListView<?> criteriaListView;
     @FXML
-    private ListView<?> menteeRequestListView;
-    @FXML
-    private TextArea menteeProfileTextArea;
+    private TextArea resultsTextArea;
 
     /**
      * Initializes the controller class.
@@ -43,15 +41,11 @@ public class MenteesController implements Initializable {
     }
 
     @FXML
-    private void acceptMenteeRequest(ActionEvent event) {
+    private void evaluateCampaign(ActionEvent event) {
     }
 
     @FXML
-    private void declineMenteeRequest(ActionEvent event) {
-    }
-
-    @FXML
-    private void setMeeting(ActionEvent event) {
+    private void clearEvaluation(ActionEvent event) {
     }
     
 }

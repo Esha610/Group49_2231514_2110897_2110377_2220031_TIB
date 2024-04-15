@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/javafx/FXMLController.java to edit this template
- */
 package Esha;
 
 import java.net.URL;
@@ -9,46 +5,56 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.Alert;
 import javafx.scene.control.TextArea;
 
-/**
- * FXML Controller class
- *
- * @author mumta
- */
-public class ContactusController implements Initializable {
+public class ContactUsController implements Initializable {
 
     @FXML
-    private Button submitButton;
-    @FXML
-    private Button backButton;
-    @FXML
-    private Button logoutButton;
-    @FXML
-    private ChoiceBox<?> contactMethodChoiceBox;
-    @FXML
-    private TextArea informationTextArea;
+    private TextArea messageTextArea;
 
-    /**
-     * Initializes the controller class.
-     */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
-    }    
+      
+        messageTextArea.setText("Enter your message here...");
 
-    @FXML
-    private void submitForm(ActionEvent event) {
+    
+        messageTextArea.requestFocus();
     }
 
     @FXML
     private void goBack(ActionEvent event) {
+     
+        System.out.println("Going back...");
     }
 
     @FXML
-    private void logOut(ActionEvent event) {
-    }
+    private void exitApplication(ActionEvent event) {
     
+        System.exit(0);
+    }
+
+    @FXML
+    private void sendMessage(ActionEvent event) {
+       
+        String message = messageTextArea.getText();
+        if (!message.isEmpty()) {
+          
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Message Sent");
+            alert.setHeaderText(null);
+            alert.setContentText("Your message has been sent successfully!");
+            alert.showAndWait();
+
+           
+            messageTextArea.clear();
+        } else {
+           
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("Empty Message");
+            alert.setHeaderText(null);
+            alert.setContentText("Please enter a message before sending.");
+            alert.showAndWait();
+        }
+    } 
 }

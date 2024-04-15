@@ -22,7 +22,7 @@
                               <Font name="System Bold" size="18.0" />
                            </font>
                         </Button>
-                        <Button mnemonicParsing="false" onAction="#requestingMentorshipButtonOnClick" prefHeight="43.0" prefWidth="292.0" text="Monitoring Reports">
+                        <Button mnemonicParsing="false" onAction="#monitoringReportsButtonOnClick" prefHeight="43.0" prefWidth="292.0" text="Monitoring Reports">
                            <font>
                               <Font name="System Bold Italic" size="18.0" />
                            </font>
@@ -37,7 +37,7 @@
                               <Font name="System Bold Italic" size="18.0" />
                            </font>
                         </Button>
-                        <Button mnemonicParsing="false" onAction="#uploadingResearchesButtonOnClick" prefHeight="43.0" prefWidth="292.0" text="Uploading Researches">
+                        <Button mnemonicParsing="false" onAction="#dataRepositoryButtonOnClick" prefHeight="43.0" prefWidth="292.0" text="Data Repository">
                            <font>
                               <Font name="System Bold Italic" size="18.0" />
                            </font>
@@ -56,7 +56,7 @@
                   </Label>
                   <ImageView fitHeight="244.0" fitWidth="287.0" layoutX="141.0" layoutY="67.0">
                      <image>
-                        <Image url="@../../../../Group49_2231514_2110897_2110377_2220031_TIB/Simulating_Operations_Of_Transparency_International_Bangladesh_Software/src/Esha/images/wired-gradient-955-demand.gif" />
+                        <Image url="@images/wired-gradient-955-demand%20-%20Copy.gif" />
                      </image>
                   </ImageView>
                </children>

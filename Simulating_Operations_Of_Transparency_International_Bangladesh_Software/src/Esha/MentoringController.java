@@ -9,29 +9,22 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
+import javafx.scene.control.ListView;
 import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
 
 /**
  * FXML Controller class
  *
  * @author mumta
  */
-public class EvaluationofworkshopsController implements Initializable {
+public class MentoringController implements Initializable {
 
     @FXML
-    private Button submitButton;
+    private ListView<?> studentListView;
     @FXML
-    private Button backButton;
+    private ListView<?> menteeRequestListView;
     @FXML
-    private Button logoutButton;
-    @FXML
-    private TextField nameTextField;
-    @FXML
-    private TextField emailTextField;
-    @FXML
-    private TextArea opinionsTextArea;
+    private TextArea menteeProfileTextArea;
 
     /**
      * Initializes the controller class.
@@ -42,15 +35,23 @@ public class EvaluationofworkshopsController implements Initializable {
     }    
 
     @FXML
-    private void submitForm(ActionEvent event) {
-    }
-
-    @FXML
     private void goBack(ActionEvent event) {
     }
 
     @FXML
-    private void logOut(ActionEvent event) {
+    private void exitApplication(ActionEvent event) {
+    }
+
+    @FXML
+    private void acceptMenteeRequest(ActionEvent event) {
+    }
+
+    @FXML
+    private void declineMenteeRequest(ActionEvent event) {
+    }
+
+    @FXML
+    private void setMeeting(ActionEvent event) {
     }
     
 }

@@ -11,11 +11,7 @@ import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 
-/**
- * FXML Controller class
- *
- * @author mumta
- */
+
 public class HostingworkshopsController implements Initializable {
 
     @FXML
@@ -35,12 +31,9 @@ public class HostingworkshopsController implements Initializable {
     @FXML
     private TextField topicTextField1;
 
-    /**
-     * Initializes the controller class.
-     */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+       
     }    
 
     @FXML
