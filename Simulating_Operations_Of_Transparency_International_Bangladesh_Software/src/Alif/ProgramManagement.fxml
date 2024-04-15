@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mainpkg.ALIF.ProgramManagementController">
+   <children>
+      <Text layoutX="155.0" layoutY="58.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome To TIB" underline="true">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Text>
+      <Text layoutX="37.0" layoutY="113.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: RED;" text="Program Management">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Text>
+      <Button fx:id="projectSummary" layoutX="36.0" layoutY="145.0" mnemonicParsing="false" onAction="#projectSummaryButtonMouseOnClicked" style="-fx-background-color: yellow;" text="Project Summary " />
+      <Button fx:id="taskList" layoutX="36.0" layoutY="188.0" mnemonicParsing="false" onAction="#taskListButtonMouseOnClicked" prefHeight="25.0" prefWidth="110.0" style="-fx-background-color: blue;" text="Task List" textAlignment="CENTER" wrapText="true" />
+      <Button fx:id="completedWork" layoutX="36.0" layoutY="233.0" mnemonicParsing="false" onAction="#completedWorkButtonMouseOnClicked" prefHeight="25.0" prefWidth="110.0" style="-fx-background-color: green;" text="Completed Work" textAlignment="CENTER" wrapText="true" />
+      <TextField fx:id="searchTF" layoutX="313.0" layoutY="117.0" promptText="search" />
+   </children>
+</AnchorPane>
