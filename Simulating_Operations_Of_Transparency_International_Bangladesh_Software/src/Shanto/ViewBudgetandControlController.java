@@ -39,7 +39,7 @@ public class ViewBudgetandControlController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-         budgetListView.setItems(budgetItems);
+        budgetListView.setItems(budgetItems);
         expenseListView.setItems(expenseItems);
         loadSavedData();
         updatePieChart();
