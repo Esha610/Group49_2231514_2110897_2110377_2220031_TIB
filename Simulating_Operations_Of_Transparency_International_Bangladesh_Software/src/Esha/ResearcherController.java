@@ -29,26 +29,10 @@ public class ResearcherController implements Initializable {
        
     }    
 
-    @FXML
-    private void menteesButtonOnClick(ActionEvent event) {
-        loadScene("/Esha/mentees.fxml", event);
-    }
-     private void loadScene(String fxmlFile, ActionEvent event) {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlFile));
-        try {
-            AnchorPane root = loader.load();
-            Scene scene = new Scene(root);
-            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            stage.setScene(scene);
-            stage.show();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
 
     @FXML
     private void monitoringReportsButtonOnClick(ActionEvent event) {
-        loadScene("/Esha/monitoringreports.fxml", event);
+        loadScene("/Esha/MonitoringReports.fxml", event);
     }
 
     @FXML
@@ -61,14 +45,42 @@ public class ResearcherController implements Initializable {
         loadScene("/Esha/evaluationofworkshops.fxml", event);
     }
     
+
+
+    @FXML
+    private void dataRepositoryButtonOnClick(ActionEvent event) {
+          loadScene("/Esha/Datarepository.fxml", event);
+    }
+    
+    
+    @FXML
+    private void menteesButtonOnClick(ActionEvent event) {
+        loadScene("/Esha/mentees.fxml", event);
+    }
+    
+    
+    
     @FXML
     private void LogoutButtonOnClick(ActionEvent event) {
          loadScene("/mainpkg/LoginSc.fxml", event);
     }
-
-    @FXML
-    private void dataRepositoryButtonOnClick(ActionEvent event) {
-          loadScene("/Esha/datarepository.fxml", event);
+    
+    
+    
+    
+    
+    
+     private void loadScene(String fxmlFile, ActionEvent event) {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlFile));
+        try {
+            AnchorPane root = loader.load();
+            Scene scene = new Scene(root);
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
     
 }

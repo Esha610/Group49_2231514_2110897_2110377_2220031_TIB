@@ -20,21 +20,74 @@ public class DataRepositoryController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-      
+        // Root item
         TreeItem<String> rootItem = new TreeItem<>("Data Repository");
-        TreeItem<String> folder1 = new TreeItem<>("Folder 1");
-        TreeItem<String> folder2 = new TreeItem<>("Folder 2");
-        rootItem.getChildren().addAll(folder1, folder2);
+
+        // Finance department
+        TreeItem<String> financeFolder = new TreeItem<>("Finance");
+        financeFolder.getChildren().addAll(
+            new TreeItem<>("Financial Statements.xlsx"),
+            new TreeItem<>("Budget2024.xlsx"),
+            new TreeItem<>("Expense Reports")
+        );
+
+        // Marketing department
+        TreeItem<String> marketingFolder = new TreeItem<>("Marketing");
+        marketingFolder.getChildren().addAll(
+            new TreeItem<>("Campaigns"),
+            new TreeItem<>("Market Research"),
+            new TreeItem<>("Ads")
+        );
+
+        // HR department
+        TreeItem<String> hrFolder = new TreeItem<>("HR");
+        hrFolder.getChildren().addAll(
+            new TreeItem<>("Employee Handbook.pdf"),
+            new TreeItem<>("Training Materials"),
+            new TreeItem<>("Recruitment")
+        );
+
+        // Sales department
+        TreeItem<String> salesFolder = new TreeItem<>("Sales");
+        salesFolder.getChildren().addAll(
+            new TreeItem<>("Sales Reports"),
+            new TreeItem<>("Client Contracts"),
+            new TreeItem<>("Sales Presentations")
+        );
+
+        // Product department
+        TreeItem<String> productFolder = new TreeItem<>("Product");
+        productFolder.getChildren().addAll(
+            new TreeItem<>("Product Specifications"),
+            new TreeItem<>("Design Mockups"),
+            new TreeItem<>("User Manuals")
+        );
+
+        // IT department
+        TreeItem<String> itFolder = new TreeItem<>("IT");
+        itFolder.getChildren().addAll(
+            new TreeItem<>("Software"),
+            new TreeItem<>("Hardware"),
+            new TreeItem<>("Network")
+        );
+
+        // Add folders to the root item
+        rootItem.getChildren().addAll(
+            financeFolder, marketingFolder, hrFolder, 
+            salesFolder, productFolder, itFolder
+        );
+
+        // Set the root item to the TreeView
         repositoryTreeView.setRoot(rootItem);
-        
-      
+
+        // Listener for selecting items in the TreeView
         repositoryTreeView.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
             if (newValue != null && !newValue.isLeaf()) {
-               
                 fileDetailsTextArea.clear();
             }
         });
     }
+
 
    @FXML
     private void goBack(ActionEvent event) {

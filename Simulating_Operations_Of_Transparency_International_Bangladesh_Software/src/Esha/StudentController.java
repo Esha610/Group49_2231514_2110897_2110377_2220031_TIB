@@ -35,10 +35,46 @@ public class StudentController implements Initializable {
         
     }    
 
-    private void mentorsButtonClicked(ActionEvent event) {
-        loadScene("/Esha/requestingmentorship.fxml", event);
+
+    @FXML
+    private void volunteerRegistrationButtonOnClick(ActionEvent event) {
+         loadScene("/Esha/Volunteerregistration.fxml", event);
+
+    }
+
+
+    @FXML
+    private void reportingCorruptionButtonOnClick(ActionEvent event) {
+          loadScene("/Esha/Reportingcorruption.fxml", event);
+    }
+
+    @FXML
+    private void workshopRegistartionButtonOnClick(ActionEvent event) {
+         loadScene("/Esha/WorkshopRegistration.fxml", event);
+
+    }
+
+    @FXML
+    private void contactUsButtonOnClick(ActionEvent event) {
+         loadScene("/Esha/Contactus.fxml", event);
+
+    }
+
+    @FXML
+    private void requestingMentorshipButtonOnClick(ActionEvent event) {
+        loadScene("/Esha/Requestingmentorship.fxml", event);
         
     }
+    
+    
+    @FXML
+    private void logOut(ActionEvent event) {
+          loadScene("/mainpkg/LoginSc.fxml", event);
+    }
+
+    
+    
+    
     private void loadScene(String fxmlFile, ActionEvent event) {
         FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlFile));
         try {
@@ -50,43 +86,6 @@ public class StudentController implements Initializable {
         } catch (IOException e) {
             e.printStackTrace();
         }
-    }
-
-
-    @FXML
-    private void logOut(ActionEvent event) {
-          loadScene("/mainpkg/LoginSc.fxml", event);
-    }
-
-
-    @FXML
-    private void volunteerRegistrationButtonOnClick(ActionEvent event) {
-         loadScene("/Esha/volunteerregistration.fxml", event);
-
-    }
-
-
-    @FXML
-    private void reportingCorruptionButtonOnClick(ActionEvent event) {
-          loadScene("/Esha/reportingcorruption.fxml", event);
-    }
-
-    @FXML
-    private void workshopRegistartionButtonOnClick(ActionEvent event) {
-         loadScene("/Esha/workshopregistration.fxml", event);
-
-    }
-
-    @FXML
-    private void contactUsButtonOnClick(ActionEvent event) {
-         loadScene("/Esha/contactus.fxml", event);
-
-    }
-
-    @FXML
-    private void requestingMentorshipButtonOnClick(ActionEvent event) {
-        loadScene("/Esha/requestingmentorship.fxml", event);
-        
     }
     
 }
