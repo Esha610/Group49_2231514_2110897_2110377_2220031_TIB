@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="463.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="Alif.FinancialManagementController">
+   <children>
+      <Label layoutX="170.0" layoutY="14.0" text="Welcome To TIB" underline="true">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+      <Label layoutX="43.0" layoutY="72.0" text="Financial Management" textFill="#2814ff">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Button fx:id="summary" layoutX="54.0" layoutY="110.0" mnemonicParsing="false" onAction="#summaryButtonMouseOnClicked" prefHeight="25.0" prefWidth="120.0" text="Summary" />
+      <Button fx:id="draft" layoutX="56.0" layoutY="155.0" mnemonicParsing="false" onAction="#draftButtonMouseOnClicked" prefHeight="25.0" prefWidth="120.0" text="Draft" />
+      <Button fx:id="latestTransactions" layoutX="54.0" layoutY="200.0" mnemonicParsing="false" onAction="#latestTransactionsButtonMouseOnClicked" prefHeight="25.0" prefWidth="120.0" text="Latest Transactions" />
+      <Button fx:id="messages" layoutX="54.0" layoutY="245.0" mnemonicParsing="false" onAction="#messagesButtonMouseOnClicked" prefHeight="25.0" prefWidth="120.0" text="Messages" />
+      <Button fx:id="export" layoutX="56.0" layoutY="295.0" mnemonicParsing="false" onAction="#exportButtonMouseOnClicked" prefHeight="25.0" prefWidth="120.0" text="Export" />
+   </children>
+</AnchorPane>
