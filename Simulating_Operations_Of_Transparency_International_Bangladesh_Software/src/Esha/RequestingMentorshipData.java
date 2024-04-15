@@ -16,7 +16,9 @@ public class RequestingMentorshipData implements Serializable {
         this.extraDescription = extraDescription;
     }
 
-    // Getters and setters
+    
+    
+    
     public String getSelectedGoal() {
         return selectedGoal;
     }

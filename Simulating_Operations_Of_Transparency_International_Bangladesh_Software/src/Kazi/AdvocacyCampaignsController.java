@@ -112,7 +112,7 @@ public class AdvocacyCampaignsController implements Initializable {
     @FXML
     private void goBack(ActionEvent event) {
 
-            loadScene("/Kazi/Citizen.fxml", event);
+            loadScene("/Kazi/Student.fxml", event);
     }
     
     
