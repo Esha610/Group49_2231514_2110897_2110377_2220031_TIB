@@ -1,12 +1,15 @@
 package Shanto;
 
+import java.io.IOException;
+import java.io.Serializable;
 import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
 
-public class SocialEvent {
-    private final SimpleStringProperty eventName;
-    private final SimpleStringProperty eventTime;
-    private final SimpleStringProperty eventDate;
-    private final SimpleStringProperty eventLocation;
+public class SocialEvent implements Serializable {
+    private transient StringProperty eventName;
+    private transient StringProperty eventTime;
+    private transient StringProperty eventDate;
+    private transient StringProperty eventLocation;
 
     public SocialEvent(String eventName, String eventTime, String eventDate, String eventLocation) {
         this.eventName = new SimpleStringProperty(eventName);
@@ -15,19 +18,35 @@ public class SocialEvent {
         this.eventLocation = new SimpleStringProperty(eventLocation);
     }
 
-    public String getEventName() {
-        return eventName.get();
+    private void writeObject(java.io.ObjectOutputStream out) throws IOException {
+        out.defaultWriteObject();
+        out.writeObject(eventName.get());
+        out.writeObject(eventTime.get());
+        out.writeObject(eventDate.get());
+        out.writeObject(eventLocation.get());
     }
 
-    public String getEventTime() {
-        return eventTime.get();
+    private void readObject(java.io.ObjectInputStream in) throws IOException, ClassNotFoundException {
+        in.defaultReadObject();
+        eventName = new SimpleStringProperty((String) in.readObject());
+        eventTime = new SimpleStringProperty((String) in.readObject());
+        eventDate = new SimpleStringProperty((String) in.readObject());
+        eventLocation = new SimpleStringProperty((String) in.readObject());
     }
 
-    public String getEventDate() {
-        return eventDate.get();
+    public StringProperty eventNameProperty() {
+        return eventName;
     }
 
-    public String getEventLocation() {
-        return eventLocation.get();
+    public StringProperty eventTimeProperty() {
+        return eventTime;
+    }
+
+    public StringProperty eventDateProperty() {
+        return eventDate;
+    }
+
+    public StringProperty eventLocationProperty() {
+        return eventLocation;
     }
 }

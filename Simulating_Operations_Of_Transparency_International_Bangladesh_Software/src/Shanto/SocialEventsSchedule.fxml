@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
@@ -11,35 +12,42 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane prefHeight="924.0" prefWidth="938.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Shanto.SocialEventsScheduleController">
-
-    <!-- Header -->
-    <VBox layoutX="10.0" layoutY="35.0" prefHeight="72.0" prefWidth="403.0" spacing="10.0">
-        <Label style="-fx-font-size: 24px; -fx-font-weight: bold;" text="Social Events Schedule" />
-        <Label text="Manage your social events with ease" />
-    </VBox>
-
-    <!-- Content Area -->
-    <VBox layoutX="32.0" layoutY="119.0" prefHeight="715.0" prefWidth="876.0" style="-fx-background-color: lightgray;">
-        <Label style="-fx-font-size: 18px; -fx-font-weight: bold;" text="                                                                          Social Events" />
-        <TableView fx:id="eventsTableView" prefHeight="508.0" prefWidth="1000.0">
-         <columns>
-            <TableColumn fx:id="socialEventsNameTimeDateLocationTableColumn" prefWidth="875.0" text="        Social Events Name                           Time                              Date                               Location                                                                                                                                 " />
-         </columns>
+<AnchorPane prefHeight="849.0" prefWidth="1045.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Shanto.SocialEventsScheduleController">
+    <children>
+        <TableView fx:id="eventsTableView" layoutX="14.0" layoutY="97.0" prefHeight="492.0" prefWidth="1014.0">
+            <columns>
+                <TableColumn fx:id="eventNameCol" prefWidth="263.0" text="Event Name" />
+                <TableColumn fx:id="eventTimeCol" prefWidth="154.0" text="Time" />
+                <TableColumn fx:id="eventDateCol" prefWidth="267.0" text="Date" />
+                <TableColumn fx:id="eventLocationCol" prefWidth="329.0" text="Location" />
+            </columns>
         </TableView>
-        <Button onAction="#viewAllEvents" text="View All" />
-        <Button onAction="#addNewEvent" text="Add New Event" />
-        <TextField fx:id="newEventField" prefHeight="128.0" prefWidth="1024.0" promptText="Enter New Event Details" /> <!-- Added TextField -->
-    </VBox>
-    <MenuBar layoutY="1.0" prefHeight="25.0" prefWidth="59.0">
-        <menus>
-            <Menu text="File">
-                <items>
-                    <MenuItem onAction="#exitApplication" text="Exit" />
-                </items>
-            </Menu>
-        </menus>
-    </MenuBar>
-   <Button layoutX="845.0" layoutY="858.0" onAction="#logout" text="Logout" />
-   <Button layoutX="788.0" layoutY="858.0" onAction="#goBack" prefHeight="25.0" prefWidth="50.0" text="Back" />
+        <Label layoutX="14.0" layoutY="602.0" text="Event Name" />
+        <TextField fx:id="eventNameTextField" layoutX="14.0" layoutY="622.0" prefWidth="200.0" />
+        <Label layoutX="14.0" layoutY="647.0" text="Time" />
+        <TextField fx:id="eventTimeTextField" layoutX="14.0" layoutY="667.0" prefWidth="200.0" />
+        <Label layoutX="14.0" layoutY="699.0" text="Date" />
+        <DatePicker fx:id="eventDatePicker" layoutX="14.0" layoutY="719.0" prefHeight="25.0" prefWidth="200.0" />
+        <Label layoutX="14.0" layoutY="744.0" text="Location" />
+        <TextField fx:id="eventLocationTextField" layoutX="14.0" layoutY="764.0" prefWidth="200.0" />
+        <Button fx:id="addEventButton" layoutX="60.0" layoutY="800.0" mnemonicParsing="false" onAction="#addEvent" text="Add Event" />
+        <VBox layoutX="14.0" layoutY="25.0" prefHeight="72.0" prefWidth="403.0" spacing="10.0">
+            <children>
+                <Label style="-fx-font-size: 24px; -fx-font-weight: bold;" text="Social Events Schedule" />
+                <Label text="Manage your social events with ease" />
+            </children>
+        </VBox>
+        <MenuBar prefHeight="25.0" prefWidth="59.0">
+            <menus>
+                <Menu text="File">
+                    <items>
+                        <MenuItem onAction="#exitApplication" text="Exit" />
+                    </items>
+                </Menu>
+            </menus>
+        </MenuBar>
+        <Button layoutX="957.0" layoutY="813.0" onAction="#logout" text="Logout" />
+        <Button layoutX="900.0" layoutY="813.0" onAction="#goBack" prefHeight="25.0" prefWidth="50.0" text="Back" />
+        <Button layoutX="300.0" layoutY="598.0" onAction="#viewAllEvents" prefHeight="35.0" prefWidth="359.0" text="View All Events" />
+    </children>
 </AnchorPane>
