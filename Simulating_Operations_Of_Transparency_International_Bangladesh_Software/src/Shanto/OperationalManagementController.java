@@ -16,6 +16,7 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Scene;
+import javafx.scene.chart.PieChart;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
@@ -27,6 +28,8 @@ public class OperationalManagementController implements Initializable {
     @FXML    private ListView<String> employeeListView;
     @FXML    private ListView<String> budgetListView;
     @FXML    private ListView<String> inventoryListView;
+    @FXML    private PieChart operationalManagementPieChart;
+
 
     private ObservableList<String> employeeData = FXCollections.observableArrayList();
     private ObservableList<String> budgetData = FXCollections.observableArrayList();
@@ -38,6 +41,7 @@ public class OperationalManagementController implements Initializable {
         employeeListView.setItems(employeeData);
         budgetListView.setItems(budgetData);
         inventoryListView.setItems(inventoryData);
+        updatePieChart();
     }    
 
 
@@ -160,8 +164,26 @@ public class OperationalManagementController implements Initializable {
             e.printStackTrace();
         }
     }
+    
+    
+    @FXML
+    private void generatePiChartOnCLick(ActionEvent event) {
+         updatePieChart();
+    }
 
 
-  
+    private void updatePieChart() {
+        double totalEmployee = employeeData.size();
+        double totalBudget = budgetData.size();
+        double totalInventory = inventoryData.size();    
+
+        PieChart.Data employeePieData = new PieChart.Data("Total Employee", totalEmployee);
+        PieChart.Data budgetPieData = new PieChart.Data("Total Budget", totalBudget);
+        PieChart.Data inventoryPieData = new PieChart.Data("Total Inventory", totalInventory);
+
+        operationalManagementPieChart.setData(FXCollections.observableArrayList(employeePieData, budgetPieData, inventoryPieData));
+    }
+
+
 
 }
