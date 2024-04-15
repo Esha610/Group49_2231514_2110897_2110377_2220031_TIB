@@ -7,7 +7,7 @@
 
 <AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Alif.FinanceAndAdministrationManagerController">
    <children>
-      <Button fx:id="logout" layoutX="446.0" layoutY="318.0" mnemonicParsing="false" onAction="#LogoutButtonOnClick" prefHeight="0.0" prefWidth="129.0" style="-fx-background-color: red;" text="Logout" textFill="#461cbc">
+      <Button fx:id="logout" layoutX="446.0" layoutY="318.0" mnemonicParsing="false" onAction="#LogoutButtonOnClick" prefHeight="0.0" prefWidth="129.0" style="-fx-background-color: red;" text="Logout" textFill="WHITE">
          <font>
             <Font name="System Bold Italic" size="23.0" />
          </font>

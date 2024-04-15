@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="514.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Alif.TeamLeadershipAndCollaborationController">
+   <children>
+      <Text layoutX="179.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome To TIB" underline="true">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Text>
+      <Text fill="#fd0000" layoutX="42.0" layoutY="86.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Team Leadership and Collaboration">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Text>
+      <Button fx:id="createATeam" layoutX="365.0" layoutY="440.0" mnemonicParsing="false" onAction="#createATeamButtonMouseOnClicked" prefHeight="25.0" prefWidth="99.0" text="Create Team" />
+      <TextField fx:id="avalableMemberName" layoutX="290.0" layoutY="97.0" />
+      <Button fx:id="addedList" layoutX="449.0" layoutY="124.0" mnemonicParsing="false" onAction="#addedListButtonMouseOnClicked" text="Add to the List" />
+      <TableView fx:id="avalableMembersTV" layoutX="22.0" layoutY="219.0" prefHeight="200.0" prefWidth="420.0">
+        <columns>
+          <TableColumn fx:id="availableMembersTC" prefWidth="178.3333740234375" text="Name of Available Members" />
+            <TableColumn fx:id="emailTC" prefWidth="240.0" text="Email" />
+        </columns>
+      </TableView>
+      <TextField fx:id="availableMemberEmail" layoutX="290.0" layoutY="126.0" />
+      <Button fx:id="emailAvailablemembers" layoutX="458.0" layoutY="245.0" mnemonicParsing="false" onAction="#emailAvailablemembersButtonMouseOnClicked" prefHeight="25.0" prefWidth="99.0" text="Email Now" />
+      <Label layoutX="42.0" layoutY="101.0" text="Available Member List" />
+      <Label layoutX="249.0" layoutY="101.0" text="Name:" />
+      <Label layoutX="251.0" layoutY="128.0" text="Email:" />
+   </children>
+</AnchorPane>

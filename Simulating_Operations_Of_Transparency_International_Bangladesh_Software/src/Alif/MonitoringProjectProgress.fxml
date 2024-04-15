@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="542.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Alif.MonitoringProjectProgressController">
+   <children>
+      <Text layoutX="185.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome To TIB" underline="true">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Text>
+      <Text fill="#ff0b0b" layoutX="36.0" layoutY="82.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Monitoring  Project Progress">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Text>
+      <CheckBox fx:id="placeAvailableCB" layoutX="32.0" layoutY="107.0" mnemonicParsing="false" text="Is Place  Available?" />
+      <CheckBox fx:id="approvedByHRCB" layoutX="33.0" layoutY="145.0" mnemonicParsing="false" text="Approved by HR?" />
+      <CheckBox fx:id="approvedByFmCB" layoutX="33.0" layoutY="191.0" mnemonicParsing="false" text="Approved by Finance Manager?" />
+      <CheckBox fx:id="milestoneAchivedCB" layoutX="33.0" layoutY="244.0" mnemonicParsing="false" text="Is Milestone Achieved?" />
+      <CheckBox fx:id="budgetOnTrackCB" layoutX="33.0" layoutY="307.0" mnemonicParsing="false" text="Is Budget on Track?" />
+      <CheckBox fx:id="scheduleMetCB" layoutX="33.0" layoutY="378.0" mnemonicParsing="false" text="Is Schedule Met properly? " />
+      <CheckBox fx:id="deliverablesCompletedCB" layoutX="33.0" layoutY="444.0" mnemonicParsing="false" text="Is Deliverables Completed?" />
+      <Button fx:id="doneProject" layoutX="414.0" layoutY="432.0" mnemonicParsing="false" onAction="#doneProjectButtonMouseOnClicked" text="Done" />
+   </children>
+</AnchorPane>
