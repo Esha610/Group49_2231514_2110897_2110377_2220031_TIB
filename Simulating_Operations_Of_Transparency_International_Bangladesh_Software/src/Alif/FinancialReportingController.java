@@ -1,4 +1,7 @@
-
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/javafx/FXMLController.java to edit this template
+ */
 package Alif;
 
 import java.io.IOException;
@@ -11,31 +14,26 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.TextArea;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
+/**
+ * FXML Controller class
+ *
+ * @author asifk
+ */
+public class FinancialReportingController implements Initializable {
 
-
-//asd
-
-public class FinancialRegulationsController implements Initializable {
-
     @FXML
-    private Button regulatoryMonitoring;
+    private ComboBox<?> optionsCB;
     @FXML
-    private Button reportAssessment;
+    private TextArea writeReportTA;
     @FXML
-    private Button controlsDevelopment;
+    private Button createFinancialReport;
     @FXML
-    private Button training;
-    @FXML
-    private Button documentation;
-    @FXML
-    private Button oversight;
-    @FXML
-    private Button theImprovement;
-    @FXML
-    private Button auditCoordination;
+    private Button cancel;
 
     /**
      * Initializes the controller class.
@@ -46,36 +44,17 @@ public class FinancialRegulationsController implements Initializable {
     }    
 
     @FXML
-    private void regulatoryMonitoringButtonMouseOnClicked(ActionEvent event) {
+    private void ButtonMouseOnClicked(ActionEvent event) {
     }
 
     @FXML
-    private void reportAssessmentButtonMouseOnClicked(ActionEvent event) {
+    private void createFinancialReportButtonMouseOnClicked(ActionEvent event) {
     }
 
     @FXML
-    private void controlsDevelopmentButtonMouseOnClicked(ActionEvent event) {
-    }
-
-    @FXML
-    private void trainingButtonMouseOnClicked(ActionEvent event) {
-    }
-
-    @FXML
-    private void documentationButtonMouseOnClicked(ActionEvent event) {
-    }
-
-    @FXML
-    private void oversightButtonMouseOnClicked(ActionEvent event) {
-    }
-
-    @FXML
-    private void theImprovementButtonMouseOnClicked(ActionEvent event) {
+    private void cancelButtonMouseOnClicked(ActionEvent event) {
+        loadScene("/Alif/FinanceAndAdministrationManager.fxml", event);
         
-    }
-
-    @FXML
-    private void auditCoordinationButtonMouseOnClicked(ActionEvent event) {
     }
     
     private void loadScene(String fxmlFile, ActionEvent event) {
@@ -90,5 +69,4 @@ public class FinancialRegulationsController implements Initializable {
             e.printStackTrace();
         }
     }
-    
 }

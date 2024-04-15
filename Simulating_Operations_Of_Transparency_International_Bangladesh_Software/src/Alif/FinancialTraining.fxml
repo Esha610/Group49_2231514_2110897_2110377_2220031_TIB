@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="591.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="Alif.FinancialTrainingController">
+   <children>
+      <Label layoutX="153.0" layoutY="25.0" text="Welcome To TIB" underline="true">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+      <Label layoutX="51.0" layoutY="85.0" text="Financial Training" textFill="#2200ff">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Button fx:id="assessment" layoutX="51.0" layoutY="143.0" mnemonicParsing="false" onAction="#assessmentButtonMouseOnClicked" prefHeight="25.0" prefWidth="183.0" text="Assessment" />
+      <Button fx:id="trainingProgramDevelopment" layoutX="51.0" layoutY="188.0" mnemonicParsing="false" onAction="#trainingProgramDevelopmentButtonMouseOnClicked" text="Training Program Development" />
+      <Button fx:id="expertConsultation" layoutX="51.0" layoutY="235.0" mnemonicParsing="false" onAction="#expertConsultationButtonMouseOnClicked" prefHeight="25.0" prefWidth="183.0" text="Expert Consultation" />
+      <Button fx:id="deliveryMethodSelection" layoutX="51.0" layoutY="284.0" mnemonicParsing="false" onAction="#deliveryMethodSelectionButtonMouseOnClicked" prefHeight="25.0" prefWidth="183.0" text="Delivery Method Selection" />
+      <Button fx:id="facilitatorSelectionAndTraining" layoutX="51.0" layoutY="331.0" mnemonicParsing="false" onAction="#facilitatorSelectionAndTrainingButtonMouseOnClicked" prefHeight="25.0" prefWidth="190.0" text="Facilitator Selection and Training" />
+      <Button fx:id="participantEngagement" layoutX="48.0" layoutY="378.0" mnemonicParsing="false" onAction="#participantEngagementButtonMouseOnClicked" prefHeight="25.0" prefWidth="183.0" text="Participant Engagement" />
+      <Label layoutX="140.0" layoutY="426.0" prefHeight="17.0" prefWidth="55.0" text="Evalution :" />
+      <TextArea fx:id="evalutionTA" layoutX="204.0" layoutY="416.0" prefHeight="110.0" prefWidth="279.0" />
+      <Label layoutX="340.0" layoutY="147.0" text="Training Schedule Planning:" />
+      <DatePicker fx:id="trainingDate" layoutX="344.0" layoutY="176.0" promptText="SelectDate" />
+      <Button fx:id="emailThem" layoutX="368.0" layoutY="213.0" mnemonicParsing="false" onAction="#emailThemButtonMouseOnClicked" text="Email Them" />
+   </children>
+</AnchorPane>
